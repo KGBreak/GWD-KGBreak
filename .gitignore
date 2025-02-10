@@ -71,3 +71,21 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+
+# Ignore FMOD cache files and temporary builds
+/FMDOProject/.cache
+/FMODProject/Build/*
+/FMODProject/Build.meta
+/FMODProject/*.log
+/FMODProject/*.bak
+/FMODProject/.user
+/FMODProject/.DS_Store
+
+# Ignore Unity FMOD cache
+/Assets/FMODStudioCache.asset
+/Assets/FMODStudioSettings.asset
+
+# Ignore FMOD-generated Unity files (optional)
+/Assets/StreamingAssets/*.bank.meta
+
