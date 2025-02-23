@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 1387528473820513667}
   - component: {fileID: 2784030856259566614}
   - component: {fileID: 4126198804805880705}
+  - component: {fileID: 6370006942994597548}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -316,3 +317,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyMovement: {fileID: 1387528473820513667}
   EnemyTransform: {fileID: 5665283195828219952}
+--- !u!114 &6370006942994597548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544474352826760812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37eebed25050b88428eb538b0c4280d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionRange: 16.74
+  visionAngle: 83.9
