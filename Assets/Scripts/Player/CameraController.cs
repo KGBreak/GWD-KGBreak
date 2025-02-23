@@ -51,8 +51,15 @@ public class CameraController : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(xRotation, yRotation, 0);
 
         Vector3 desiredPosition = playerTransform.position - rotation * Vector3.forward * distanceFromPlayer + offset;
-        transform.position = desiredPosition;
+        Vector3 directionToPlayer = playerTransform.position + offset - desiredPosition;
 
+        RaycastHit hit;
+        if (Physics.Raycast(playerTransform.position + offset, -directionToPlayer.normalized, out hit, distanceFromPlayer))
+        {
+            desiredPosition = playerTransform.position + offset - directionToPlayer.normalized * hit.distance;
+        }
+
+        transform.position = desiredPosition;
         transform.LookAt(playerTransform.position + offset);
     }
 }
