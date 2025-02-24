@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 344eeffb469fdeb4683c1bdab45b2909
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 227026
+  packageName: Interior Laboratory
+  packageVersion: 1.0
+  assetPath: Assets/Interior Laboratory/Materials/M_Color_Wall_02.mat
+  uploadId: 511625
