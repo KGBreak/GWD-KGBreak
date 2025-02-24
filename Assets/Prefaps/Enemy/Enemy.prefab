@@ -640,8 +640,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMovement: {fileID: 1387528473820513667}
-  investigateTime: 20
-  investigateTime2: 30
+  investigateTime: 200000000
+  investigateTime2: 300000000
   investPos: {x: -11, y: 1, z: -11}
   investPos2: {x: 0, y: 1, z: -11}
 --- !u!114 &1387528473820513667
