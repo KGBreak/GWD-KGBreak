@@ -115,7 +115,10 @@ public class EnemyMovement : MonoBehaviour
     {
         if (currentActionCoroutine != null)
         {
-            pathPoints[nextPoint].action.InterruptAction();
+            if (pathPoints[nextPoint].action != null)
+            {
+                pathPoints[nextPoint].action.InterruptAction();
+            }
             StopCoroutine(currentActionCoroutine);
             currentActionCoroutine = null;
         }
