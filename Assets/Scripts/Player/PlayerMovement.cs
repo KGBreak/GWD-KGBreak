@@ -26,31 +26,16 @@ public class PlayerMovement : MonoBehaviour
     Vector3 currentVelocity;
     bool isGrounded;
     CharacterController characterController;
-    InputSystem_Actions playerInput;
 
     private float slowdownTimer = 0f;
     private float slowdownInterval = 0.5f; // Interval in seconds for the halt effect
     private float slowdownDuration = 0.3f; // Duration of the slowdown effect
     private bool isSlowingDown = false;
 
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        playerInput = new InputSystem_Actions();
-    }
-
-    private void OnEnable()
-    {
-        playerInput.Player.Enable();
-        playerInput.Player.Move.performed += OnMove;
-        playerInput.Player.Move.canceled += OnMove;
-    }
-
-    private void OnDisable()
-    {
-        playerInput.Player.Move.performed -= OnMove;
-        playerInput.Player.Move.canceled -= OnMove;
-        playerInput.Player.Disable();
     }
 
     private void Start()
@@ -60,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
     }
