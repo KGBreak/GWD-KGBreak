@@ -8,9 +8,12 @@ public class SimulateDetection : MonoBehaviour
 
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] float investigateTime;
+    [SerializeField] float investigateTime2;
     [SerializeField] Vector3 investPos;
+    [SerializeField] Vector3 investPos2;
     float timer = 0;
     bool done = false;
+    bool done2 = false;
     void Start()
     {
         
@@ -23,6 +26,11 @@ public class SimulateDetection : MonoBehaviour
         if (timer > investigateTime && done == false) {
             enemyMovement.SetDestination(investPos);
             done = true;
+        }
+        if (timer > investigateTime2 && done2 == false)
+        {
+            enemyMovement.SetDestination(investPos2);
+            done2 = true;
         }
     }
 }
