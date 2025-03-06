@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Interact : MonoBehaviour
 {
@@ -40,9 +41,9 @@ public class Interact : MonoBehaviour
         }
     }
 
-    void InteractWithClosest()
+    public void OnInteract(InputAction.CallbackContext context)
     {
-        if (closestInteractable != null)
+        if (context.phase == InputActionPhase.Performed) // Only trigger once per key press
         {
             closestInteractable.InteractWith();
         }

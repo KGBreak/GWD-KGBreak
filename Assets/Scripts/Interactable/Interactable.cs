@@ -32,6 +32,6 @@ public class Interactable : MonoBehaviour
     }
 
     public void InteractWith() {
-        Debug.Log("WOW I HAVE BEEN INTERACTED WITH");
+        Debug.Log("WOW I HAVE BEEN INTERACTED WITH. I AM: " + name);
     }
 }
