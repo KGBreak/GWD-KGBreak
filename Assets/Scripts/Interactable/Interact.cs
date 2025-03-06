@@ -23,8 +23,13 @@ public class Interact : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
+            if (hit.gameObject.layer == LayerMask.NameToLayer("Selectable"))
+            {
+                hit.gameObject.layer = LayerMask.NameToLayer("Interactable");
+            }
+
             Interactable interactable = hit.GetComponent<Interactable>();
-            interactable.LightUp();
+            interactable.ResetTimer();
 
             float distance = Vector3.Distance(transform.position, hit.transform.position);
 

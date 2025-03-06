@@ -145,10 +145,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeGuy
       objectReference: {fileID: 0}
-    - target: {fileID: 6219049929726357228, guid: 1352c717772c25745831c2da41dfe781, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1102,17 +1098,6 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 3e99637dfc92e4b459bd9fb3efefff9f, type: 2}
   m_BuildHeightMesh: 0
---- !u!114 &1845142008 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7744692671348851127, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
-  m_PrefabInstance: {fileID: 8641714766028511034}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1971771350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,6 +1191,10 @@ PrefabInstance:
     - target: {fileID: 4024824018578480026, guid: 84268f9d16d5b534f941bfd98639461b, type: 3}
       propertyPath: m_Name
       value: LoreObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024824018578480026, guid: 84268f9d16d5b534f941bfd98639461b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1305,6 +1294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interretable
       objectReference: {fileID: 0}
+    - target: {fileID: 4140433358002902101, guid: 956fea20c4c6da149b2b475ec15c1d06, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5384859756640706893, guid: 956fea20c4c6da149b2b475ec15c1d06, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.64
@@ -1398,13 +1391,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5138285722615139452, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
-      propertyPath: outliner
-      value: 
-      objectReference: {fileID: 1845142008}
     - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: m_Name
       value: HideInObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

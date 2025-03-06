@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] private Outline outliner;
     float counter = 0;
     // Update is called once per frame
     void Update()
@@ -10,21 +9,15 @@ public class Interactable : MonoBehaviour
         counter += Time.deltaTime;
 
 
-        if (counter > 1)
+        if (counter > 0.1)
         {
-            LightDown();
+            gameObject.layer = LayerMask.NameToLayer("Selectable");
         }
     }
 
-    public void LightUp()
+    public void ResetTimer()
     {
-        outliner.enabled = true;
         counter = 0;
-    }
-
-    public void LightDown()
-    {
-        outliner.enabled = false;
     }
 
     public virtual void InteractWith() {
