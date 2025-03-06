@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private float slowdownInterval = 0.5f; // Interval in seconds for the halt effect
     private float slowdownDuration = 0.3f; // Duration of the slowdown effect
     private bool isSlowingDown = false;
+    private bool isHiding = false;
 
 
     private void Awake()
@@ -52,6 +53,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (isHiding) {
+            return;
+        }
+
         isGrounded = Physics.SphereCast(transform.position, characterController.radius, Vector3.down, out RaycastHit hitInfo, groundCheckDistance);
 
         if (isGrounded && velocity.y < 0)
@@ -104,5 +109,15 @@ public class PlayerMovement : MonoBehaviour
         // Apply gravity
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+    }
+
+    public void SetHiding(bool isHidingInput)
+    {
+        isHiding = isHidingInput;
+    }
+
+    public bool getHiding()
+    {
+        return isHiding;
     }
 }
