@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Interact : MonoBehaviour
@@ -5,6 +6,7 @@ public class Interact : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] float detectionRadius;
     [SerializeField] LayerMask targetLayer; // Assign in Inspector
+    Interactable closestInteractable = null;
 
     void Start()
     {
@@ -16,7 +18,6 @@ public class Interact : MonoBehaviour
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, targetLayer);
 
-        Interactable closestInteractable = null;
         float closestDistance = Mathf.Infinity;
 
         foreach (Collider hit in hits)
@@ -31,7 +32,20 @@ public class Interact : MonoBehaviour
                 closestDistance = distance;
                 closestInteractable = interactable;
             }
+        }
 
+        if (hits.Length <1)
+        {
+            closestInteractable = null;
         }
     }
+
+    void InteractWithClosest()
+    {
+        if (closestInteractable != null)
+        {
+            closestInteractable.InteractWith();
+        }
+    }
+
 }
