@@ -4,10 +4,6 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] private Outline outliner;
     float counter = 0;
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -31,7 +27,7 @@ public class Interactable : MonoBehaviour
         outliner.enabled = false;
     }
 
-    public void InteractWith() {
+    public virtual void InteractWith() {
         Debug.Log("WOW I HAVE BEEN INTERACTED WITH. I AM: " + name);
     }
 }
