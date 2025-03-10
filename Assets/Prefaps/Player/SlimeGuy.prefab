@@ -461,6 +461,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 225c62fedef728a4eb00c1b3aa100af8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1757867352163724644}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 225c62fedef728a4eb00c1b3aa100af8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6043987849687517633}
   m_SourcePrefab: {fileID: 100100000, guid: 225c62fedef728a4eb00c1b3aa100af8, type: 3}
 --- !u!1 &6030481443308734810 stripped
 GameObject:
@@ -547,7 +550,7 @@ MonoBehaviour:
   detectionRadius: 1.5
   targetLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
 --- !u!114 &790143266530890559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,6 +676,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6043987849687517633}
+        m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
+        m_MethodName: EjectCurrentItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 180ba0b5-a8bc-45f1-aa28-cb06a5399eac
+    m_ActionName: 'Player/Eject[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -688,6 +707,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb5ff678115200f419cac34eb6d264f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6043987849687517633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030481443308734810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30df3df5a1caa240a5ea5a8a3f5ee30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &6411791368941786080 stripped

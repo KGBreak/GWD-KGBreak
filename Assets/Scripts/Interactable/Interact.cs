@@ -48,7 +48,7 @@ public class Interact : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed) // Only trigger once per key press
+        if (context.phase == InputActionPhase.Performed && closestInteractable != null) // Only trigger once per key press
         {
             closestInteractable.InteractWith();
         }
