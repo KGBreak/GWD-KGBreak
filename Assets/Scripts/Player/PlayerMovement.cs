@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
+using FMOD.Studio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
     private float slowdownDuration = 0.3f; // Duration of the slowdown effect
     private bool isSlowingDown = false;
 
+    // Added for FMOD
+    private EventInstance movementEvent;
+    private bool isMovementEventPlaying = false;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -51,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
         playerInput.Player.Move.performed -= OnMove;
         playerInput.Player.Move.canceled -= OnMove;
         playerInput.Player.Disable();
+
+        // Stop and release FMOD event
+        movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        movementEvent.release();
     }
 
     private void Start()
@@ -58,6 +68,9 @@ public class PlayerMovement : MonoBehaviour
         // Hide and lock the cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        // Create the movement event
+        movementEvent = RuntimeManager.CreateInstance("event:/Player/Movement");
     }
 
     private void OnMove(InputAction.CallbackContext context)
@@ -119,5 +132,23 @@ public class PlayerMovement : MonoBehaviour
         // Apply gravity
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+
+        // Start/stop the FMOD event
+        if (currentVelocity.sqrMagnitude > 0.01f)
+        {
+            if (!isMovementEventPlaying)
+            {
+                movementEvent.start();
+                isMovementEventPlaying = true;
+            }
+        }
+        else
+        {
+            if (isMovementEventPlaying)
+            {
+                movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                isMovementEventPlaying = false;
+            }
+        }
     }
 }
