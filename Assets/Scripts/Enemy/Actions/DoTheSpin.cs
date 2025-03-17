@@ -7,8 +7,6 @@ public class DoTheSpin : Actions
     public override IEnumerator PerformAction()
     {
         isInterrupted = false;
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
         while (!isInterrupted)
         {
 
