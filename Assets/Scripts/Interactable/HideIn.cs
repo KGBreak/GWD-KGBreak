@@ -129,13 +129,13 @@ public class HideIn : Interactable
     {
         switch (direction)
         {
-            case ExitDirection.UP: return transform.up;
-            case ExitDirection.DOWN: return -transform.up;
-            case ExitDirection.LEFT: return -transform.right;
-            case ExitDirection.RIGHT: return transform.right;
-            case ExitDirection.FORWARD: return transform.forward;
-            case ExitDirection.BACKWARD: return -transform.forward;
-            default: return transform.right;
+            case ExitDirection.UP: return Vector3.up;         // Always global up
+            case ExitDirection.DOWN: return Vector3.down;     // Always global down
+            case ExitDirection.LEFT: return Vector3.left;     // Always global left
+            case ExitDirection.RIGHT: return Vector3.right;   // Always global right
+            case ExitDirection.FORWARD: return Vector3.forward; // Always global forward
+            case ExitDirection.BACKWARD: return Vector3.back; // Always global backward
+            default: return Vector3.right; // Default to world right
         }
     }
 }

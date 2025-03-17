@@ -6,6 +6,7 @@ public class EnemyVision : MonoBehaviour
     [Header("Vision Settings")]
     [SerializeField] float visionRange = 10f;
     [SerializeField] float visionAngle = 45f;
+    [SerializeField] float downwardTiltAngle = 20f;
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] float detectionMeterSize;
     [SerializeField] float deathSize;
@@ -34,8 +35,9 @@ public class EnemyVision : MonoBehaviour
             {
                 enemyMovement.SetDestination(player.position);
             }
-            else if (dectectionMeterValue > detectionMeterSize*4)
+            if (dectectionMeterValue > deathSize)
             {
+                Debug.Log("Player detected, restarting the scene...");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
@@ -57,15 +59,16 @@ public class EnemyVision : MonoBehaviour
 
         Vector3 visionOrigin = transform.position + Vector3.up * visionHeightOffset;
         Vector3 directionToPlayer = (player.position - visionOrigin).normalized;
-        float angleToPlayer = Vector3.Angle(transform.forward, directionToPlayer);
+        Vector3 visionDirection = Quaternion.Euler(-downwardTiltAngle, 0, 0) * transform.forward;
+        float angleToPlayer = Vector3.Angle(visionDirection, directionToPlayer);
 
         if (angleToPlayer < visionAngle / 2)
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            float distanceToPlayer = Vector3.Distance(visionOrigin, player.position);
 
             if (distanceToPlayer < visionRange)
             {
-                if (Physics.Raycast(transform.position, directionToPlayer, out RaycastHit hit, distanceToPlayer))
+                if (Physics.Raycast(visionOrigin, directionToPlayer, out RaycastHit hit, distanceToPlayer))
                 {
                     if (hit.transform == player)
                     {
@@ -80,13 +83,13 @@ public class EnemyVision : MonoBehaviour
 
     void OnDrawGizmos()
     {
-
         Vector3 visionOrigin = transform.position + Vector3.up * visionHeightOffset;
+        Vector3 visionDirection = Quaternion.Euler(-downwardTiltAngle, 0, 0) * transform.forward;
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(visionOrigin, visionRange);
 
-        Vector3 forward = transform.forward * visionRange;
+        Vector3 forward = visionDirection * visionRange;
         Vector3 leftBoundary = Quaternion.Euler(0, -visionAngle / 2, 0) * forward;
         Vector3 rightBoundary = Quaternion.Euler(0, visionAngle / 2, 0) * forward;
 
@@ -95,9 +98,8 @@ public class EnemyVision : MonoBehaviour
         Gizmos.DrawLine(visionOrigin, visionOrigin + rightBoundary);
 
         Gizmos.color = new Color(1, 1, 0, 0.2f);
-        Gizmos.DrawMesh(CreateConeMesh(), visionOrigin, transform.rotation);
+        Gizmos.DrawMesh(CreateConeMesh(), visionOrigin, Quaternion.LookRotation(visionDirection));
 
-        // Draw a line to the player if they are in view and not obstructed
         if (CanSeePlayer())
         {
             Gizmos.color = Color.red;

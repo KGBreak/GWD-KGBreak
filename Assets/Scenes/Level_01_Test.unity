@@ -3604,6 +3604,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (3)
@@ -3686,6 +3690,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (4)
@@ -5394,6 +5402,7 @@ Transform:
   - {fileID: 1222627572}
   - {fileID: 920758255}
   - {fileID: 607622171}
+  - {fileID: 1507769733}
   - {fileID: 601856148}
   - {fileID: 846293857}
   - {fileID: 163673129}
@@ -5678,6 +5687,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (9)
@@ -5927,6 +5940,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 88fc695a283296140b8283c9c6b49809, type: 3}
   m_PrefabInstance: {fileID: 1023951756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1025075754 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7979404873316549576, guid: 1352c717772c25745831c2da41dfe781, type: 3}
+  m_PrefabInstance: {fileID: 1569550765}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1026524337
 PrefabInstance:
@@ -6427,6 +6445,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (8)
@@ -6727,6 +6749,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (2)
@@ -7655,6 +7681,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (10)
@@ -8657,6 +8687,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 174273241985249445, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1025075754}
     - target: {fileID: 1387528473820513667, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: pathPoints.Array.data[0].position
       value: 
@@ -9576,6 +9610,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7770272887773107738, guid: 40fa3bfd5e56b6c459e44df45690813c, type: 3}
   m_PrefabInstance: {fileID: 1506152386}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1507769733 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+  m_PrefabInstance: {fileID: 1947908567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1513280164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10138,18 +10177,6 @@ PrefabInstance:
     - target: {fileID: 6030481443308734810, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_Name
       value: SlimeGuy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11235,6 +11262,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (6)
@@ -11304,6 +11335,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (5)
@@ -12136,6 +12171,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (11)
@@ -12863,6 +12902,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (7)
@@ -13056,6 +13099,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 403383d50f858f64f9bc8efcdae2a599, type: 3}
+--- !u!1001 &1947908567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 890278443}
+    m_Modifications:
+    - target: {fileID: 5422936204149228254, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: legalExitDirections.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422936204149228254, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[3]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288292819162184413, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_Name
+      value: SM_Low_Bottle_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957551684618641511, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 763fa85f8665d6e4ea5d14ba9a41a475, type: 3}
 --- !u!1001 &1947932404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13915,6 +14023,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1976526836}
     m_Modifications:
+    - target: {fileID: 2968984546089190387, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
+      propertyPath: 'legalExitDirections.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600262739698544960, guid: d45e558536c29eb4f9e99f33f8444ac5, type: 3}
       propertyPath: m_Name
       value: SM_Ventilation_01 (1)
