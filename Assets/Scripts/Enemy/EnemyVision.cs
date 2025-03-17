@@ -11,10 +11,14 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] DetectionMeter detectionMeter;
     float dectectionMeterValue;
     Transform player;
+    PlayerMovement playerMovement;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        player = playerObject.transform;
+        playerMovement = playerObject.GetComponent<PlayerMovement>();
+
     }
 
     void Update()
@@ -44,7 +48,7 @@ public class EnemyVision : MonoBehaviour
 
     bool CanSeePlayer()
     {
-        if (player == null)
+        if (player == null || playerMovement.getHiding())
         {
             return false;
         }

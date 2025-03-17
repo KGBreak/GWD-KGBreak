@@ -28,12 +28,13 @@ public class PlayerMovement : MonoBehaviour
     Vector3 currentVelocity;
     bool isGrounded;
     CharacterController characterController;
-    InputSystem_Actions playerInput;
 
     private float slowdownTimer = 0f;
     private float slowdownInterval = 0.5f; // Interval in seconds for the halt effect
     private float slowdownDuration = 0.3f; // Duration of the slowdown effect
     private bool isSlowingDown = false;
+    private bool isHiding = false;
+
 
     // Added for FMOD
     private EventInstance movementEvent;
@@ -42,25 +43,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        playerInput = new InputSystem_Actions();
-    }
-
-    private void OnEnable()
-    {
-        playerInput.Player.Enable();
-        playerInput.Player.Move.performed += OnMove;
-        playerInput.Player.Move.canceled += OnMove;
-    }
-
-    private void OnDisable()
-    {
-        playerInput.Player.Move.performed -= OnMove;
-        playerInput.Player.Move.canceled -= OnMove;
-        playerInput.Player.Disable();
-
-        // Stop and release FMOD event
-        movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        movementEvent.release();
     }
 
     private void Start()
@@ -73,13 +55,17 @@ public class PlayerMovement : MonoBehaviour
         movementEvent = RuntimeManager.CreateInstance("event:/Player/Movement");
     }
 
-    private void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
     }
 
     private void Update()
     {
+        if (isHiding) {
+            return;
+        }
+
         isGrounded = Physics.SphereCast(transform.position, characterController.radius, Vector3.down, out RaycastHit hitInfo, groundCheckDistance);
 
         if (isGrounded && velocity.y < 0)
@@ -150,5 +136,15 @@ public class PlayerMovement : MonoBehaviour
                 isMovementEventPlaying = false;
             }
         }
+    }
+
+    public void SetHiding(bool isHidingInput)
+    {
+        isHiding = isHidingInput;
+    }
+
+    public bool getHiding()
+    {
+        return isHiding;
     }
 }
