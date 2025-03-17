@@ -5,24 +5,50 @@ public class EnemyVision : MonoBehaviour
     [Header("Vision Settings")]
     [SerializeField] float visionRange = 10f;
     [SerializeField] float visionAngle = 45f;
+    [SerializeField] EnemyMovement enemyMovement;
+    [SerializeField] float detectionMeterSize;
+    [SerializeField] float detectionMeterSpeed;
+    [SerializeField] DetectionMeter detectionMeter;
+    float dectectionMeterValue;
     Transform player;
+    PlayerMovement playerMovement;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        player = playerObject.transform;
+        playerMovement = playerObject.GetComponent<PlayerMovement>();
+
     }
 
     void Update()
     {
         if (CanSeePlayer())
         {
-            Debug.Log("Player detected!");
+
+            dectectionMeterValue += detectionMeterSpeed;
+            Debug.Log(dectectionMeterValue);
+            if (dectectionMeterValue > detectionMeterSize)
+            {
+                enemyMovement.SetDestination(player.position);
+            }
+            else if (dectectionMeterValue > detectionMeterSize*4)
+            {
+                Debug.Log("Player detected! YOU LOSE");
+            }
         }
+        else
+        {
+            if (dectectionMeterValue > 0) {
+                dectectionMeterValue -= detectionMeterSpeed;
+            }
+        }
+        detectionMeter.UpdateMeter(dectectionMeterValue, detectionMeterSize);
     }
 
     bool CanSeePlayer()
     {
-        if (player == null)
+        if (player == null || playerMovement.getHiding())
         {
             return false;
         }
