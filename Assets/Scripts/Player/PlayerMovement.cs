@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
+using FMOD.Studio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -34,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
     private bool isHiding = false;
 
 
+    // Added for FMOD
+    private EventInstance movementEvent;
+    private bool isMovementEventPlaying = false;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -44,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
         // Hide and lock the cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        // Create the movement event
+        movementEvent = RuntimeManager.CreateInstance("event:/Player/Movement");
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -109,6 +118,24 @@ public class PlayerMovement : MonoBehaviour
         // Apply gravity
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+
+        // Start/stop the FMOD event
+        if (currentVelocity.sqrMagnitude > 0.01f)
+        {
+            if (!isMovementEventPlaying)
+            {
+                movementEvent.start();
+                isMovementEventPlaying = true;
+            }
+        }
+        else
+        {
+            if (isMovementEventPlaying)
+            {
+                movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                isMovementEventPlaying = false;
+            }
+        }
     }
 
     public void SetHiding(bool isHidingInput)
