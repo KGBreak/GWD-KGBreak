@@ -2512,7 +2512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPoint: {fileID: 1127620052}
-  isEnterPoint: 0
+  isEnterPoint: 1
 --- !u!1001 &7810972367365109346
 PrefabInstance:
   m_ObjectHideFlags: 0
