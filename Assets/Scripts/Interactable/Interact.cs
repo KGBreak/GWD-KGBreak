@@ -4,54 +4,51 @@ using UnityEngine.InputSystem;
 
 public class Interact : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] float detectionRadius;
-    [SerializeField] LayerMask targetLayer; // Assign in Inspector
+    [SerializeField] LayerMask targetLayer; 
+    float elevationThreshold = 0.3f;
+
     Interactable closestInteractable = null;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, targetLayer);
 
         float closestDistance = Mathf.Infinity;
+        closestInteractable = null; // Reset before checking
 
         foreach (Collider hit in hits)
         {
-            if (hit.gameObject.layer == LayerMask.NameToLayer("Selectable"))
-            {
-                hit.gameObject.layer = LayerMask.NameToLayer("Interactable");
+            float heightDifference = Mathf.Abs(transform.position.y - hit.transform.position.y);
+            if (heightDifference <= elevationThreshold) {
+                if (hit.gameObject.layer == LayerMask.NameToLayer("Selectable"))
+                {
+                    hit.gameObject.layer = LayerMask.NameToLayer("Interactable");
+                }
+
+                Interactable interactable = hit.GetComponent<Interactable>();
+                if (interactable == null) continue; // Skip if not interactable
+
+                interactable.ResetTimer();
+
+                float distance = Vector3.Distance(transform.position, hit.transform.position);
+
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestInteractable = interactable;
+                }
+
             }
-
-            Interactable interactable = hit.GetComponent<Interactable>();
-            interactable.ResetTimer();
-
-            float distance = Vector3.Distance(transform.position, hit.transform.position);
-
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestInteractable = interactable;
-            }
-        }
-
-        if (hits.Length <1)
-        {
-            closestInteractable = null;
         }
     }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed && closestInteractable != null) // Only trigger once per key press
+        if (context.phase == InputActionPhase.Performed && closestInteractable != null)
         {
             closestInteractable.InteractWith();
         }
     }
-
 }
+

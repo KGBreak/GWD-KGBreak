@@ -127,12 +127,12 @@ public class EnemyMovement : MonoBehaviour
 
     void rotateGoal(Vector3 goalRotation)
     {
-        // Turn in direction
-        if (timer == 0.0f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(goalRotation, Vector3.up);
-            transform.rotation = Quaternion.LookRotation(goalRotation, Vector3.up);
-        }
+        // Calculate the target rotation
+        Quaternion targetRotation = Quaternion.LookRotation(goalRotation, Vector3.up);
+
+        // Gradually rotate towards the target over timeSpent duration
+        float lerpFactor = Mathf.Clamp01(timer / pathPoints[nextPoint].timeSpent);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, lerpFactor);
     }
 
     public void SetDestination(Vector3 goalPos)
