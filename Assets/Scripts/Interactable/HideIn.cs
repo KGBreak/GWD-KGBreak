@@ -14,6 +14,7 @@ public class HideIn : Interactable
     private Vector3 exitPosition;
     [SerializeField] private ExitDirection[] legalExitDirections;
     [SerializeField] private Transform exitPoint;
+    [SerializeField] private bool canBringItem = false;
     private Renderer[] playerRenderers;
     private Collider playerCollider;
     private PlayerMovement playerMovement;
@@ -65,6 +66,10 @@ public class HideIn : Interactable
     void EnterObject()
     {
         if (player == null) return;
+        if (!canBringItem)
+        {
+            player.GetComponent<ItemManager>().EjectCurrentItem();
+        }
         hidingManager.SetHidingObject(this);
 
         // Hide player by disabling all Renderers
@@ -88,7 +93,6 @@ public class HideIn : Interactable
     public void ExitObject()
     {
         if (player == null) return;
-        hidingManager.SetHidingObject(null);
 
         Camera playerCamera = Camera.main; // Get the main camera
         Vector3 cameraViewDir = playerCamera.transform.forward; // Use camera's forward vector
@@ -110,6 +114,7 @@ public class HideIn : Interactable
         if (playerMovement) playerMovement.SetHiding(false);
 
         isInside = false;
+        hidingManager.SetHidingObject(null);
 
 
     }
