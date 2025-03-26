@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 public class Interact : MonoBehaviour
 {
     [SerializeField] float detectionRadius;
-    [SerializeField] LayerMask targetLayer; 
-    float elevationThreshold = 0.3f;
+    [SerializeField] LayerMask targetLayer;
+    [SerializeField] float elevationThreshold = 0.3f;
 
     Interactable closestInteractable = null;
 
