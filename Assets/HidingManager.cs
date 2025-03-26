@@ -19,4 +19,15 @@ public class HidingManager : MonoBehaviour
             hidingObject.ExitObject();
         }
     }
+
+    public bool GetIsHiding()
+    {
+        if (hidingObject == null)
+        {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 }
