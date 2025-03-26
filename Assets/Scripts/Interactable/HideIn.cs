@@ -13,16 +13,26 @@ public class HideIn : Interactable
     private GameObject player;
     private Vector3 exitPosition;
     [SerializeField] private ExitDirection[] legalExitDirections;
+    [SerializeField] private Transform exitPoint;
     private Renderer[] playerRenderers;
     private Collider playerCollider;
     private PlayerMovement playerMovement;
     private Camera playerCamera;
+    private HidingManager hidingManager;
 
     public override void InteractWith()
     {
         if (isInside)
         {
-            ExitObject();
+            if (exitPoint == null) {
+                ExitObject();
+            }
+            else
+            {
+                // Move to linkted object
+                exitPoint.gameObject.GetComponent<HideIn>().InteractWith();
+                isInside = false;
+            }
         }
         else
         {
@@ -48,12 +58,14 @@ public class HideIn : Interactable
         playerRenderers = player.GetComponentsInChildren<Renderer>();
         playerCollider = player.GetComponent<Collider>();
         playerMovement = player.GetComponent<PlayerMovement>();
+        hidingManager = player.GetComponent<HidingManager>();
 
     }
 
     void EnterObject()
     {
         if (player == null) return;
+        hidingManager.SetHidingObject(this);
 
         // Hide player by disabling all Renderers
         foreach (Renderer rend in playerRenderers)
@@ -73,9 +85,10 @@ public class HideIn : Interactable
         isInside = true;
     }
 
-    void ExitObject()
+    public void ExitObject()
     {
         if (player == null) return;
+        hidingManager.SetHidingObject(null);
 
         Camera playerCamera = Camera.main; // Get the main camera
         Vector3 cameraViewDir = playerCamera.transform.forward; // Use camera's forward vector
@@ -129,13 +142,13 @@ public class HideIn : Interactable
     {
         switch (direction)
         {
-            case ExitDirection.UP: return transform.up;
-            case ExitDirection.DOWN: return -transform.up;
-            case ExitDirection.LEFT: return -transform.right;
-            case ExitDirection.RIGHT: return transform.right;
-            case ExitDirection.FORWARD: return transform.forward;
-            case ExitDirection.BACKWARD: return -transform.forward;
-            default: return transform.right;
+            case ExitDirection.UP: return Vector3.up;         // Always global up
+            case ExitDirection.DOWN: return Vector3.down;     // Always global down
+            case ExitDirection.LEFT: return Vector3.left;     // Always global left
+            case ExitDirection.RIGHT: return Vector3.right;   // Always global right
+            case ExitDirection.FORWARD: return Vector3.forward; // Always global forward
+            case ExitDirection.BACKWARD: return Vector3.back; // Always global backward
+            default: return Vector3.right; // Default to world right
         }
     }
 }
