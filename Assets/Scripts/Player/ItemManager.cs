@@ -40,7 +40,7 @@ public class ItemManager : MonoBehaviour
 
     public void EjectCurrentItem()
     {
-        if (m_Item == null || gameObject.GetComponent<HidingManager>().GetIsHiding()) return;
+        if (m_Item == null) return;
 
         // Remove it from being a child of the player
         m_Item.transform.SetParent(null);
