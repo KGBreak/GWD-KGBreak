@@ -10,6 +10,9 @@ public class VentPoint : Interactable
     [SerializeField]
     private bool canBringItem = false;
     [SerializeField] private ExitDirection exitDirection;
+    private static float originalCameraDistance;
+    private static bool originalDistanceSet = false;
+
     public override void InteractWith()
     {
         if (otherPoint != null)
@@ -50,13 +53,30 @@ public class VentPoint : Interactable
 
     private void PerformAdditionalActions()
     {
-        if (isEnterPoint)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            // Additional actions for enter point
-        }
-        else
-        {
-            // Additional actions for exit point
+            CameraController cameraController = player.GetComponentInChildren<CameraController>();
+            if (cameraController != null)
+            {
+                if (isEnterPoint)
+                {
+                    if (!originalDistanceSet)
+                    {
+                        originalCameraDistance = cameraController.distanceFromPlayer;
+                        originalDistanceSet = true;
+                    }
+                    cameraController.distanceFromPlayer = 0.01f; // Set distance to zero when entering the vent
+                }
+                else
+                {
+                    if (originalDistanceSet)
+                    {
+                        cameraController.distanceFromPlayer = originalCameraDistance; // Restore the original distance when exiting the vent
+                        originalDistanceSet = false;
+                    }
+                }
+            }
         }
     }
 

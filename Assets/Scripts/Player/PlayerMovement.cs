@@ -23,11 +23,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10f;
 
-    Vector2 moveInput;
+    Vector2 moveInput ;
     Vector3 velocity;
     Vector3 currentVelocity;
     bool isGrounded;
     CharacterController characterController;
+
+    public Vector2 MoveInput => moveInput;
 
     private float slowdownTimer = 0f;
     private float slowdownInterval = 0.5f; // Interval in seconds for the halt effect

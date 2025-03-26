@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  gravity: -9.81
+  gravity: -3
   groundCheckDistance: 0.1
   movementSmoothing: 0.5
   drag: 0.1
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26641c0aea8943e4d97776bcf56abc87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 1
+  detectionRadius: 0.3
   targetLayer:
     serializedVersion: 2
     m_Bits: 192

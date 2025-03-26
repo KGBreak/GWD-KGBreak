@@ -7,10 +7,11 @@ public class CameraController : MonoBehaviour
     Transform playerTransform;
     [SerializeField]
     float mouseSensitivity = 100f;
-    [SerializeField]
-    float distanceFromPlayer = 3f;
+    public float distanceFromPlayer = 3f;
     [SerializeField]
     Vector3 offset = new Vector3(0, 1.5f, 0);
+    [SerializeField]
+    bool isFirstPerson = false; // Flag to toggle between first-person and third-person
 
     float xRotation = 0f;
     float yRotation = 0f;
@@ -50,16 +51,26 @@ public class CameraController : MonoBehaviour
     {
         Quaternion rotation = Quaternion.Euler(xRotation, yRotation, 0);
 
-        Vector3 desiredPosition = playerTransform.position - rotation * Vector3.forward * distanceFromPlayer + offset;
-        Vector3 directionToPlayer = playerTransform.position + offset - desiredPosition;
-
-        RaycastHit hit;
-        if (Physics.Raycast(playerTransform.position + offset, -directionToPlayer.normalized, out hit, distanceFromPlayer))
+        if (isFirstPerson)
         {
-            desiredPosition = playerTransform.position + offset - directionToPlayer.normalized * hit.distance;
+            // First-person view
+            transform.position = playerTransform.position + offset;
+            transform.rotation = rotation;
         }
+        else
+        {
+            // Third-person view
+            Vector3 desiredPosition = playerTransform.position - rotation * Vector3.forward * distanceFromPlayer + offset;
+            Vector3 directionToPlayer = playerTransform.position + offset - desiredPosition;
 
-        transform.position = desiredPosition;
-        transform.LookAt(playerTransform.position + offset);
+            RaycastHit hit;
+            if (Physics.Raycast(playerTransform.position + offset, -directionToPlayer.normalized, out hit, distanceFromPlayer))
+            {
+                desiredPosition = playerTransform.position + offset - directionToPlayer.normalized * hit.distance;
+            }
+
+            transform.position = desiredPosition;
+            transform.LookAt(playerTransform.position + offset);
+        }
     }
 }
