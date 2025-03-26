@@ -1,4 +1,5 @@
 using UnityEngine;
+using Util;
 
 public class HideInEdit : Interactable
 {
@@ -114,7 +115,7 @@ public class HideInEdit : Interactable
 
         foreach (ExitDirection dir in legalExitDirections)
         {
-            Vector3 worldDirection = GetWorldDirection(dir);
+            Vector3 worldDirection = DirectionHelper.GetWorldDirection(dir);
             float dotProduct = Vector3.Dot(cameraViewDir, worldDirection);
 
             if (dotProduct > maxDot) // Closer to player's camera direction
@@ -125,20 +126,6 @@ public class HideInEdit : Interactable
         }
 
         return bestDirection;
-    }
-
-    Vector3 GetWorldDirection(ExitDirection direction)
-    {
-        switch (direction)
-        {
-            case ExitDirection.UP: return transform.up;
-            case ExitDirection.DOWN: return -transform.up;
-            case ExitDirection.LEFT: return -transform.right;
-            case ExitDirection.RIGHT: return transform.right;
-            case ExitDirection.FORWARD: return transform.forward;
-            case ExitDirection.BACKWARD: return -transform.forward;
-            default: return transform.right;
-        }
     }
 
     //Used for passages
