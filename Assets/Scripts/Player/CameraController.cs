@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     Transform playerTransform;
     [SerializeField]
-    float mouseSensitivity = 100f;
+    Settings settings; // Reference to the Settings ScriptableObject
     [SerializeField]
     float distanceFromPlayer = 3f;
     [SerializeField]
@@ -38,8 +38,8 @@ public class CameraController : MonoBehaviour
     private void OnLook(InputAction.CallbackContext context)
     {
         Vector2 lookInput = context.ReadValue<Vector2>();
-        float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
-        float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
+        float mouseX = lookInput.x * settings.mouseSensetivity * Time.deltaTime; // Use mouse sensitivity from settings
+        float mouseY = lookInput.y * settings.mouseSensetivity * Time.deltaTime; // Use mouse sensitivity from settings
 
         yRotation += mouseX;
         xRotation -= mouseY;

@@ -147,6 +147,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4448480279812178649, guid: 1352c717772c25745831c2da41dfe781, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6030481443308734810, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_Name
       value: SlimeGuy
@@ -202,6 +206,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 584066523776987729, guid: 1352c717772c25745831c2da41dfe781, type: 3}
+    - {fileID: 4448480279812178649, guid: 1352c717772c25745831c2da41dfe781, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1352c717772c25745831c2da41dfe781, type: 3}

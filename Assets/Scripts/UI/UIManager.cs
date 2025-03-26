@@ -12,24 +12,12 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    // Method to handle the Main Menu button
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene("StartMenu");
-    }
-
     // Method to handle the Start Game button
     public void StartGame()
     {
         SceneManager.LoadScene("Asger_Greybox");
     }
 
-    // Method to handle the Continue Game button
-    public void ContinueGame()
-    {
-        // Logic to continue the game/ closing the menu
-        Debug.Log("Continue Game");
-    }
 
     // Method to handle the Options button
     public void OpenOptions()
