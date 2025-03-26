@@ -13,16 +13,26 @@ public class HideIn : Interactable
     private GameObject player;
     private Vector3 exitPosition;
     [SerializeField] private ExitDirection[] legalExitDirections;
+    [SerializeField] private Transform exitPoint;
     private Renderer[] playerRenderers;
     private Collider playerCollider;
     private PlayerMovement playerMovement;
     private Camera playerCamera;
+    private HidingManager hidingManager;
 
     public override void InteractWith()
     {
         if (isInside)
         {
-            ExitObject();
+            if (exitPoint == null) {
+                ExitObject();
+            }
+            else
+            {
+                // Move to linkted object
+                exitPoint.gameObject.GetComponent<HideIn>().InteractWith();
+                isInside = false;
+            }
         }
         else
         {
@@ -48,12 +58,14 @@ public class HideIn : Interactable
         playerRenderers = player.GetComponentsInChildren<Renderer>();
         playerCollider = player.GetComponent<Collider>();
         playerMovement = player.GetComponent<PlayerMovement>();
+        hidingManager = player.GetComponent<HidingManager>();
 
     }
 
     void EnterObject()
     {
         if (player == null) return;
+        hidingManager.SetHidingObject(this);
 
         // Hide player by disabling all Renderers
         foreach (Renderer rend in playerRenderers)
@@ -73,9 +85,10 @@ public class HideIn : Interactable
         isInside = true;
     }
 
-    void ExitObject()
+    public void ExitObject()
     {
         if (player == null) return;
+        hidingManager.SetHidingObject(null);
 
         Camera playerCamera = Camera.main; // Get the main camera
         Vector3 cameraViewDir = playerCamera.transform.forward; // Use camera's forward vector
