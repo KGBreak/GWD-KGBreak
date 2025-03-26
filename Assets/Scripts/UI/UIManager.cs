@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject optionMenu;
+    // We should change this to index numbers of the scenes when we have them
     // Method to handle the Exit button
     public void ExitGame()
     {
@@ -31,7 +34,12 @@ public class UIManager : MonoBehaviour
     // Method to handle the Options button
     public void OpenOptions()
     {
-        // Logic to open the options menu
-        Debug.Log("Options Menu");
+        if (optionMenu == null) return;
+
+        if (optionMenu.activeSelf)
+        {
+            optionMenu.SetActive(false);
+        }
+        else optionMenu.SetActive(true);
     }
 }
