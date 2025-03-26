@@ -1,11 +1,5 @@
 using UnityEngine;
-
-
-public enum ExitDirection
-{
-    UP, DOWN, LEFT, RIGHT, FORWARD, BACKWARD
-
-}
+using Util;
 
 public class HideIn : Interactable
 {
@@ -14,6 +8,7 @@ public class HideIn : Interactable
     private Vector3 exitPosition;
     [SerializeField] private ExitDirection[] legalExitDirections;
     [SerializeField] private Transform exitPoint;
+    [SerializeField] private bool canBringItem = false;
     private Renderer[] playerRenderers;
     private Collider playerCollider;
     private PlayerMovement playerMovement;
@@ -50,8 +45,6 @@ public class HideIn : Interactable
             Debug.LogError("Player not found! Make sure it's tagged as 'Player'.");
             return;
         }
-
-        player = GameObject.FindGameObjectWithTag("Player");
         playerCamera = Camera.main; // Get the main camera
 
         // Get all Renderers from child objects
@@ -65,6 +58,10 @@ public class HideIn : Interactable
     void EnterObject()
     {
         if (player == null) return;
+        if (!canBringItem)
+        {
+            player.GetComponent<ItemManager>().EjectCurrentItem();
+        }
         hidingManager.SetHidingObject(this);
 
         // Hide player by disabling all Renderers
@@ -88,7 +85,6 @@ public class HideIn : Interactable
     public void ExitObject()
     {
         if (player == null) return;
-        hidingManager.SetHidingObject(null);
 
         Camera playerCamera = Camera.main; // Get the main camera
         Vector3 cameraViewDir = playerCamera.transform.forward; // Use camera's forward vector
@@ -110,6 +106,7 @@ public class HideIn : Interactable
         if (playerMovement) playerMovement.SetHiding(false);
 
         isInside = false;
+        hidingManager.SetHidingObject(null);
 
 
     }
@@ -125,7 +122,7 @@ public class HideIn : Interactable
 
         foreach (ExitDirection dir in legalExitDirections)
         {
-            Vector3 worldDirection = GetWorldDirection(dir);
+            Vector3 worldDirection = DirectionHelper.GetWorldDirection(dir);
             float dotProduct = Vector3.Dot(cameraViewDir, worldDirection);
 
             if (dotProduct > maxDot) // Closer to player's camera direction
@@ -136,20 +133,6 @@ public class HideIn : Interactable
         }
 
         return bestDirection;
-    }
-
-    Vector3 GetWorldDirection(ExitDirection direction)
-    {
-        switch (direction)
-        {
-            case ExitDirection.UP: return Vector3.up;         // Always global up
-            case ExitDirection.DOWN: return Vector3.down;     // Always global down
-            case ExitDirection.LEFT: return Vector3.left;     // Always global left
-            case ExitDirection.RIGHT: return Vector3.right;   // Always global right
-            case ExitDirection.FORWARD: return Vector3.forward; // Always global forward
-            case ExitDirection.BACKWARD: return Vector3.back; // Always global backward
-            default: return Vector3.right; // Default to world right
-        }
     }
 }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Util;
 
 public class VentPoint : Interactable
 {
@@ -6,7 +7,9 @@ public class VentPoint : Interactable
     private Transform otherPoint;
     [SerializeField]
     private bool isEnterPoint;
-
+    [SerializeField]
+    private bool canBringItem = false;
+    [SerializeField] private ExitDirection exitDirection;
     private static float originalCameraDistance;
     private static bool originalDistanceSet = false;
 
@@ -14,6 +17,10 @@ public class VentPoint : Interactable
     {
         if (otherPoint != null)
         {
+            if (!canBringItem)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<ItemManager>().EjectCurrentItem();
+            }
             TeleportTo(otherPoint);
             PerformAdditionalActions();
         }
@@ -25,8 +32,6 @@ public class VentPoint : Interactable
         {
             return;
         }
-
-        Vector3 offset = targetPoint.forward * (GetComponent<Renderer>().bounds.size.z + 0.5f);
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null)
@@ -36,12 +41,12 @@ public class VentPoint : Interactable
             if (characterController != null)
             {
                 characterController.enabled = false; // Disable the CharacterController to set the position directly
-                player.transform.position = targetPoint.position + offset;
+                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection);
                 characterController.enabled = true; // Re-enable the CharacterController
             }
             else
             {
-                player.transform.position = targetPoint.position + offset;
+                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection);
             }
         }
     }
@@ -74,4 +79,5 @@ public class VentPoint : Interactable
             }
         }
     }
+
 }
