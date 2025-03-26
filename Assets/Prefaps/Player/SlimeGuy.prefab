@@ -756,6 +756,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6411791368941786080}
     m_Modifications:
+    - target: {fileID: 1420486091312886109, guid: 83e631f21e1a5f748b2b3db2c77bfd07, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6111709103330105972, guid: 83e631f21e1a5f748b2b3db2c77bfd07, type: 3}
       propertyPath: m_Name
       value: PauseScreen

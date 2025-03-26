@@ -38,8 +38,9 @@ public class CameraController : MonoBehaviour
     private void OnLook(InputAction.CallbackContext context)
     {
         Vector2 lookInput = context.ReadValue<Vector2>();
-        float mouseX = lookInput.x * settings.mouseSensetivity * Time.deltaTime; // Use mouse sensitivity from settings
-        float mouseY = lookInput.y * settings.mouseSensetivity * Time.deltaTime; // Use mouse sensitivity from settings
+        float sensitivityMultiplier = 20.0f; // Increase this value to make the sensitivity faster
+        float mouseX = lookInput.x * settings.mouseSensetivity * sensitivityMultiplier * Time.deltaTime;
+        float mouseY = lookInput.y * settings.mouseSensetivity * sensitivityMultiplier * Time.deltaTime;
 
         yRotation += mouseX;
         xRotation -= mouseY;
