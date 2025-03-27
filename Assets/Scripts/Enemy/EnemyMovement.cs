@@ -107,8 +107,16 @@ public class EnemyMovement : MonoBehaviour
     }
     bool HasReachedDestination()
     {
-        if (navAgent.pathPending || navAgent.remainingDistance > arrivalThreshold ) return false;
-        return true;
+
+        Vector3 currentPosition = transform.position;
+        Vector3 targetPosition = navAgent.destination;
+
+        // Ignore Y axis
+        currentPosition.y = 0;
+        targetPosition.y = 0;
+
+        float distance = Vector3.Distance(currentPosition, targetPosition);
+        return distance <= arrivalThreshold;
     }
 
     void StopAction()
