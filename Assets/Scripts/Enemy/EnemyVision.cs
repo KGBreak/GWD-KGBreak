@@ -10,7 +10,6 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] float detectionMeterSize;
     [SerializeField] float deathSize;
-    [SerializeField] float detectionMeterSpeed;
     [SerializeField] DetectionMeter detectionMeter;
     float dectectionMeterValue;
     Transform player;
@@ -30,7 +29,7 @@ public class EnemyVision : MonoBehaviour
         if (CanSeePlayer())
         {
 
-            dectectionMeterValue += detectionMeterSpeed;
+            dectectionMeterValue += Time.deltaTime;
             if (dectectionMeterValue > detectionMeterSize)
             {
                 enemyMovement.SetDestination(player.position);
@@ -44,7 +43,7 @@ public class EnemyVision : MonoBehaviour
         else
         {
             if (dectectionMeterValue > 0) {
-                dectectionMeterValue -= detectionMeterSpeed;
+                dectectionMeterValue -= Time.deltaTime;
             }
         }
         detectionMeter.UpdateMeter(dectectionMeterValue, detectionMeterSize);

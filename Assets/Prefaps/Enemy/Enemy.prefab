@@ -516,7 +516,7 @@ MonoBehaviour:
     action: {fileID: 4126198804805880705}
     direction: {x: 0, y: 0, z: 0}
   navAgent: {fileID: 7932070159973192354}
-  investigateTime: 10
+  investigateTime: 5
   investigateAction: {fileID: 5874342962388730276}
 --- !u!114 &2784030856259566614
 MonoBehaviour:
@@ -576,11 +576,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visionRange: 15
   visionAngle: 90
-  downwardTiltAngle: 20
+  downwardTiltAngle: 0
   enemyMovement: {fileID: 1387528473820513667}
-  detectionMeterSize: 200
-  deathSize: 400
-  detectionMeterSpeed: 1
+  detectionMeterSize: 2
+  deathSize: 4
   detectionMeter: {fileID: 174273241985249445}
 --- !u!114 &174273241985249445
 MonoBehaviour:
