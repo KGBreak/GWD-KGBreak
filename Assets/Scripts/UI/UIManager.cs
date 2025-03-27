@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     // Method to handle the Start Game button
     public void StartGame()
     {
-        SceneManager.LoadScene("Asger_Greybox");
+        SceneManager.LoadScene("Asger_Greybox2");
     }
 
 
