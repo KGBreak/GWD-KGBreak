@@ -578,9 +578,9 @@ MonoBehaviour:
   visionAngle: 90
   downwardTiltAngle: 20
   enemyMovement: {fileID: 1387528473820513667}
-  detectionMeterSize: 50
-  deathSize: 100
-  detectionMeterSpeed: 0
+  detectionMeterSize: 200
+  deathSize: 400
+  detectionMeterSpeed: 1
   detectionMeter: {fileID: 174273241985249445}
 --- !u!114 &174273241985249445
 MonoBehaviour:
