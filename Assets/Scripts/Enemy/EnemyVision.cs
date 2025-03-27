@@ -58,6 +58,12 @@ public class EnemyVision : MonoBehaviour
         }
 
         Vector3 visionOrigin = transform.position + Vector3.up * visionHeightOffset;
+
+        if(player.position.y > visionOrigin.y)
+        {
+            return false;
+        }
+
         Vector3 directionToPlayer = (player.position - visionOrigin).normalized;
         Vector3 visionDirection = Quaternion.Euler(-downwardTiltAngle, 0, 0) * transform.forward;
         float angleToPlayer = Vector3.Angle(visionDirection, directionToPlayer);
