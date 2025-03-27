@@ -6,6 +6,7 @@ public class Door : Interactable
     [SerializeField] float slideSpeed = 1f;
     [SerializeField] float autoCloseTime = 3f;
     [SerializeField] GameObject keyCard;
+    [SerializeField] float slideLength = 1.8f;
 
     private Vector3 closedPosition;
     private Vector3 openPosition;
@@ -16,8 +17,7 @@ public class Door : Interactable
     void Start()
     {
         closedPosition = transform.position;
-        float doorWidth = GetComponent<Renderer>().bounds.size.x;
-        openPosition = closedPosition + (-transform.right * doorWidth);
+        openPosition = closedPosition + (-transform.forward * slideLength);
     }
 
     public override void InteractWith()
