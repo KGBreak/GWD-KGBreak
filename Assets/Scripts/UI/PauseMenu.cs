@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour
     private GameObject pauseMenuUI;
     [SerializeField]
     private GameObject optionMenuUI; // Reference to the options menu
+    [SerializeField]
+    private GameObject lorePanelUI; // Reference to the lore panel
 
     public static bool IsPaused { get; private set; } = false;
 
@@ -31,6 +33,10 @@ public class PauseMenu : MonoBehaviour
         if (optionMenuUI != null)
         {
             optionMenuUI.SetActive(false); // Hide the options menu
+        }
+        if (lorePanelUI != null)
+        {
+            lorePanelUI.SetActive(false); // Hide the lore panel
         }
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
@@ -68,7 +74,6 @@ public class PauseMenu : MonoBehaviour
     // Method to handle the Options button click
     public void OpenOptions()
     {
-
         if (optionMenuUI.activeSelf)
         {
             optionMenuUI.SetActive(false);
@@ -76,6 +81,19 @@ public class PauseMenu : MonoBehaviour
         else
         {
             optionMenuUI.SetActive(true);
+        }
+    }
+
+    // Method to handle the Lore button click
+    public void OpenLorePanel()
+    {
+        if (lorePanelUI.activeSelf)
+        {
+            lorePanelUI.SetActive(false);
+        }
+        else
+        {
+            lorePanelUI.SetActive(true);
         }
     }
 }
