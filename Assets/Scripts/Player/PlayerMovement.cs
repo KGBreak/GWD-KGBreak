@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     float moveSpeed = 5f;
     [SerializeField]
     float gravity = -9.81f;
+    private float aplliedGravity;
+
     [SerializeField]
     float groundCheckDistance = 0.1f;
     [SerializeField]
@@ -52,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         // Hide and lock the cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
+        aplliedGravity = gravity;
         // Create the movement event
         movementEvent = RuntimeManager.CreateInstance("event:/Player/Movement");
     }
@@ -68,9 +70,9 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        isGrounded = Physics.SphereCast(transform.position, characterController.radius, Vector3.down, out RaycastHit hitInfo, groundCheckDistance);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundCheckDistance);
 
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded && aplliedGravity < 0f)
         {
             velocity.y = -2f;
         }
@@ -118,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(currentVelocity * Time.deltaTime);
 
         // Apply gravity
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += aplliedGravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
 
         // Start/stop the FMOD event
@@ -138,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
                 isMovementEventPlaying = false;
             }
         }
+        Debug.Log(velocity.y);
     }
 
     public void SetHiding(bool isHidingInput)
@@ -152,6 +155,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetGravity(float newGravity)
     {
-        this.gravity = newGravity;
+        this.aplliedGravity = newGravity;
+
+
+    }
+    public void resetGravity()
+    {
+        velocity.y = 0f;
+        this.aplliedGravity = gravity;
     }
 }

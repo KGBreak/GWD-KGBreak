@@ -1,29 +1,52 @@
+using System.Linq;
 using UnityEngine;
 
 public class SuckUp : MonoBehaviour
 {
     private bool isTurnedOn = true;
-    [SerializeField] float pullForce = 1f;
+    [SerializeField] float pullForce = 3;
+    private float lastTriggerTime = 0f;
+    private float triggerGracePeriod = 0.1f; // Time before we consider it "no longer staying"
+    private PlayerMovement playerMovement;
+    private bool pullingPlayer = false;
 
 
-    void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if (isTurnedOn)
+        playerMovement = GameObject.FindGameObjectsWithTag("Player").First().GetComponent<PlayerMovement>();
+    }
+    private void Update()
+    {
+        if (Time.time - lastTriggerTime > triggerGracePeriod)
         {
-            if (other.CompareTag("Player"))
-            {
-                other.gameObject.GetComponent<PlayerMovement>().SetGravity(3f);
-            }
+            OnTriggerNoLongerStay();
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerStay(Collider other)
     {
-
-        if (other.CompareTag("Player"))
+        if (isTurnedOn && other.CompareTag("Player"))
         {
-            //other.gameObject.GetComponent<PlayerMovement>().SetGravity(-9.81f);
+            other.gameObject.GetComponent<PlayerMovement>().SetGravity(pullForce);
+            pullingPlayer = true;
+            lastTriggerTime = Time.time; // Reset timer
         }
+    }
 
+    private void OnTriggerNoLongerStay()
+    {
+        if (pullingPlayer)
+        {
+            playerMovement.resetGravity();
+            pullingPlayer = false;
+        }
+    }
+    public void SetTurnOn(bool boolean)
+    {
+        isTurnedOn = boolean;
+    }
+    public bool IsTurnedOn()
+    {
+        return isTurnedOn;
     }
 }
