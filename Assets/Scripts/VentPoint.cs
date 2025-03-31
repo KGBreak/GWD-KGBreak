@@ -1,4 +1,5 @@
 using UnityEngine;
+using Util;
 
 public class VentPoint : Interactable
 {
@@ -6,11 +7,20 @@ public class VentPoint : Interactable
     private Transform otherPoint;
     [SerializeField]
     private bool isEnterPoint;
+    [SerializeField]
+    private bool canBringItem = false;
+    [SerializeField] private ExitDirection exitDirection;
+    private static float originalCameraDistance;
+    private static bool originalDistanceSet = false;
 
     public override void InteractWith()
     {
         if (otherPoint != null)
         {
+            if (!canBringItem)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<ItemManager>().EjectCurrentItem();
+            }
             TeleportTo(otherPoint);
             PerformAdditionalActions();
         }
@@ -22,8 +32,6 @@ public class VentPoint : Interactable
         {
             return;
         }
-
-        Vector3 offset = targetPoint.forward * (GetComponent<Renderer>().bounds.size.z + 0.5f);
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null)
@@ -33,25 +41,43 @@ public class VentPoint : Interactable
             if (characterController != null)
             {
                 characterController.enabled = false; // Disable the CharacterController to set the position directly
-                player.transform.position = targetPoint.position + offset;
+                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection);
                 characterController.enabled = true; // Re-enable the CharacterController
             }
             else
             {
-                player.transform.position = targetPoint.position + offset;
+                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection);
             }
         }
     }
 
     private void PerformAdditionalActions()
     {
-        if (isEnterPoint)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            // Additional actions for enter point
-        }
-        else
-        {
-            // Additional actions for exit point
+            CameraController cameraController = player.GetComponentInChildren<CameraController>();
+            if (cameraController != null)
+            {
+                if (isEnterPoint)
+                {
+                    if (!originalDistanceSet)
+                    {
+                        originalCameraDistance = cameraController.distanceFromPlayer;
+                        originalDistanceSet = true;
+                    }
+                    cameraController.distanceFromPlayer = 0.01f; // Set distance to zero when entering the vent
+                }
+                else
+                {
+                    if (originalDistanceSet)
+                    {
+                        cameraController.distanceFromPlayer = originalCameraDistance; // Restore the original distance when exiting the vent
+                        originalDistanceSet = false;
+                    }
+                }
+            }
         }
     }
+
 }

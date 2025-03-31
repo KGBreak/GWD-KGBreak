@@ -1,11 +1,5 @@
 using UnityEngine;
-
-
-public enum ExitDirection
-{
-    UP, DOWN, LEFT, RIGHT, FORWARD, BACKWARD
-
-}
+using Util;
 
 public class HideIn : Interactable
 {
@@ -13,16 +7,27 @@ public class HideIn : Interactable
     private GameObject player;
     private Vector3 exitPosition;
     [SerializeField] private ExitDirection[] legalExitDirections;
+    [SerializeField] private Transform exitPoint;
+    [SerializeField] private bool canBringItem = false;
     private Renderer[] playerRenderers;
     private Collider playerCollider;
     private PlayerMovement playerMovement;
     private Camera playerCamera;
+    private HidingManager hidingManager;
 
     public override void InteractWith()
     {
         if (isInside)
         {
-            ExitObject();
+            if (exitPoint == null) {
+                ExitObject();
+            }
+            else
+            {
+                // Move to linkted object
+                exitPoint.gameObject.GetComponent<HideIn>().InteractWith();
+                isInside = false;
+            }
         }
         else
         {
@@ -40,20 +45,24 @@ public class HideIn : Interactable
             Debug.LogError("Player not found! Make sure it's tagged as 'Player'.");
             return;
         }
-
-        player = GameObject.FindGameObjectWithTag("Player");
         playerCamera = Camera.main; // Get the main camera
 
         // Get all Renderers from child objects
         playerRenderers = player.GetComponentsInChildren<Renderer>();
         playerCollider = player.GetComponent<Collider>();
         playerMovement = player.GetComponent<PlayerMovement>();
+        hidingManager = player.GetComponent<HidingManager>();
 
     }
 
     void EnterObject()
     {
         if (player == null) return;
+        if (!canBringItem)
+        {
+            player.GetComponent<ItemManager>().EjectCurrentItem();
+        }
+        hidingManager.SetHidingObject(this);
 
         // Hide player by disabling all Renderers
         foreach (Renderer rend in playerRenderers)
@@ -73,7 +82,7 @@ public class HideIn : Interactable
         isInside = true;
     }
 
-    void ExitObject()
+    public void ExitObject()
     {
         if (player == null) return;
 
@@ -97,6 +106,7 @@ public class HideIn : Interactable
         if (playerMovement) playerMovement.SetHiding(false);
 
         isInside = false;
+        hidingManager.SetHidingObject(null);
 
 
     }
@@ -112,7 +122,7 @@ public class HideIn : Interactable
 
         foreach (ExitDirection dir in legalExitDirections)
         {
-            Vector3 worldDirection = GetWorldDirection(dir);
+            Vector3 worldDirection = DirectionHelper.GetWorldDirection(dir);
             float dotProduct = Vector3.Dot(cameraViewDir, worldDirection);
 
             if (dotProduct > maxDot) // Closer to player's camera direction
@@ -123,20 +133,6 @@ public class HideIn : Interactable
         }
 
         return bestDirection;
-    }
-
-    Vector3 GetWorldDirection(ExitDirection direction)
-    {
-        switch (direction)
-        {
-            case ExitDirection.UP: return transform.up;
-            case ExitDirection.DOWN: return -transform.up;
-            case ExitDirection.LEFT: return -transform.right;
-            case ExitDirection.RIGHT: return transform.right;
-            case ExitDirection.FORWARD: return transform.forward;
-            case ExitDirection.BACKWARD: return -transform.forward;
-            default: return transform.right;
-        }
     }
 }
 
