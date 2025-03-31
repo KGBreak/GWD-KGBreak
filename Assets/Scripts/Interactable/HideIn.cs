@@ -40,11 +40,6 @@ public class HideIn : Interactable
         // Find the player by tag
         player = GameObject.FindGameObjectWithTag("Player");
 
-        if (player == null)
-        {
-            Debug.LogError("Player not found! Make sure it's tagged as 'Player'.");
-            return;
-        }
         playerCamera = Camera.main; // Get the main camera
 
         // Get all Renderers from child objects
@@ -86,7 +81,6 @@ public class HideIn : Interactable
     {
         if (player == null) return;
 
-        Camera playerCamera = Camera.main; // Get the main camera
         Vector3 cameraViewDir = playerCamera.transform.forward; // Use camera's forward vector
 
         // Determine the best exit direction based on where the camera is looking

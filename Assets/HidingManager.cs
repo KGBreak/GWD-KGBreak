@@ -12,6 +12,11 @@ public class HidingManager : MonoBehaviour
     }
 
 
+    public HideIn GetHidingObject()
+    {
+        return hidingObject;
+    }
+
 
     public void ExitHidingObject()
     {

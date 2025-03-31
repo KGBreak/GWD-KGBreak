@@ -577,6 +577,7 @@ MonoBehaviour:
   visionRange: 15
   visionAngle: 90
   downwardTiltAngle: 0
+  proximityDetection: 1.7
   enemyMovement: {fileID: 1387528473820513667}
   detectionMeterSize: 2
   deathSize: 4

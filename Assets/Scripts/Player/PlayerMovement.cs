@@ -149,4 +149,9 @@ public class PlayerMovement : MonoBehaviour
     {
         return isHiding;
     }
+
+    public void SetGravity(float newGravity)
+    {
+        this.gravity = newGravity;
+    }
 }
