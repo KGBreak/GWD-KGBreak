@@ -19,15 +19,7 @@ public class HideIn : Interactable
     {
         if (isInside)
         {
-            if (exitPoint == null) {
-                ExitObject();
-            }
-            else
-            {
-                // Move to linkted object
-                exitPoint.gameObject.GetComponent<HideIn>().InteractWith();
-                isInside = false;
-            }
+            ExitObject();
         }
         else
         {
@@ -50,7 +42,7 @@ public class HideIn : Interactable
 
     }
 
-    void EnterObject()
+    public void EnterObject()
     {
         if (player == null) return;
         if (!canBringItem)
@@ -99,10 +91,8 @@ public class HideIn : Interactable
         if (playerCollider) playerCollider.enabled = true;
         if (playerMovement) playerMovement.SetHiding(false);
 
-        isInside = false;
         hidingManager.SetHidingObject(null);
-
-
+        isInside = false;
     }
 
 
@@ -127,6 +117,16 @@ public class HideIn : Interactable
         }
 
         return bestDirection;
+    }
+
+    public Transform GetExitPoint()
+    {
+        return exitPoint;
+    }
+
+    public void SetIsInside(bool boolean)
+    {
+        isInside = boolean;
     }
 }
 

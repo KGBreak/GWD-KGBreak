@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HidingManager : MonoBehaviour
 {
@@ -17,14 +18,17 @@ public class HidingManager : MonoBehaviour
         return hidingObject;
     }
 
-
-    public void ExitHidingObject()
+    public void MoveHidingObject()
     {
-        if (hidingObject != null) {
-            hidingObject.ExitObject();
-        }
-    }
+        var exitPoint = hidingObject?.GetExitPoint()?.gameObject.GetComponent<HideIn>();
 
+        if (hidingObject != null && exitPoint != null)
+        {
+            hidingObject.ExitObject();
+            exitPoint.EnterObject();
+        }
+
+    }
     public bool GetIsHiding()
     {
         if (hidingObject == null)

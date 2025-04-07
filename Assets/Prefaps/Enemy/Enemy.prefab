@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 5874342962388730276}
   - component: {fileID: 6370006942994597548}
   - component: {fileID: 174273241985249445}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -582,6 +582,9 @@ MonoBehaviour:
   detectionMeterSize: 2
   deathSize: 4
   detectionMeter: {fileID: 174273241985249445}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1216
 --- !u!114 &174273241985249445
 MonoBehaviour:
   m_ObjectHideFlags: 0

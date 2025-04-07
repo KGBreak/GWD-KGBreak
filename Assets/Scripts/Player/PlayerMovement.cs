@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10f;
 
+    [SerializeField]
+    HidingManager hidingManager; 
+
     Vector2 moveInput ;
     Vector3 velocity;
     Vector3 currentVelocity;
@@ -61,7 +64,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        if (isHiding) {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                moveInput = Vector2.zero;
+                hidingManager.MoveHidingObject();
+            }
+        }
+        else
+        {
+            moveInput = context.ReadValue<Vector2>();
+        }
     }
 
     private void Update()
@@ -140,7 +153,6 @@ public class PlayerMovement : MonoBehaviour
                 isMovementEventPlaying = false;
             }
         }
-        Debug.Log(velocity.y);
     }
 
     public void SetHiding(bool isHidingInput)

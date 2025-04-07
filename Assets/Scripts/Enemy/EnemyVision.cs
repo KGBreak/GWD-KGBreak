@@ -12,6 +12,7 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] float detectionMeterSize;
     [SerializeField] float deathSize;
     [SerializeField] DetectionMeter detectionMeter;
+    [SerializeField] LayerMask obstacleLayer;
     float dectectionMeterValue;
     Transform player;
     PlayerMovement playerMovement;
@@ -70,7 +71,11 @@ public class EnemyVision : MonoBehaviour
 
         if (Vector3.Distance(player.position, transform.position) < proximityDetection)
         {
-            return true;
+            // Check if the ray does not hit anything in the obstacle layer
+            if (!Physics.Raycast(transform.position, (player.position - transform.position).normalized, proximityDetection, obstacleLayer))
+            {
+                return true; // The player is within range and not behind an obstacle
+            }
         }
 
         Vector3 directionToPlayer = (player.position - visionOrigin).normalized;

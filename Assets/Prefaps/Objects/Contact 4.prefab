@@ -29,14 +29,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36538472659490256}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -40.627483, y: 34.43253, z: 0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 82731619772137738}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &6931736658980036480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1975
+  m_VersionIndex: 1996
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2066
+  m_VersionIndex: 2087
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -719,3 +719,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suckUp: {fileID: 0}
+  pingRange: 100
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1216

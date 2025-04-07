@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SuckUp : MonoBehaviour
 {
-    private bool isTurnedOn = true;
+    private bool isTurnedOn = false;
     [SerializeField] float pullForce = 3;
     private float lastTriggerTime = 0f;
     private float triggerGracePeriod = 0.1f; // Time before we consider it "no longer staying"
