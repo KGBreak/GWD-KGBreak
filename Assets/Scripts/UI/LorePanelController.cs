@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // Add this namespace for TextMeshPro
 
 public class LorePanelController : MonoBehaviour
 {
-    public RawImage loreImage;
+    public TMP_Text loreText; // Reference to the TMP_Text component for lore content
+    public TMP_Text entryNumberText; // Reference to the TMP_Text component for entry number
     public Button leftArrow;
     public Button rightArrow;
 
@@ -26,7 +28,8 @@ public class LorePanelController : MonoBehaviour
         {
             int entryNumber = loreEntryKeys[index];
             var entry = LoreManager.loreEntries[entryNumber];
-            loreImage.texture = entry.loreObject.GetComponent<Renderer>().material.mainTexture as Texture2D;
+            loreText.text = entry.loreDoc;
+            entryNumberText.text = $"Entry {entryNumber}";
         }
     }
 
