@@ -7,10 +7,12 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] float visionRange = 10f;
     [SerializeField] float visionAngle = 45f;
     [SerializeField] float downwardTiltAngle = 20f;
+    [SerializeField] float proximityDetection;
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] float detectionMeterSize;
     [SerializeField] float deathSize;
     [SerializeField] DetectionMeter detectionMeter;
+    [SerializeField] LayerMask obstacleLayer;
     float dectectionMeterValue;
     Transform player;
     PlayerMovement playerMovement;
@@ -45,6 +47,10 @@ public class EnemyVision : MonoBehaviour
             if (dectectionMeterValue > 0) {
                 dectectionMeterValue -= Time.deltaTime;
             }
+            else
+            {
+                dectectionMeterValue = 0;
+            }
         }
         detectionMeter.UpdateMeter(dectectionMeterValue, detectionMeterSize);
     }
@@ -61,6 +67,15 @@ public class EnemyVision : MonoBehaviour
         if(player.position.y > visionOrigin.y)
         {
             return false;
+        }
+
+        if (Vector3.Distance(player.position, transform.position) < proximityDetection)
+        {
+            // Check if the ray does not hit anything in the obstacle layer
+            if (!Physics.Raycast(transform.position, (player.position - transform.position).normalized, proximityDetection, obstacleLayer))
+            {
+                return true; // The player is within range and not behind an obstacle
+            }
         }
 
         Vector3 directionToPlayer = (player.position - visionOrigin).normalized;

@@ -54,6 +54,7 @@ public class VentPoint : Interactable
     private void PerformAdditionalActions()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerMovement>().resetGravity();
         if (player != null)
         {
             CameraController cameraController = player.GetComponentInChildren<CameraController>();

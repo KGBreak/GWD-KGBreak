@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -65,11 +66,20 @@ public class CameraController : MonoBehaviour
             Vector3 desiredPosition = playerTransform.position - rotation * Vector3.forward * distanceFromPlayer + offset;
             Vector3 directionToPlayer = playerTransform.position + offset - desiredPosition;
 
-            RaycastHit hit;
-            if (Physics.Raycast(playerTransform.position + offset, -directionToPlayer.normalized, out hit, distanceFromPlayer))
+
+            RaycastHit[] hits = Physics.RaycastAll(playerTransform.position + offset, -directionToPlayer.normalized, distanceFromPlayer);
+
+            float closestDistance = distanceFromPlayer;
+            foreach (var hit in hits)
             {
-                desiredPosition = playerTransform.position + offset - directionToPlayer.normalized * hit.distance;
+                if (hit.collider.CompareTag("Item") || hit.collider.CompareTag("Suck")) continue;
+
+                if (hit.distance < closestDistance)
+                {
+                    closestDistance = hit.distance;
+                }
             }
+            desiredPosition = playerTransform.position + offset - directionToPlayer.normalized * closestDistance;
 
             transform.position = desiredPosition;
             transform.LookAt(playerTransform.position + offset);
