@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class VentPointEDIT : Interactable
@@ -13,6 +14,7 @@ public class VentPointEDIT : Interactable
         {
             TeleportTo(otherPoint);
             PerformAdditionalActions();
+            RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
         }
     }
 
