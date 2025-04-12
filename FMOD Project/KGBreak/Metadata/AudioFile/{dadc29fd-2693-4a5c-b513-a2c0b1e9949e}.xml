@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dadc29fd-2693-4a5c-b513-a2c0b1e9949e}">
+		<property name="assetPath">
+			<value>KGB_Slime_Mvmt_Land_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.18804988662131519</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dfa8febb-b1f6-4580-8bdc-9dba0e9dc466}</destination>
+		</relationship>
+	</object>
+</objects>
