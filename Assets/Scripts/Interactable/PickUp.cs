@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 
 public class PickUp : Interactable
 {
@@ -16,5 +17,6 @@ public class PickUp : Interactable
     public override void InteractWith()
     {
         playerItemManager.SetItem(this.gameObject);
+        RuntimeManager.PlayOneShot("event:/Player/Pickup");
     }
 }

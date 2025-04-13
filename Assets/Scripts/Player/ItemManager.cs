@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using FMODUnity;
 //using static UnityEditor.Progress;
 
 public class ItemManager : MonoBehaviour
@@ -41,6 +42,7 @@ public class ItemManager : MonoBehaviour
     public void EjectCurrentItem()
     {
         if (m_Item == null) return;
+        RuntimeManager.PlayOneShot("event:/Player/Drop");
 
         // Remove it from being a child of the player
         m_Item.transform.SetParent(null);
