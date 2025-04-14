@@ -17,20 +17,21 @@ public class EnemyVision : MonoBehaviour
     Transform player;
     PlayerMovement playerMovement;
     private float visionHeightOffset = 0.8f;
+    private DetectionIndicator detectionIndicator;
 
     void Start()
     {
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.transform;
         playerMovement = playerObject.GetComponent<PlayerMovement>();
-
+        detectionIndicator = playerObject.GetComponent<DetectionIndicator>();
     }
 
     void Update()
     {
         if (CanSeePlayer())
         {
-
+            detectionIndicator.AttemptAddEnemy(transform);
             dectectionMeterValue += Time.deltaTime;
             if (dectectionMeterValue > detectionMeterSize)
             {
@@ -44,6 +45,7 @@ public class EnemyVision : MonoBehaviour
         }
         else
         {
+            detectionIndicator.RemoveEnemy(transform);
             if (dectectionMeterValue > 0) {
                 dectectionMeterValue -= Time.deltaTime;
             }

@@ -4,9 +4,14 @@ using UnityEngine.UI;
 public class DetectionMeter : MonoBehaviour
 {
     [SerializeField] Slider slider;
-    [SerializeField] Camera camera;
+    Camera mainCamera;
 
     // Update is called once per frame
+    void Start()
+    {
+        mainCamera = Camera.main;
+    }
+
     void Update()
     {
         if (slider.value == 0f)
@@ -16,7 +21,7 @@ public class DetectionMeter : MonoBehaviour
         else
         {
             slider.gameObject.SetActive(true);
-            slider.transform.rotation = camera.transform.rotation;
+            slider.transform.rotation = mainCamera.transform.rotation;
         }
     }
 
