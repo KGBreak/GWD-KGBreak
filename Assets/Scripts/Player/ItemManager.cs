@@ -5,13 +5,6 @@ using System.Collections;
 public class ItemManager : MonoBehaviour
 {
     private GameObject m_Item;
-    private Collider playerCollider;
-
-
-    private void Start()
-    {
-        playerCollider = GetComponent<Collider>();
-    }
 
     public void SetItem(GameObject newItem)
     {
@@ -28,12 +21,10 @@ public class ItemManager : MonoBehaviour
 
         // Disable physics so it doesn't fall/move on its own
         Rigidbody itemRb = newItem.GetComponent<Rigidbody>();
-        Collider itemCl = newItem.GetComponent<Collider>();
-        if (itemRb != null && itemCl != null)
+        if (itemRb != null)
         {
             itemRb.isKinematic = true;
             itemRb.useGravity = false;
-            itemCl.enabled = false;
         }
 
     }
@@ -46,36 +37,25 @@ public class ItemManager : MonoBehaviour
         m_Item.transform.SetParent(null);
 
         // Move the item slightly in front of the player
-        m_Item.transform.position = transform.position - (transform.forward*0.5f);
+        m_Item.transform.position = transform.position + (transform.forward*0.2f);
 
         // Activate physics again
         Rigidbody itemRb = m_Item.GetComponent<Rigidbody>();
-        Collider itemCl = m_Item.GetComponent<Collider>();
         if (itemRb != null)
         {
             itemRb.isKinematic = false;
             itemRb.useGravity = true;
 
             // Apply a slight push outward
-            Vector3 ejectForce = (-transform.forward + Vector3.up * 0.5f);
+            Vector3 ejectForce = (transform.forward*2f + Vector3.up*2f);
             itemRb.AddForce(ejectForce, ForceMode.Impulse);
         }
-
-        // Re-enable collision after a delay
-        Physics.IgnoreCollision(playerCollider, itemCl, true);
-        itemCl.enabled = true;
-        StartCoroutine(EnableCollisionAfterDelay(itemCl, 0.2f));
-
         // Clear reference to the item
         m_Item = null;
+
+
     }
 
-    private IEnumerator EnableCollisionAfterDelay(Collider itemCl, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        Physics.IgnoreCollision(playerCollider, itemCl, false);
-    }
 
     public GameObject GetItem()
     {

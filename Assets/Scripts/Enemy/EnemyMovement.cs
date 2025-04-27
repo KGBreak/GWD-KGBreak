@@ -23,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
     float timer = 0;
     int nextPoint = 0;
     bool followingPath = true;
+    TurnOn turnOnButton;
 
     // Update is called once per frame
     void Update()
@@ -91,6 +92,33 @@ public class EnemyMovement : MonoBehaviour
             navAgent.updateRotation = false;
             if (timer > investigateTime)
             {
+                if (turnOnButton != null)
+                {
+                    turnOnButton.TurnOnOrOff(false);
+                    turnOnButton = null;
+                }
+                StopAction();
+                timer = 0;
+                followingPath = true;
+            }
+            else
+            {
+                if (currentActionCoroutine == null)
+                {
+                    currentActionCoroutine = StartCoroutine(investigateAction.PerformAction());
+                }
+                timer += Time.deltaTime;
+            }
+        }
+    }
+
+    void Investigate(TurnOn turnOnButton)
+    {
+        if (HasReachedDestination())
+        {
+            navAgent.updateRotation = false;
+            if (timer > investigateTime)
+            {
                 StopAction();
                 timer = 0;
                 followingPath = true;
@@ -149,5 +177,14 @@ public class EnemyMovement : MonoBehaviour
         followingPath = false;
         timer = 0;
         navAgent.destination = goalPos;
+    }
+
+    public void SetDestination(Vector3 goalPos, TurnOn turnOnButton)
+    {
+        StopAction();
+        followingPath = false;
+        timer = 0;
+        navAgent.destination = goalPos;
+        this.turnOnButton = turnOnButton;
     }
 }

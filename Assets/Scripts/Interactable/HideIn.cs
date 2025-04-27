@@ -19,15 +19,7 @@ public class HideIn : Interactable
     {
         if (isInside)
         {
-            if (exitPoint == null) {
-                ExitObject();
-            }
-            else
-            {
-                // Move to linkted object
-                exitPoint.gameObject.GetComponent<HideIn>().InteractWith();
-                isInside = false;
-            }
+            ExitObject();
         }
         else
         {
@@ -40,11 +32,6 @@ public class HideIn : Interactable
         // Find the player by tag
         player = GameObject.FindGameObjectWithTag("Player");
 
-        if (player == null)
-        {
-            Debug.LogError("Player not found! Make sure it's tagged as 'Player'.");
-            return;
-        }
         playerCamera = Camera.main; // Get the main camera
 
         // Get all Renderers from child objects
@@ -55,7 +42,7 @@ public class HideIn : Interactable
 
     }
 
-    void EnterObject()
+    public void EnterObject()
     {
         if (player == null) return;
         if (!canBringItem)
@@ -86,7 +73,6 @@ public class HideIn : Interactable
     {
         if (player == null) return;
 
-        Camera playerCamera = Camera.main; // Get the main camera
         Vector3 cameraViewDir = playerCamera.transform.forward; // Use camera's forward vector
 
         // Determine the best exit direction based on where the camera is looking
@@ -105,10 +91,8 @@ public class HideIn : Interactable
         if (playerCollider) playerCollider.enabled = true;
         if (playerMovement) playerMovement.SetHiding(false);
 
-        isInside = false;
         hidingManager.SetHidingObject(null);
-
-
+        isInside = false;
     }
 
 
@@ -133,6 +117,16 @@ public class HideIn : Interactable
         }
 
         return bestDirection;
+    }
+
+    public Transform GetExitPoint()
+    {
+        return exitPoint;
+    }
+
+    public void SetIsInside(bool boolean)
+    {
+        isInside = boolean;
     }
 }
 
