@@ -20,16 +20,9 @@ public class HideIn : Interactable
     {
         if (isInside)
         {
-            if (exitPoint == null) {
-                ExitObject();
-            }
-            else
-            {
-                // Move to linkted object
-                exitPoint.gameObject.GetComponent<HideIn>().InteractWith();
-                isInside = false;
-                RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
-            }
+            ExitObject();
+            RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
+            
         }
         else
         {
