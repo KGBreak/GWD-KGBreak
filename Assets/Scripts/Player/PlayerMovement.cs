@@ -150,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
             if (isMovementEventPlaying)
             {
                 movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                RuntimeManager.PlayOneShot("event:/Player/Movement_Stop", transform.position);
                 isMovementEventPlaying = false;
             }
         }

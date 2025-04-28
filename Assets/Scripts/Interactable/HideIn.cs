@@ -1,5 +1,6 @@
 using UnityEngine;
 using Util;
+using FMODUnity;
 
 public class HideIn : Interactable
 {
@@ -20,9 +21,12 @@ public class HideIn : Interactable
         if (isInside)
         {
             ExitObject();
+            RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
+            
         }
         else
         {
+            RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
             EnterObject();
         }
     }
@@ -71,6 +75,7 @@ public class HideIn : Interactable
 
     public void ExitObject()
     {
+        RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
         if (player == null) return;
 
         Vector3 cameraViewDir = playerCamera.transform.forward; // Use camera's forward vector

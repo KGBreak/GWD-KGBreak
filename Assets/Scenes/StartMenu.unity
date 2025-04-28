@@ -331,6 +331,30 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &799113458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4002265820914390310, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
+  m_PrefabInstance: {fileID: 5972918755529168477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &799113463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799113458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fcf31f0ed1285941ab62f30e67e01d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuMusicEvent:
+    Guid:
+      Data1: -763217546
+      Data2: 1119788877
+      Data3: -774580605
+      Data4: 573476033
+    Path: event:/Music/Varshavjanka
 --- !u!1 &832667436
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +543,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1926653178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6030481443308734810, guid: 1352c717772c25745831c2da41dfe781, type: 3}
+  m_PrefabInstance: {fileID: 392002845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2028200331
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,8 +558,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2028200334}
   - component: {fileID: 2028200333}
-  - component: {fileID: 2028200332}
   - component: {fileID: 2028200335}
+  - component: {fileID: 2028200336}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -538,14 +567,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2028200332
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028200331}
-  m_Enabled: 1
 --- !u!20 &2028200333
 Camera:
   m_ObjectHideFlags: 0
@@ -656,6 +677,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &2028200336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028200331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 1926653178}
 --- !u!1001 &5972918755529168477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -667,6 +702,26 @@ PrefabInstance:
     - target: {fileID: 4002265820914390310, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
       propertyPath: m_Name
       value: StartMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931596115583786384, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
+      propertyPath: clickSoundEvent.Path
+      value: event:/UI/StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931596115583786384, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
+      propertyPath: clickSoundEvent.Guid.Data1
+      value: -1069995265
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931596115583786384, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
+      propertyPath: clickSoundEvent.Guid.Data2
+      value: 1341766036
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931596115583786384, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
+      propertyPath: clickSoundEvent.Guid.Data3
+      value: 2044336037
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931596115583786384, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
+      propertyPath: clickSoundEvent.Guid.Data4
+      value: -997402667
       objectReference: {fileID: 0}
     - target: {fileID: 6544814892985063425, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
       propertyPath: m_Pivot.x
@@ -751,7 +806,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4002265820914390310, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 799113463}
   m_SourcePrefab: {fileID: 100100000, guid: 0e837454bb3fe944982826531272b1a9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
