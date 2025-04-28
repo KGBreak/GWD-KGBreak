@@ -22,7 +22,6 @@ public class DetectionMeter : MonoBehaviour
 
     public void UpdateMeter(float currentValue, float maxValue)
     {
-        Debug.Log("Current value: " + currentValue + " Max value: " + maxValue + "procentage: " + currentValue / maxValue);
         slider.value = currentValue/maxValue;
     }
 }

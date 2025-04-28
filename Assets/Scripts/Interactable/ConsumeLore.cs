@@ -18,7 +18,7 @@ public class ConsumeLore : Interactable
             if (loreManager != null)
             {
                 // Add lore entry to the player's lore manager
-                loreManager.AddLoreEntry(loreDoc, entryNumber);
+                loreManager.AddLoreEntry(loreDoc, entryNumber, this.gameObject);
 
                 // Destroy this object after interaction
                 Destroy(gameObject);

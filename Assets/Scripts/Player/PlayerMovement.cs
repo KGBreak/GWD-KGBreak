@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     float moveSpeed = 5f;
     [SerializeField]
     float gravity = -9.81f;
+    private float aplliedGravity;
+
     [SerializeField]
     float groundCheckDistance = 0.1f;
     [SerializeField]
@@ -22,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     Transform cameraTransform;
     [SerializeField]
     float rotationSpeed = 10f;
+
+    [SerializeField]
+    HidingManager hidingManager; 
 
     Vector2 moveInput ;
     Vector3 velocity;
@@ -52,14 +57,24 @@ public class PlayerMovement : MonoBehaviour
         // Hide and lock the cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
+        aplliedGravity = gravity;
         // Create the movement event
         movementEvent = RuntimeManager.CreateInstance("event:/Player/Movement");
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        if (isHiding) {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                moveInput = Vector2.zero;
+                hidingManager.MoveHidingObject();
+            }
+        }
+        else
+        {
+            moveInput = context.ReadValue<Vector2>();
+        }
     }
 
     private void Update()
@@ -68,9 +83,9 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        isGrounded = Physics.SphereCast(transform.position, characterController.radius, Vector3.down, out RaycastHit hitInfo, groundCheckDistance);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundCheckDistance);
 
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded && aplliedGravity < 0f)
         {
             velocity.y = -2f;
         }
@@ -118,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(currentVelocity * Time.deltaTime);
 
         // Apply gravity
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += aplliedGravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
 
         // Start/stop the FMOD event
@@ -149,5 +164,17 @@ public class PlayerMovement : MonoBehaviour
     public bool getHiding()
     {
         return isHiding;
+    }
+
+    public void SetGravity(float newGravity)
+    {
+        this.aplliedGravity = newGravity;
+
+
+    }
+    public void resetGravity()
+    {
+        velocity.y = 0f;
+        this.aplliedGravity = gravity;
     }
 }

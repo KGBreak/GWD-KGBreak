@@ -8,7 +8,6 @@ public class DoNothing : Actions
     {
         isInterrupted = false;
         while (!isInterrupted) {
-            Debug.Log("Doing nothing");
             yield return null;
         }
     }
