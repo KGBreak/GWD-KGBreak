@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>Radio_Announcement</value>
 		</property>
+		<relationship name="masters">
+			<destination>{89e1f92a-788d-49d8-a928-de8c2dca4216}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{4107eeeb-a65c-4712-8b22-2029e058b1b2}</destination>
 		</relationship>

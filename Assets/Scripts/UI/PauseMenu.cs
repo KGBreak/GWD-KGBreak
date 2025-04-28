@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            RuntimeManager.PlayOneShot("event:/UI/Pause");
             if (IsPaused)
             {
                 Resume();

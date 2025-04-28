@@ -1,57 +1,52 @@
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 
 public class VentPointEDIT : Interactable
 {
-    [SerializeField]
-    private Transform otherPoint;
-    [SerializeField]
-    private bool isEnterPoint;
+    [SerializeField] private Transform otherPoint;
+    [SerializeField] private bool isEnterPoint;
+
+    private const string AirDuctLoopEventPath = "event:/Airduct";
+    public static EventInstance AirDuctLoopInstance;  // <<== static instance!
 
     public override void InteractWith()
     {
-        if (otherPoint != null)
-        {
-            TeleportTo(otherPoint);
-            PerformAdditionalActions();
-        }
+        if (otherPoint == null) return;
+
+        TeleportTo(otherPoint);
+        PerformAdditionalActions();
+        RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
+        AirDuctLoopInstance = RuntimeManager.CreateInstance(AirDuctLoopEventPath);
+        AirDuctLoopInstance.start();
     }
 
     private void TeleportTo(Transform targetPoint)
     {
-        if (targetPoint == null)
-        {
-            return;
-        }
-
-        //Vector3 offset = targetPoint.forward * (GetComponent<Renderer>().bounds.size.z + 0.5f);
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) return;
 
-        if (player != null)
-        {
-            CharacterController characterController = player.GetComponent<CharacterController>();
+        CharacterController characterController = player.GetComponent<CharacterController>();
+        if (characterController != null) characterController.enabled = false;
 
-            if (characterController != null)
-            {
-                characterController.enabled = false; // Disable the CharacterController to set the position directly
-                player.transform.position = targetPoint.position; //+ offset;
-                characterController.enabled = true; // Re-enable the CharacterController
-            }
-            else
-            {
-                player.transform.position = targetPoint.position; //+ offset;
-            }
-        }
+        player.transform.position = targetPoint.position;
+
+        if (characterController != null) characterController.enabled = true;
     }
 
     private void PerformAdditionalActions()
     {
         if (isEnterPoint)
         {
-            // Additional actions for enter point
+
         }
         else
         {
-            // Additional actions for exit point
+            if (AirDuctLoopInstance.isValid())
+            {
+                AirDuctLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                AirDuctLoopInstance.release();
+            }
         }
     }
 }

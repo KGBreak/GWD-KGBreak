@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using FMODUnity;
 
 public class Door : Interactable
 {
@@ -34,6 +35,7 @@ public class Door : Interactable
     void OpenDoor()
     {
         if (movementCoroutine != null) StopCoroutine(movementCoroutine);
+        RuntimeManager.PlayOneShot("event:/Door_open", transform.position);
         movementCoroutine = StartCoroutine(MoveDoor(openPosition, () =>
         {
             isOpen = true;
@@ -44,6 +46,7 @@ public class Door : Interactable
     void CloseDoor()
     {
         if (movementCoroutine != null) StopCoroutine(movementCoroutine);
+        RuntimeManager.PlayOneShot("event:/Door_close", transform.position);
         movementCoroutine = StartCoroutine(MoveDoor(closedPosition, () =>
         {
             isOpen = false;
