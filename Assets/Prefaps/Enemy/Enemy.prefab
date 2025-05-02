@@ -598,7 +598,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2791463661678256485}
-  camera: {fileID: 0}
+  detectionBeepEvent:
+    Guid:
+      Data1: -1227939069
+      Data2: 1321237776
+      Data3: 204841882
+      Data4: -746267817
+    Path: event:/Detected_LOOP
+  detectedFullEvent:
+    Guid:
+      Data1: -249821092
+      Data2: 1263188630
+      Data3: -1133385029
+      Data4: -25853958
+    Path: event:/Detected_Full
 --- !u!1001 &2079182952692839698
 PrefabInstance:
   m_ObjectHideFlags: 0
