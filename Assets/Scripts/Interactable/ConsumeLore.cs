@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 
 public class ConsumeLore : Interactable
 {
@@ -9,6 +10,7 @@ public class ConsumeLore : Interactable
     {
         // Get reference to the player object (assuming it's tagged as "Player")
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        RuntimeManager.PlayOneShot("event:/Player/Pickup");
 
         if (player != null)
         {

@@ -5,7 +5,7 @@
 			<value>Intercom_Switch_Vox</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{28ca37e8-b643-4462-8491-8d889a2dd5d8}</destination>
@@ -39,7 +39,7 @@
 	</object>
 	<object class="MasterTrack" id="{9290e7b7-b4aa-46d0-b412-2eb2060d0ca9}">
 		<relationship name="modules">
-			<destination>{5863c783-7717-489d-9966-12f46f7bb225}</destination>
+			<destination>{391ee8a6-4afd-4389-a59b-14158ac419c4}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{03459a7b-eb2b-4643-a164-116276344817}</destination>
@@ -53,14 +53,18 @@
 			<destination>{21cedeb5-e8ae-4acb-844e-e7acb5ef85fe}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{65a4242a-5688-4711-ab7e-a0f9880a6bbe}</destination>
+			<destination>{c0e9c14f-f8a7-474c-9c91-647db9a6fc85}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{5fb5e2da-f649-49be-857d-20e3e57ef11c}" />
+	<object class="EventAutomatableProperties" id="{5fb5e2da-f649-49be-857d-20e3e57ef11c}">
+		<property name="minimumDistance">
+			<value>0.5</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{b2bd40c4-4506-409e-9430-0122fda0f012}" />
 	<object class="Timeline" id="{80e17357-0557-4799-826a-a5448b7f6e24}">
 		<relationship name="modules">
-			<destination>{5863c783-7717-489d-9966-12f46f7bb225}</destination>
+			<destination>{391ee8a6-4afd-4389-a59b-14158ac419c4}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{03459a7b-eb2b-4643-a164-116276344817}">
@@ -74,12 +78,12 @@
 			<destination>{05c569f6-1b6a-45c3-a8e9-adc6f24b0d3b}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{5863c783-7717-489d-9966-12f46f7bb225}">
+	<object class="SingleSound" id="{391ee8a6-4afd-4389-a59b-14158ac419c4}">
 		<property name="length">
-			<value>18.814376417233561</value>
+			<value>22.810975056689344</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{12e6747f-a273-4eaa-b68b-dfe050e59f8c}</destination>
+			<destination>{ae398886-6e33-448c-929d-ceb00170a4cf}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{890b7924-6f50-4e2b-a0a1-39c709726a79}">
@@ -91,9 +95,15 @@
 	<object class="MixerBusEffectChain" id="{77d40709-e213-4d77-8706-2c95af31a53d}">
 		<relationship name="effects">
 			<destination>{a213483d-4cb1-4eb7-852f-b7d4dff9f6c5}</destination>
+			<destination>{b46c7413-4be3-476d-a276-a2b21cc849e2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{40f6982b-2dc4-4061-8430-15386a8fddd4}" />
 	<object class="MixerBusFader" id="{ea906dec-8d2a-4b48-82d8-c236fb7239a6}" />
 	<object class="MixerBusFader" id="{a213483d-4cb1-4eb7-852f-b7d4dff9f6c5}" />
+	<object class="SpatialiserEffect" id="{b46c7413-4be3-476d-a276-a2b21cc849e2}">
+		<property name="minimumDistance">
+			<value>0.5</value>
+		</property>
+	</object>
 </objects>
