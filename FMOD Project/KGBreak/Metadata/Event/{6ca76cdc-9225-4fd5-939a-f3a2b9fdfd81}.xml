@@ -105,5 +105,8 @@
 		<property name="minimumDistance">
 			<value>0.5</value>
 		</property>
+		<property name="panBlend">
+			<value>0.754999995</value>
+		</property>
 	</object>
 </objects>
