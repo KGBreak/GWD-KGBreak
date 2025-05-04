@@ -1,4 +1,4 @@
-using FMOD.Studio;
+﻿using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 
@@ -15,10 +15,15 @@ public class VentPointEDIT : Interactable
         if (otherPoint == null) return;
 
         TeleportTo(otherPoint);
-        PerformAdditionalActions();
-        RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
-        AirDuctLoopInstance = RuntimeManager.CreateInstance(AirDuctLoopEventPath);
-        AirDuctLoopInstance.start();
+
+        if (isEnterPoint)
+        {
+            PlayEnterVentFX();
+        }
+        else    // exit‑point
+        {
+            StopVentLoop();
+        }
     }
 
     private void TeleportTo(Transform targetPoint)
@@ -47,6 +52,34 @@ public class VentPointEDIT : Interactable
                 AirDuctLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 AirDuctLoopInstance.release();
             }
+        }
+    }
+    private void PlayEnterVentFX()
+    {
+        RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
+
+        // If the loop is already running we don’t want a duplicate.
+        if (!AirDuctLoopInstance.isValid())
+            AirDuctLoopInstance = RuntimeManager.CreateInstance(AirDuctLoopEventPath);
+
+        if (AirDuctLoopInstance.isValid())
+        {
+            AirDuctLoopInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            AirDuctLoopInstance.release();
+            AirDuctLoopInstance.clearHandle();
+        }
+        AirDuctLoopInstance = RuntimeManager.CreateInstance(AirDuctLoopEventPath);
+        AirDuctLoopInstance.start();
+    }
+
+    private void StopVentLoop()
+    {
+        if (AirDuctLoopInstance.isValid())
+        {
+            AirDuctLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            AirDuctLoopInstance.release();
+            AirDuctLoopInstance.clearHandle();
+            RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
         }
     }
 }

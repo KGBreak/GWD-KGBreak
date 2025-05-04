@@ -13,6 +13,7 @@ public class IntercomSFXManager : MonoBehaviour
     [SerializeField] EventReference gibberishLoop;// 3‑D random chatter loop
     [SerializeField] EventReference EnglishLoop;
     [SerializeField] float EnglishLoopDelay = 1.0f;
+    [SerializeField] float gibberishStartDelay = 10.0f;
 
     [Header("Dictionary pages needed")]
     [SerializeField] int[] dictionaryEntryIDs = { 100, 101 };
@@ -33,15 +34,18 @@ public class IntercomSFXManager : MonoBehaviour
         LoreManager.OnLoreEntryAdded += HandleLoreAdded;
     }
 
-    void Start()
+    IEnumerator Start()
     {
-        /* start the gibberish chatter immediately */
+        // wait first…
+        yield return new WaitForSeconds(gibberishStartDelay);
+
+        // …then instantiate & start gibberish
         gibberishInst = RuntimeManager.CreateInstance(gibberishLoop);
         gibberishInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
         gibberishInst.start();
     }
 
-    void OnDestroy()
+void OnDestroy()
     {
         LoreManager.OnLoreEntryAdded -= HandleLoreAdded;
 
