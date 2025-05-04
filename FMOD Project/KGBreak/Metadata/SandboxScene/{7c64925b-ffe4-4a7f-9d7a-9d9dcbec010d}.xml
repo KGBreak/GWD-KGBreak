@@ -19,30 +19,32 @@
 		<relationship name="emitters">
 			<destination>{aff5921f-4590-4287-812c-ef681392f74b}</destination>
 			<destination>{48845021-ba8f-45f5-b851-21e0e8826816}</destination>
+			<destination>{8034fff2-366a-49db-bf5f-a7493649f940}</destination>
+			<destination>{0135fea9-eb1c-4420-9c6d-6f67315d0ab4}</destination>
 		</relationship>
 	</object>
 	<object class="MarkerTrack" id="{41bb1a75-db0a-4cff-b4fe-10ee5d0cfb88}" />
 	<object class="Timeline" id="{939fed21-f04d-4305-913c-68e7a7db81ab}" />
 	<object class="SandboxListener" id="{7a350495-1dc7-4403-b9ec-385f61790fd4}">
 		<property name="positionX">
-			<value>0.375000089</value>
+			<value>0.925000072</value>
 		</property>
 		<property name="positionZ">
-			<value>2.62500024</value>
+			<value>2.47500014</value>
 		</property>
 		<property name="rotationY">
-			<value>-3.0360167</value>
+			<value>36.1273575</value>
 		</property>
 	</object>
 	<object class="SandboxEmitter" id="{aff5921f-4590-4287-812c-ef681392f74b}">
 		<property name="positionX">
-			<value>0.24999997</value>
+			<value>-0.900000036</value>
 		</property>
 		<property name="positionZ">
-			<value>3.29999995</value>
+			<value>2.67499995</value>
 		</property>
 		<property name="rotationY">
-			<value>107.747292</value>
+			<value>-174.336166</value>
 		</property>
 		<relationship name="event">
 			<destination>{52ca7287-9737-470a-a72f-fac9542282b6}</destination>
@@ -60,6 +62,31 @@
 		</property>
 		<relationship name="event">
 			<destination>{d0ea02ec-97fd-4d38-8d09-88bb5b77a84c}</destination>
+		</relationship>
+	</object>
+	<object class="SandboxEmitter" id="{8034fff2-366a-49db-bf5f-a7493649f940}">
+		<property name="positionX">
+			<value>0.950000107</value>
+		</property>
+		<property name="positionZ">
+			<value>2.4749999</value>
+		</property>
+		<property name="rotationY">
+			<value>-10.293561</value>
+		</property>
+		<relationship name="event">
+			<destination>{4155c2fc-3342-4cbd-90ef-d1e232da0466}</destination>
+		</relationship>
+	</object>
+	<object class="SandboxEmitter" id="{0135fea9-eb1c-4420-9c6d-6f67315d0ab4}">
+		<property name="positionX">
+			<value>1</value>
+		</property>
+		<property name="positionZ">
+			<value>1.125</value>
+		</property>
+		<relationship name="event">
+			<destination>{dd99f0cc-4390-44a0-b145-abe8d1952ae2}</destination>
 		</relationship>
 	</object>
 </objects>

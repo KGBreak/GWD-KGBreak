@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{1567c6f7-aa16-4676-a9ae-167adb0a9d49}">
+		<property name="name">
+			<value>Outside_ENV</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{ba476318-5b09-415e-acaf-875b054143e0}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{7166de92-65a0-43d6-9632-fb1c44bb9a3d}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{65a4242a-5688-4711-ab7e-a0f9880a6bbe}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{ba476318-5b09-415e-acaf-875b054143e0}">
+		<relationship name="effects">
+			<destination>{97715d9d-9dc2-4dbc-b53f-6add98787487}</destination>
+			<destination>{9233a298-34be-4000-aee2-79b86da0897d}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{7166de92-65a0-43d6-9632-fb1c44bb9a3d}" />
+	<object class="MixerBusFader" id="{97715d9d-9dc2-4dbc-b53f-6add98787487}" />
+	<object class="ThreeEQEffect" id="{9233a298-34be-4000-aee2-79b86da0897d}">
+		<property name="crossoverSlope">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

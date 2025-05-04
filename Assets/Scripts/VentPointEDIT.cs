@@ -10,6 +10,10 @@ public class VentPointEDIT : Interactable
     private const string AirDuctLoopEventPath = "event:/Airduct";
     public static EventInstance AirDuctLoopInstance;  // <<== static instance!
 
+    // === SNAPSHOT ===
+    private const string VentSnapshotPath = "snapshot:/Airduct_Lowpass";
+    public static EventInstance VentSnapshotInstance;  // static so only one active at a time
+
     public override void InteractWith()
     {
         if (otherPoint == null) return;
@@ -19,10 +23,12 @@ public class VentPointEDIT : Interactable
         if (isEnterPoint)
         {
             PlayEnterVentFX();
+            StartVentSnapshot();
         }
         else    // exit‑point
         {
             StopVentLoop();
+            StopVentSnapshot();
         }
     }
 
@@ -80,6 +86,25 @@ public class VentPointEDIT : Interactable
             AirDuctLoopInstance.release();
             AirDuctLoopInstance.clearHandle();
             RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
+        }
+    }
+    private void StartVentSnapshot()
+    {
+        if (!VentSnapshotInstance.isValid())
+        {
+            VentSnapshotInstance = RuntimeManager.CreateInstance(VentSnapshotPath);
+        }
+
+        VentSnapshotInstance.start();
+    }
+
+    private void StopVentSnapshot()
+    {
+        if (VentSnapshotInstance.isValid())
+        {
+            VentSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            VentSnapshotInstance.release();
+            VentSnapshotInstance.clearHandle();
         }
     }
 }
