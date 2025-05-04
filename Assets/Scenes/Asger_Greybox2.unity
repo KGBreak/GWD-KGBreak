@@ -6853,6 +6853,81 @@ Transform:
   - {fileID: 1294444050}
   m_Father: {fileID: 873525771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &175661692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 175661694}
+  - component: {fileID: 175661693}
+  m_Layer: 0
+  m_Name: IntercomSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &175661693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175661692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb969cb285889a74098ca502d4d2fb9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoosh2D:
+    Guid:
+      Data1: -1196085822
+      Data2: 1122549689
+      Data3: -2125113723
+      Data4: -1746729854
+    Path: event:/Dialogue/Intercom/Intercom_Switch_SFX
+  voice3D:
+    Guid:
+      Data1: 1822911708
+      Data2: 1339396645
+      Data3: -1561093485
+      Data4: -2114060871
+    Path: event:/Dialogue/Intercom/Intercom_Switch_Vox
+  gibberishLoop:
+    Guid:
+      Data1: -577113908
+      Data2: 1151353744
+      Data3: -391428687
+      Data4: -500525615
+    Path: event:/Dialogue/Intercom/Intercom_gibberish
+  EnglishLoop:
+    Guid:
+      Data1: 1096139516
+      Data2: 1287467842
+      Data3: -489558128
+      Data4: 1711594034
+    Path: event:/Dialogue/Intercom/Intercom_Random
+  EnglishLoopDelay: 70
+  gibberishStartDelay: 6
+  dictionaryEntryIDs: 0100000002000000
+--- !u!4 &175661694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175661692}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.312, y: 3.6057801, z: 4.448}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181124940
 GameObject:
   m_ObjectHideFlags: 0
@@ -39519,7 +39594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPoint: {fileID: 1786697148}
-  isEnterPoint: 0
+  isEnterPoint: 1
 --- !u!43 &997436022
 Mesh:
   m_ObjectHideFlags: 0
@@ -80381,3 +80456,4 @@ SceneRoots:
   - {fileID: 1497874424}
   - {fileID: 1370838319}
   - {fileID: 506654298}
+  - {fileID: 175661694}
