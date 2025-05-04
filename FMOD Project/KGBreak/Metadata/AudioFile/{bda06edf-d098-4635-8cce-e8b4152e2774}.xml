@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bda06edf-d098-4635-8cce-e8b4152e2774}">
+		<property name="assetPath">
+			<value>vox_USSR Intercom (S) - Intruder Captured.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>35.953291666666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dfa8febb-b1f6-4580-8bdc-9dba0e9dc466}</destination>
+		</relationship>
+	</object>
+</objects>

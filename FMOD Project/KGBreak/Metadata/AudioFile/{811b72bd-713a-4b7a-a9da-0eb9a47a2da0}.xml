@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{811b72bd-713a-4b7a-a9da-0eb9a47a2da0}">
+		<property name="assetPath">
+			<value>vox_USSR Intercom (S) - Weekly Check-In.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>21.051083333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dfa8febb-b1f6-4580-8bdc-9dba0e9dc466}</destination>
+		</relationship>
+	</object>
+</objects>
