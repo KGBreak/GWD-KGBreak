@@ -7,7 +7,7 @@ public class VentPointEDIT : Interactable
     [SerializeField] private Transform otherPoint;
     [SerializeField] private bool isEnterPoint;
 
-    private const string AirDuctLoopEventPath = "event:/Airduct";
+    private const string AirDuctLoopEventPath = "event:/Ambience/Airduct";
     public static EventInstance AirDuctLoopInstance;  // <<== static instance!
 
     // === SNAPSHOT ===
