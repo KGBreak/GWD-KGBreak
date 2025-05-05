@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{c0e9c14f-f8a7-474c-9c91-647db9a6fc85}">
-		<property name="volume">
-			<value>-6</value>
-		</property>
 		<property name="name">
 			<value>Intercom</value>
 		</property>
@@ -20,8 +17,23 @@
 	<object class="MixerBusEffectChain" id="{70dbff71-c21c-46c8-b020-1037cb225372}">
 		<relationship name="effects">
 			<destination>{0b22d564-d2c7-45f9-8a9d-ae05d319c91b}</destination>
+			<destination>{09ee5f71-67db-454f-bc68-2308a954d48c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9ce5aeaa-971b-4253-ba14-c01585d74e62}" />
 	<object class="MixerBusFader" id="{0b22d564-d2c7-45f9-8a9d-ae05d319c91b}" />
+	<object class="DelayEffect" id="{09ee5f71-67db-454f-bc68-2308a954d48c}">
+		<property name="delay">
+			<value>94</value>
+		</property>
+		<property name="feedback">
+			<value>3.5</value>
+		</property>
+		<property name="level">
+			<value>-17</value>
+		</property>
+		<property name="dryLevel">
+			<value>-4</value>
+		</property>
+	</object>
 </objects>

@@ -5,7 +5,7 @@
 			<value>Radio_Announcement</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{4cdcc286-e7cc-4501-8189-4634e186085b}</destination>
@@ -59,10 +59,20 @@
 			<destination>{325c494a-f926-4768-b9db-3f886c0d01ef}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{613c6386-5991-4e92-9464-5a19db7ca5ef}</destination>
+			<destination>{a37e9de8-7f23-49ef-a479-6f2825887d85}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{7a38521d-c830-40ff-8b40-18564b82da58}" />
+	<object class="EventAutomatableProperties" id="{7a38521d-c830-40ff-8b40-18564b82da58}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0.699999988</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{0d8854a0-f5e3-4c44-b95e-506d6d0d5855}" />
 	<object class="ReturnTrack" id="{cfaf2f64-b038-4bd0-a1c1-5f08e8c06554}">
 		<relationship name="mixerReturn">
@@ -118,6 +128,7 @@
 	<object class="MixerBusEffectChain" id="{c69290b0-359c-49cd-9624-1637876b90b4}">
 		<relationship name="effects">
 			<destination>{ea2389be-4316-4b9f-bda4-0e68db170e02}</destination>
+			<destination>{45a83b5a-def3-4e97-b926-0fb2d0ef7f01}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ae9cfd22-df26-4d57-98b6-ac139ccded36}" />
@@ -134,6 +145,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{5147ecb9-69fa-4872-9137-20c07bcff5d6}" />
 	<object class="MixerBusFader" id="{ea2389be-4316-4b9f-bda4-0e68db170e02}" />
+	<object class="SpatialiserEffect" id="{45a83b5a-def3-4e97-b926-0fb2d0ef7f01}">
+		<property name="minimumDistance">
+			<value>0.699999988</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{17665510-957d-42d9-9b2f-02a0804d00d4}">
 		<relationship name="audioFile">
 			<destination>{1cb10def-e9b9-44b9-b355-f831f92f11e2}</destination>

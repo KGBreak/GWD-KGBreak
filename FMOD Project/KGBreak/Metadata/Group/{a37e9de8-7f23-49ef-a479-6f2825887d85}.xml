@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{a37e9de8-7f23-49ef-a479-6f2825887d85}">
+		<property name="name">
+			<value>Radio_Announcement</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{0aee193b-7c8f-4b1c-9491-dce982f48119}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{ffde4871-7dff-48dc-a703-f907c0758d3e}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{a8594de8-95e6-457a-9a12-1af1f22d848b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{0aee193b-7c8f-4b1c-9491-dce982f48119}">
+		<relationship name="effects">
+			<destination>{587dacaf-705b-43b6-b6ef-7c136f528b9c}</destination>
+			<destination>{95480600-639f-4d63-adf3-5e5952e43bad}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{ffde4871-7dff-48dc-a703-f907c0758d3e}" />
+	<object class="MixerBusFader" id="{587dacaf-705b-43b6-b6ef-7c136f528b9c}" />
+	<object class="Sidechain" id="{95480600-639f-4d63-adf3-5e5952e43bad}" />
+</objects>
