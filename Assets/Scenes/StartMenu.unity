@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcf31f0ed1285941ab62f30e67e01d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuMusicEvent:
+  musicEvent:
     Guid:
       Data1: -763217546
       Data2: 1119788877

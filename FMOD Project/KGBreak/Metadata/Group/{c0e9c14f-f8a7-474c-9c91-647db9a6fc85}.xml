@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{c0e9c14f-f8a7-474c-9c91-647db9a6fc85}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<property name="name">
 			<value>Intercom</value>
 		</property>
@@ -27,10 +30,10 @@
 			<value>94</value>
 		</property>
 		<property name="feedback">
-			<value>3.5</value>
+			<value>15</value>
 		</property>
 		<property name="level">
-			<value>-17</value>
+			<value>-14</value>
 		</property>
 		<property name="dryLevel">
 			<value>-4</value>

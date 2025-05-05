@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMODUnity;
+using FMOD.Studio;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -70,6 +71,8 @@ public class PauseMenu : MonoBehaviour
     public void GoToTitleScreen()
     {
         Time.timeScale = 1f; // Ensure the game is not paused
+        Bus master = RuntimeManager.GetBus("bus:/");
+        master.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadScene("StartMenu"); // Load the title screen scene
     }
 

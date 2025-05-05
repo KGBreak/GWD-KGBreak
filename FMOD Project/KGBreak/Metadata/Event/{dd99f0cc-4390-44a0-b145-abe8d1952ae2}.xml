@@ -61,7 +61,7 @@
 			<value>0.5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>30</value>
+			<value>15</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{f9d7f75a-e116-4a57-9de7-5e63ae8bd880}" />
@@ -158,7 +158,7 @@
 			<value>0.5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>30</value>
+			<value>15</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{48af6668-0a6d-47f3-9e76-9270461914df}">

@@ -4,19 +4,24 @@ using FMOD.Studio;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] private EventReference menuMusicEvent;
+    [Tooltip("FMOD event to play on scene start")]
+    [SerializeField] private EventReference musicEvent;
 
-    private EventInstance musicInstance;
+    private EventInstance _musicInst;
 
     void Start()
     {
-        musicInstance = RuntimeManager.CreateInstance(menuMusicEvent);
-        musicInstance.start();
+        _musicInst = RuntimeManager.CreateInstance(musicEvent);
+        _musicInst.start();
     }
 
-    private void OnDestroy()
+    void OnDestroy()
     {
-        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        musicInstance.release();
+        if (_musicInst.isValid())
+        {
+            _musicInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            _musicInst.release();
+            _musicInst.clearHandle();
+        }
     }
 }

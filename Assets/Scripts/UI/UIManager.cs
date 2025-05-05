@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMODUnity;
+using FMOD.Studio;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Asger_Greybox2");
+        Bus master = RuntimeManager.GetBus("bus:/");
+        master.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
 
