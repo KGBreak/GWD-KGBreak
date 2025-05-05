@@ -54,7 +54,7 @@
 			<value>highGain</value>
 		</property>
 		<property name="value">
-			<value>-56</value>
+			<value>-46</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{9233a298-34be-4000-aee2-79b86da0897d}</destination>
@@ -65,7 +65,7 @@
 			<value>highCrossover</value>
 		</property>
 		<property name="value">
-			<value>540</value>
+			<value>560</value>
 		</property>
 		<relationship name="automatableObject">
 			<destination>{9233a298-34be-4000-aee2-79b86da0897d}</destination>
