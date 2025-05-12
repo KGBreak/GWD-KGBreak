@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using FMODUnity;
 using FMOD.Studio;
@@ -82,6 +82,12 @@ public class PlayerMovement : MonoBehaviour
         if (isHiding) {
             return;
         }
+        // ── STOP ON PAUSE ──
+        if (PauseMenu.IsPaused && isMovementEventPlaying)
+        {
+        movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        isMovementEventPlaying = false;
+        }
 
         isGrounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundCheckDistance);
 
@@ -158,8 +164,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetHiding(bool isHidingInput)
     {
+        if (isHidingInput && isMovementEventPlaying)
+        {
+            movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            isMovementEventPlaying = false;
+            RuntimeManager.PlayOneShot("event:/Player/Movement_Stop", transform.position);
+        }
+
         isHiding = isHidingInput;
     }
+
 
     public bool getHiding()
     {
