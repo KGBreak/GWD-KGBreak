@@ -1,6 +1,7 @@
 ﻿using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AmbientController : MonoBehaviour
 {
@@ -32,6 +33,12 @@ public class AmbientController : MonoBehaviour
             Debug.LogError("[AmbientController] ‘State’ param not found on Ambience");
 
         _ambienceInst.start();
+        SceneManager.sceneLoaded += (scene, mode) =>
+        {
+            if (scene.name == "Asger_Greybox2")   // use build index if you prefer
+                StartAmbience();
+        };
+
     }
 
     /// <summary>
@@ -56,6 +63,30 @@ public class AmbientController : MonoBehaviour
             _airductSnapshotInst.clearHandle();
         }
     }
+    public void StartAmbience()
+    {
+        // recreate only if the handle is gone or no longer playing
+        if (_ambienceInst.isValid())
+        {
+            FMOD.Studio.PLAYBACK_STATE state;
+            _ambienceInst.getPlaybackState(out state);
+            if (state == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                return;                     // already running
+        }
+
+        _ambienceInst = RuntimeManager.CreateInstance(AmbienceEventPath);
+        _ambienceInst.setParameterByID(_stateParamId, 0f); // default “outside vent”
+        _ambienceInst.start();
+    }
+
+    public void StopAmbience(bool fade = true)
+    {
+        if (!_ambienceInst.isValid()) return;
+        _ambienceInst.stop(fade ? FMOD.Studio.STOP_MODE.ALLOWFADEOUT : FMOD.Studio.STOP_MODE.IMMEDIATE);
+        _ambienceInst.release();
+        _ambienceInst.clearHandle();        // mark as invalid so StartAmbience() knows to recreate
+    }
+
 
     void OnDestroy()
     {

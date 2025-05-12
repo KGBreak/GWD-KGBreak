@@ -79,15 +79,26 @@ public class PauseMenu : MonoBehaviour
     // Method to handle the Title Screen button click
     public void GoToTitleScreen()
     {
+        Time.timeScale = 1f;
+
+        // 1) Stop the ambience loop
+        if (AmbientController.Instance != null)
+            AmbientController.Instance.StopAmbience(false);  // or true if you want a fade-out
+
+        // 2) Stop the pause snapshot (if still running)
         if (_pauseSnapshot.isValid())
         {
             _pauseSnapshot.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             _pauseSnapshot.release();
             _pauseSnapshot.clearHandle();
         }
-        Time.timeScale = 1f; // Ensure the game is not paused
-        SceneManager.LoadScene("StartMenu"); // Load the title screen scene
+
+        // 3) (Optional) stop other loops one by one here…
+
+        // 4) Finally load your menu
+        SceneManager.LoadScene("StartMenu");
     }
+
 
     // Method to handle the Options button click
     public void OpenOptions()
