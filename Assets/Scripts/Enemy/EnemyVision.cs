@@ -1,27 +1,38 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class EnemyVision : MonoBehaviour
 {
     [Header("Vision Settings")]
-    [SerializeField] float visionRange = 10f;
-    [SerializeField] float visionAngle = 45f;
-    [SerializeField] float downwardTiltAngle = 20f;
-    [SerializeField] float proximityDetection;
-    [SerializeField] EnemyMovement enemyMovement;
-    [SerializeField] float detectionMeterSize;
-    [SerializeField] float deathSize;
-    [SerializeField] DetectionMeter detectionMeter;
-    [SerializeField] LayerMask obstacleLayer;
-    float dectectionMeterValue;
-    Transform player;
-    PlayerMovement playerMovement;
-    private float visionHeightOffset = 0.8f;
+    [SerializeField] private float visionRange = 10f;
+    [SerializeField] private float visionAngle = 45f;
+    [SerializeField] private float downwardTiltAngle = 20f;
+    [SerializeField] private float proximityDetection = 5f;
+    [SerializeField] private EnemyMovement enemyMovement;
+    [SerializeField] private float detectionMeterSize = 3f;
+    [SerializeField] private float deathSize = 5f;
+    [SerializeField] private DetectionMeter detectionMeter;
+    [SerializeField] private LayerMask obstacleLayer;
+
+    [Header("FMOD Guard VO")]
+    [SerializeField] private EventReference guardDetectionStartEvent;
+    [SerializeField] private EventReference guardChaseStartEvent;
+    [SerializeField] private EventReference guardDetectionLostEvent;
+
+    private float detectionMeterValue = 0f;
+    private Transform player;
+    private PlayerMovement playerMovement;
     private DetectionIndicator detectionIndicator;
+    private float visionHeightOffset = 0.8f;
+
+    private bool hasPlayedDetectionStartVO = false;
+    private bool hasPlayedChaseStartVO = false;
+    private bool hasPlayedDetectionLostVO = false;
 
     void Start()
     {
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        var playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.transform;
         playerMovement = playerObject.GetComponent<PlayerMovement>();
         detectionIndicator = playerObject.GetComponent<DetectionIndicator>();
@@ -32,12 +43,30 @@ public class EnemyVision : MonoBehaviour
         if (CanSeePlayer())
         {
             detectionIndicator.AttemptAddEnemy(transform);
-            dectectionMeterValue += Time.deltaTime;
-            if (dectectionMeterValue > detectionMeterSize)
+
+            // 1) Meter just went from 0→>0?
+            if (detectionMeterValue <= 0f && !hasPlayedDetectionStartVO)
             {
+                RuntimeManager.PlayOneShot(guardDetectionStartEvent, transform.position);
+                hasPlayedDetectionStartVO = true;
+                hasPlayedDetectionLostVO = false;  // allow lost-VO next time
+            }
+
+            detectionMeterValue += Time.deltaTime;
+
+            // 2) Meter crossed chase threshold?
+            if (detectionMeterValue > detectionMeterSize)
+            {
+                if (!hasPlayedChaseStartVO)
+                {
+                    RuntimeManager.PlayOneShot(guardChaseStartEvent, transform.position);
+                    hasPlayedChaseStartVO = true;
+                }
                 enemyMovement.SetDestination(player.position);
             }
-            if (dectectionMeterValue > deathSize)
+
+            // 3) Full detect → restart
+            if (detectionMeterValue > deathSize)
             {
                 Debug.Log("Player detected, restarting the scene...");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -46,57 +75,61 @@ public class EnemyVision : MonoBehaviour
         else
         {
             detectionIndicator.RemoveEnemy(transform);
-            if (dectectionMeterValue > 0) {
-                dectectionMeterValue -= Time.deltaTime;
+
+            // drain the meter
+            if (detectionMeterValue > 0f)
+            {
+                detectionMeterValue -= Time.deltaTime;
             }
             else
             {
-                dectectionMeterValue = 0;
+                // Only play this once, and only if we’d actually detected before
+                if (!hasPlayedDetectionLostVO && hasPlayedDetectionStartVO)
+                {
+                    RuntimeManager.PlayOneShot(guardDetectionLostEvent, transform.position);
+                    hasPlayedDetectionLostVO = true;
+                }
+
+                detectionMeterValue = 0f;
+                hasPlayedDetectionStartVO = false;
+                hasPlayedChaseStartVO = false;
             }
         }
-        detectionMeter.UpdateMeter(dectectionMeterValue, detectionMeterSize);
+
+        detectionMeter.UpdateMeter(detectionMeterValue, detectionMeterSize);
     }
 
-    bool CanSeePlayer()
+    private bool CanSeePlayer()
     {
         if (player == null || playerMovement.getHiding())
-        {
             return false;
-        }
 
-        Vector3 visionOrigin = transform.position + Vector3.up * visionHeightOffset;
+        Vector3 origin = transform.position + Vector3.up * visionHeightOffset;
+        if (player.position.y > origin.y) return false;
 
-        if(player.position.y > visionOrigin.y)
-        {
-            return false;
-        }
-
+        // Proximity check
         if (Vector3.Distance(player.position, transform.position) < proximityDetection)
         {
-            // Check if the ray does not hit anything in the obstacle layer
-            if (!Physics.Raycast(transform.position, (player.position - transform.position).normalized, proximityDetection, obstacleLayer))
-            {
-                return true; // The player is within range and not behind an obstacle
-            }
+            if (!Physics.Raycast(transform.position,
+                                 (player.position - transform.position).normalized,
+                                 proximityDetection,
+                                 obstacleLayer))
+                return true;
         }
 
-        Vector3 directionToPlayer = (player.position - visionOrigin).normalized;
-        Vector3 visionDirection = Quaternion.Euler(-downwardTiltAngle, 0, 0) * transform.forward;
-        float angleToPlayer = Vector3.Angle(visionDirection, directionToPlayer);
+        // Cone-of-vision check
+        Vector3 dirToPlayer = (player.position - origin).normalized;
+        Vector3 forwardTilt = Quaternion.Euler(-downwardTiltAngle, 0f, 0f) * transform.forward;
+        float angle = Vector3.Angle(forwardTilt, dirToPlayer);
 
-        if (angleToPlayer < visionAngle / 2)
+        if (angle < visionAngle * 0.5f)
         {
-            float distanceToPlayer = Vector3.Distance(visionOrigin, player.position);
-
-            if (distanceToPlayer < visionRange)
+            float dist = Vector3.Distance(origin, player.position);
+            if (dist < visionRange &&
+                Physics.Raycast(origin, dirToPlayer, out RaycastHit hit, dist) &&
+                hit.transform == player)
             {
-                if (Physics.Raycast(visionOrigin, directionToPlayer, out RaycastHit hit, distanceToPlayer))
-                {
-                    if (hit.transform == player)
-                    {
-                        return true;
-                    }
-                }
+                return true;
             }
         }
 
@@ -105,65 +138,59 @@ public class EnemyVision : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Vector3 visionOrigin = transform.position + Vector3.up * visionHeightOffset;
-        Vector3 visionDirection = Quaternion.Euler(-downwardTiltAngle, 0, 0) * transform.forward;
+        Vector3 origin = transform.position + Vector3.up * visionHeightOffset;
+        Vector3 forwardTilt = Quaternion.Euler(-downwardTiltAngle, 0f, 0f) * transform.forward;
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(visionOrigin, visionRange);
+        Gizmos.DrawWireSphere(origin, visionRange);
 
-        Vector3 forward = visionDirection * visionRange;
-        Vector3 leftBoundary = Quaternion.Euler(0, -visionAngle / 2, 0) * forward;
-        Vector3 rightBoundary = Quaternion.Euler(0, visionAngle / 2, 0) * forward;
+        Vector3 fwd = forwardTilt * visionRange;
+        Vector3 left = Quaternion.Euler(0, -visionAngle / 2f, 0) * fwd;
+        Vector3 right = Quaternion.Euler(0, visionAngle / 2f, 0) * fwd;
 
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(visionOrigin, visionOrigin + leftBoundary);
-        Gizmos.DrawLine(visionOrigin, visionOrigin + rightBoundary);
+        Gizmos.DrawLine(origin, origin + left);
+        Gizmos.DrawLine(origin, origin + right);
 
-        Gizmos.color = new Color(1, 1, 0, 0.2f);
-        Gizmos.DrawMesh(CreateConeMesh(), visionOrigin, Quaternion.LookRotation(visionDirection));
+        Gizmos.color = new Color(1f, 1f, 0f, 0.2f);
+        Gizmos.DrawMesh(CreateConeMesh(), origin, Quaternion.LookRotation(forwardTilt));
 
-        if (CanSeePlayer())
+        if (Application.isPlaying && CanSeePlayer())
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(visionOrigin, player.position);
+            Gizmos.DrawLine(origin, player.position);
         }
     }
 
-    Mesh CreateConeMesh()
+    private Mesh CreateConeMesh()
     {
         Mesh mesh = new Mesh();
         int segments = 20;
-        float angleStep = visionAngle / segments;
+        float step = visionAngle / segments;
         float height = visionRange;
-        float radius = height * Mathf.Tan(Mathf.Deg2Rad * visionAngle / 2);
+        float radius = height * Mathf.Tan(Mathf.Deg2Rad * visionAngle / 2f);
 
-        Vector3[] vertices = new Vector3[segments + 2];
-        int[] triangles = new int[segments * 3];
+        Vector3[] verts = new Vector3[segments + 2];
+        int[] tris = new int[segments * 3];
 
-        vertices[0] = Vector3.zero;
-
+        verts[0] = Vector3.zero;
         for (int i = 0; i <= segments; i++)
         {
-            float angle = Mathf.Deg2Rad * (-visionAngle / 2 + angleStep * i);
-            vertices[i + 1] = new Vector3(
-                Mathf.Sin(angle) * radius,
-                0,
-                Mathf.Cos(angle) * height
-            );
+            float a = Mathf.Deg2Rad * (-visionAngle / 2f + step * i);
+            verts[i + 1] = new Vector3(Mathf.Sin(a) * radius, 0f, Mathf.Cos(a) * height);
         }
 
         for (int i = 0; i < segments; i++)
         {
-            triangles[i * 3] = 0;
-            triangles[i * 3 + 1] = i + 1;
-            triangles[i * 3 + 2] = i + 2;
+            tris[i * 3 + 0] = 0;
+            tris[i * 3 + 1] = i + 1;
+            tris[i * 3 + 2] = i + 2;
         }
 
-        mesh.vertices = vertices;
-        mesh.triangles = triangles;
+        mesh.vertices = verts;
+        mesh.triangles = tris;
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
-
         return mesh;
     }
 }
