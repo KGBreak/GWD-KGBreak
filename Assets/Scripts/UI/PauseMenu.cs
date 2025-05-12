@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     private GameObject optionMenuUI; // Reference to the options menu
     [SerializeField]
     private GameObject lorePanelUI; // Reference to the lore panel
+    private EventInstance _pauseSnapshot;
 
     public static bool IsPaused { get; private set; } = false;
 
@@ -45,6 +46,12 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         IsPaused = false;
+        if (_pauseSnapshot.isValid())
+        {
+            _pauseSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // or IMMEDIATE
+            _pauseSnapshot.release();
+            _pauseSnapshot.clearHandle();
+        }
     }
 
     void Pause()
@@ -54,6 +61,8 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         IsPaused = true;
+        _pauseSnapshot = RuntimeManager.CreateInstance("snapshot:/Pause");
+        _pauseSnapshot.start();
     }
 
     public void QuitGame()
@@ -70,9 +79,13 @@ public class PauseMenu : MonoBehaviour
     // Method to handle the Title Screen button click
     public void GoToTitleScreen()
     {
+        if (_pauseSnapshot.isValid())
+        {
+            _pauseSnapshot.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            _pauseSnapshot.release();
+            _pauseSnapshot.clearHandle();
+        }
         Time.timeScale = 1f; // Ensure the game is not paused
-        Bus master = RuntimeManager.GetBus("bus:/");
-        master.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadScene("StartMenu"); // Load the title screen scene
     }
 
