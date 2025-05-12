@@ -8,7 +8,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{64c3058a-598d-4ffa-bac7-0b919ce1aaac}</destination>
+			<destination>{64f48db1-aa33-405c-88cf-99c98d0beb16}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{7f0877ce-28b9-4686-b3f4-489527e50d1b}</destination>
@@ -56,7 +56,23 @@
 			<destination>{41932bdc-80d8-415e-b639-a0fed2f42387}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{affef19c-7759-493d-b824-9ccd2cbca8dd}" />
+	<object class="EventAutomatableProperties" id="{affef19c-7759-493d-b824-9ccd2cbca8dd}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="voiceStealing">
+			<value>2</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0.5</value>
+		</property>
+		<property name="maximumDistance">
+			<value>8</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>500</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{284a2937-a9fe-4549-8e0b-2508fc29710d}" />
 	<object class="Timeline" id="{41e38ab2-c468-4343-a052-811640f9f86c}">
 		<relationship name="modules">
@@ -174,5 +190,12 @@
 	</object>
 	<object class="MixerBusFader" id="{818eab55-48da-45d0-b823-be0ee50feaf2}" />
 	<object class="MixerBusFader" id="{b793b298-640d-4f40-9868-a1883bfbc515}" />
-	<object class="SpatialiserEffect" id="{98fba6a8-f03c-4f96-8d4e-ffafd1ec9f84}" />
+	<object class="SpatialiserEffect" id="{98fba6a8-f03c-4f96-8d4e-ffafd1ec9f84}">
+		<property name="minimumDistance">
+			<value>0.5</value>
+		</property>
+		<property name="maximumDistance">
+			<value>8</value>
+		</property>
+	</object>
 </objects>

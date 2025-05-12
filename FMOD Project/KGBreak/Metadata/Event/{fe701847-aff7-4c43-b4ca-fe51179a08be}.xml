@@ -8,7 +8,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{5481ed3a-3a5d-4a7e-bbd3-c5f72f988d99}</destination>
+			<destination>{962c45f3-9f16-46e1-abb8-0e12057f1dc4}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{cd20bef5-0bac-4940-bdf2-44237c7289d1}</destination>
@@ -56,7 +56,20 @@
 			<destination>{41932bdc-80d8-415e-b639-a0fed2f42387}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{5a45ae3c-53bb-483e-a503-cd8bc85ba7c9}" />
+	<object class="EventAutomatableProperties" id="{5a45ae3c-53bb-483e-a503-cd8bc85ba7c9}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="voiceStealing">
+			<value>2</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>500</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{512e4a01-4fb2-4afd-a8f0-a4e7f455c5dd}" />
 	<object class="Timeline" id="{8265d19c-f6e7-409b-a81e-241b69caa42c}">
 		<relationship name="modules">
@@ -76,7 +89,7 @@
 	</object>
 	<object class="MultiSound" id="{ad7c5f97-391f-4cba-9f4d-813b1b0d47f5}">
 		<property name="length">
-			<value>5.5</value>
+			<value>60</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{ab48ebc2-fcc9-4212-a5d2-b262cc7eba67}</destination>
@@ -150,5 +163,9 @@
 	</object>
 	<object class="MixerBusFader" id="{507fab68-106d-4487-b22b-7beea2181d2d}" />
 	<object class="MixerBusFader" id="{58e26f75-b9b9-4384-8258-ed5cfb5bcbc8}" />
-	<object class="SpatialiserEffect" id="{ca907efa-8cca-4be2-a69f-55312bccfa7e}" />
+	<object class="SpatialiserEffect" id="{ca907efa-8cca-4be2-a69f-55312bccfa7e}">
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+	</object>
 </objects>

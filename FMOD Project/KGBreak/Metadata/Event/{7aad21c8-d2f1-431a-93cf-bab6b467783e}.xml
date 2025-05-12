@@ -8,7 +8,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{64c3058a-598d-4ffa-bac7-0b919ce1aaac}</destination>
+			<destination>{64f48db1-aa33-405c-88cf-99c98d0beb16}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{fea9cdbb-5681-45d9-978b-f563cfa6e320}</destination>
@@ -56,7 +56,17 @@
 			<destination>{41932bdc-80d8-415e-b639-a0fed2f42387}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{fa3881ce-2ae3-417e-a107-8b85e8b20531}" />
+	<object class="EventAutomatableProperties" id="{fa3881ce-2ae3-417e-a107-8b85e8b20531}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="voiceStealing">
+			<value>2</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>500</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{30d27a99-c9c2-4750-ae28-743718e88aae}" />
 	<object class="Timeline" id="{772ee742-5b1f-48e4-aeec-59402012861a}">
 		<relationship name="modules">
@@ -76,7 +86,7 @@
 	</object>
 	<object class="MultiSound" id="{56db504f-f868-41ab-b35c-bb377d5b68f5}">
 		<property name="length">
-			<value>5</value>
+			<value>6.4000000000000004</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{8eb088d6-6be9-4802-8d31-2983b8da0a44}</destination>
