@@ -6869,7 +6869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &175661693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10580,11 +10580,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicEvent:
     Guid:
-      Data1: 323439304
-      Data2: 1086302166
-      Data3: 1775928254
-      Data4: 1395545211
-    Path: event:/Music/Level_Music_01
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &286761889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11811,7 +11811,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4126198804805880705, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
   m_PrefabInstance: {fileID: 2128046432}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1224346519}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38ed0d232c1b68643adc0b0250c826bc, type: 3}
@@ -47526,6 +47526,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1289336670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1224346519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+  m_PrefabInstance: {fileID: 2128046432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1224346520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224346519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f624a5d78255642b7760f7ddab554e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkTurnThreshold: 0.1
+  turnLeftAngle: 60
+  turnRightAngle: -60
+  turn180Angle: 135
+  turn90Duration: 0.6
+  turn180Duration: 1.2
 --- !u!1001 &1235399041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58981,7 +59004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalPosition.y
@@ -58989,7 +59012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalRotation.w
@@ -79394,6 +79417,10 @@ PrefabInstance:
       propertyPath: pathPoints.Array.data[1].direction.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2701547890564386598, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9df14c1b34ee1f548bc7884e1825324b, type: 2}
     - target: {fileID: 4078066779216033203, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -79442,6 +79469,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: -400814057
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1296953270
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: 824019604
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: -523818080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 1736534246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1279908638
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1211830118
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: 649651902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 433147510
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1094422463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: -2089595762
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: 486394033
+      objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
       value: Guard 2
@@ -79453,7 +79540,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1224346520}
   m_SourcePrefab: {fileID: 100100000, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
 --- !u!1 &2135670707
 GameObject:
