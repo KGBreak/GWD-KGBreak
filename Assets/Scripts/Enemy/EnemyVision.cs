@@ -68,9 +68,15 @@ public class EnemyVision : MonoBehaviour
             // 3) Full detect → restart
             if (detectionMeterValue > deathSize)
             {
+                if (playerMovement != null)
+                {
+                    playerMovement.ForceStopMovementAudio();
+                }
+
                 Debug.Log("Player detected, restarting the scene...");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+
         }
         else
         {
@@ -83,8 +89,7 @@ public class EnemyVision : MonoBehaviour
             }
             else
             {
-                // Only play this once, and only if we’d actually detected before
-                if (!hasPlayedDetectionLostVO && hasPlayedDetectionStartVO)
+                if (!hasPlayedDetectionLostVO && hasPlayedChaseStartVO)
                 {
                     RuntimeManager.PlayOneShot(guardDetectionLostEvent, transform.position);
                     hasPlayedDetectionLostVO = true;

@@ -11,8 +11,15 @@ public class MusicManager : MonoBehaviour
 
     void Start()
     {
-        _musicInst = RuntimeManager.CreateInstance(musicEvent);
-        _musicInst.start();
+        if (!string.IsNullOrEmpty(musicEvent.Path))
+        {
+            _musicInst = RuntimeManager.CreateInstance(musicEvent);
+            _musicInst.start();
+        }
+        else
+        {
+            Debug.LogWarning($"[{nameof(MusicManager)}] No FMOD event assigned on “{gameObject.name}” – skipping music.");
+        }
     }
 
     void OnDestroy()

@@ -26,7 +26,10 @@ public class PlayerMovement : MonoBehaviour
     float rotationSpeed = 10f;
 
     [SerializeField]
-    HidingManager hidingManager; 
+    HidingManager hidingManager;
+
+    [SerializeField] private PlayerMovement playerMovement;
+
 
     Vector2 moveInput ;
     Vector3 velocity;
@@ -191,4 +194,17 @@ public class PlayerMovement : MonoBehaviour
         velocity.y = 0f;
         this.aplliedGravity = gravity;
     }
+    public void ForceStopMovementAudio()
+    {
+        if (isMovementEventPlaying)
+        {
+            movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            isMovementEventPlaying = false;
+            RuntimeManager.PlayOneShot("event:/Player/Movement_Stop", transform.position);
+        }
+
+        currentVelocity = Vector3.zero;
+        velocity = Vector3.zero;
+    }
+
 }
