@@ -39,8 +39,7 @@ public class EnemyVision : MonoBehaviour
             }
             if (dectectionMeterValue > deathSize)
             {
-                Debug.Log("Player detected, restarting the scene...");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                player.GetComponent<PlayerMovement>().ResetToLastCheckpoint();
             }
         }
         else
