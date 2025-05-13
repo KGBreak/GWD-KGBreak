@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{41932bdc-80d8-415e-b639-a0fed2f42387}">
+		<property name="name">
+			<value>Interpersonel</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{f4863f48-4e3f-4709-ace9-a73e4d6ed1fa}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{6ab7d61d-3c6b-4eea-a20d-1abb4b7c614c}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{93fbbecd-2b12-4b2f-9f0c-f9ea0d0abc91}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{f4863f48-4e3f-4709-ace9-a73e4d6ed1fa}">
+		<relationship name="effects">
+			<destination>{240c027d-82b1-4dca-a600-ac5307af7e87}</destination>
+			<destination>{13793289-cd45-4ccc-9b01-adfa3075f299}</destination>
+			<destination>{0e824917-ac96-4134-85dd-a3171eb62c18}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{6ab7d61d-3c6b-4eea-a20d-1abb4b7c614c}" />
+	<object class="MultibandEqEffect" id="{240c027d-82b1-4dca-a600-ac5307af7e87}">
+		<property name="filterTypeA">
+			<value>5</value>
+		</property>
+		<property name="filterTypeB">
+			<value>9</value>
+		</property>
+		<property name="filterTypeE">
+			<value>1</value>
+		</property>
+		<property name="frequencyA">
+			<value>123.843109</value>
+		</property>
+		<property name="frequencyB">
+			<value>225.849808</value>
+		</property>
+		<property name="frequencyE">
+			<value>14238.3682</value>
+		</property>
+		<property name="qualityA">
+			<value>0.549824476</value>
+		</property>
+		<property name="qualityB">
+			<value>2.5</value>
+		</property>
+		<property name="qualityE">
+			<value>0.697135448</value>
+		</property>
+		<property name="gainB">
+			<value>-4.32286072</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{13793289-cd45-4ccc-9b01-adfa3075f299}" />
+	<object class="CompressorEffect" id="{0e824917-ac96-4134-85dd-a3171eb62c18}">
+		<property name="threshold">
+			<value>-33</value>
+		</property>
+		<property name="attackTime">
+			<value>10</value>
+		</property>
+		<property name="releaseTime">
+			<value>100</value>
+		</property>
+		<property name="gain">
+			<value>11</value>
+		</property>
+	</object>
+</objects>

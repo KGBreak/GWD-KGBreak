@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using FMODUnity;
 using FMOD.Studio;
@@ -26,7 +26,10 @@ public class PlayerMovement : MonoBehaviour
     float rotationSpeed = 10f;
 
     [SerializeField]
-    HidingManager hidingManager; 
+    HidingManager hidingManager;
+
+    [SerializeField] private PlayerMovement playerMovement;
+
 
     Vector2 moveInput ;
     Vector3 velocity;
@@ -81,6 +84,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isHiding) {
             return;
+        }
+        // ── STOP ON PAUSE ──
+        if (PauseMenu.IsPaused && isMovementEventPlaying)
+        {
+        movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        isMovementEventPlaying = false;
         }
 
         isGrounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundCheckDistance);
@@ -158,8 +167,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetHiding(bool isHidingInput)
     {
+        if (isHidingInput && isMovementEventPlaying)
+        {
+            movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            isMovementEventPlaying = false;
+            RuntimeManager.PlayOneShot("event:/Player/Movement_Stop", transform.position);
+        }
+
         isHiding = isHidingInput;
     }
+
 
     public bool getHiding()
     {
@@ -177,4 +194,17 @@ public class PlayerMovement : MonoBehaviour
         velocity.y = 0f;
         this.aplliedGravity = gravity;
     }
+    public void ForceStopMovementAudio()
+    {
+        if (isMovementEventPlaying)
+        {
+            movementEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            isMovementEventPlaying = false;
+            RuntimeManager.PlayOneShot("event:/Player/Movement_Stop", transform.position);
+        }
+
+        currentVelocity = Vector3.zero;
+        velocity = Vector3.zero;
+    }
+
 }

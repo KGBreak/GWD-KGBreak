@@ -88,6 +88,10 @@
 		<property name="volume">
 			<value>3</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{87a7756d-2842-4019-bb73-7d8fe969b272}</destination>
+			<destination>{8e80b177-62c1-4939-8f59-4ee957258d01}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{dab64b72-b8af-4ad5-bca3-889787aa7f20}</destination>
 		</relationship>
@@ -182,6 +186,16 @@
 		<relationship name="markerTrack">
 			<destination>{b927c454-c749-4bed-b8cf-2715984c1590}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{87a7756d-2842-4019-bb73-7d8fe969b272}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{8e80b177-62c1-4939-8f59-4ee957258d01}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{dab64b72-b8af-4ad5-bca3-889787aa7f20}">
 		<relationship name="effects">
