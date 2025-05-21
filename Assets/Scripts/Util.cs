@@ -27,4 +27,19 @@ namespace Util
         Up,
         Down
     }
+
+    public enum Priority
+    {
+        Radio = 0,
+        Filler = 1,
+        Important = 2,
+    }
+
+    public enum VoiceActor
+    {
+        Attila,
+        Emil,
+        Tim,
+        David
+    }
 }
