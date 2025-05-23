@@ -9,4 +9,5 @@ public class VoiceLine : ScriptableObject
     public EventReference eventRef;
     public float delayAfter = 0.3f;
     public int voiceLineID;
+
 }

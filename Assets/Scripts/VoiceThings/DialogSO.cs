@@ -8,7 +8,7 @@ public class Dialog : ScriptableObject
 {
     public int dialogID;
     public List<VoiceLine> voiceLines;
-    public Priority priority;
+    public bool isImportant;
     public List<VoiceActor> actors;
     public bool wasPlayed;
       
