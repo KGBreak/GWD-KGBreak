@@ -6,6 +6,7 @@ public class InvestigateState : BaseState
     private float timer = 0f;
     private Coroutine currentActionCoroutine;
     private TurnOn btn;
+    Vector3? lastInvestigateTarget;
     public InvestigateState(Enemy enemy) : base(enemy) { }
 
     public override void EnterState()
@@ -34,17 +35,17 @@ public class InvestigateState : BaseState
 
     public override void Execute()
     {
-
-        if (_enemy.GetInvestigateTarget().HasValue &&
-    Vector3.Distance(_agent.destination, _enemy.GetInvestigateTarget().Value) > 0.3f)
+        Vector3? currentTarget = _enemy.GetInvestigateTarget();
+        if (currentTarget.HasValue && (!lastInvestigateTarget.HasValue || lastInvestigateTarget.Value != currentTarget.Value))
         {
+            _agent.updateRotation = true;
+            _agent.destination = currentTarget.Value;
+            lastInvestigateTarget = currentTarget;
             if (currentActionCoroutine != null)
             {
                 _enemy.StopCoroutine(currentActionCoroutine);
                 currentActionCoroutine = null;
             }
-            _agent.updateRotation = true;
-            _agent.destination = _enemy.GetInvestigateTarget().Value;
             timer = 0f;
         }
 
