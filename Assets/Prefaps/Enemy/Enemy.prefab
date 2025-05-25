@@ -503,8 +503,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 7932070159973192354}
   pathPoints: []
-  investigateTime: 5
+  investigateTime: 6
   investigateAction: {fileID: 5874342962388730276}
+  debug: 0
 --- !u!114 &1387528473820513667
 MonoBehaviour:
   m_ObjectHideFlags: 0

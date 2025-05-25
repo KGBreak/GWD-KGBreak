@@ -30,6 +30,10 @@ public class EnemyVision : MonoBehaviour
     private bool hasPlayedChaseStartVO = false;
     private bool hasPlayedDetectionLostVO = false;
 
+    // Cooldown related variables
+    private float cooldownTimer = 0f;
+    private float cooldownDuration = 5f;  // 5 seconds cooldown
+
     void Start()
     {
         var playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -62,6 +66,8 @@ public class EnemyVision : MonoBehaviour
                     RuntimeManager.PlayOneShot(guardChaseStartEvent, transform.position);
                     hasPlayedChaseStartVO = true;
                 }
+
+                cooldownTimer = cooldownDuration;
                 enemy.SetInvestigateTarget(player.position);
             }
 
@@ -85,7 +91,14 @@ public class EnemyVision : MonoBehaviour
             // drain the meter
             if (detectionMeterValue > 0f)
             {
-                detectionMeterValue -= Time.deltaTime;
+                if (cooldownTimer > 0f)
+                {
+                    cooldownTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    detectionMeterValue -= Time.deltaTime;
+                }
             }
             else
             {

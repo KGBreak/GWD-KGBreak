@@ -22,13 +22,13 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
 
-        if (followingPath) {
+        /*if (followingPath) {
             FollowPath();
         }
         else
         {
             Investigate();
-        }
+        }*/
     }
 
     void FollowPath()

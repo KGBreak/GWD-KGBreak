@@ -51,7 +51,7 @@ public class PatrolState : BaseState
             {
                 if (currentActionCoroutine != null)
                     _enemy.StopCoroutine(currentActionCoroutine);
-
+                _agent.updateRotation = true;
                 _enemy.SetPathIndex((_enemy.GetPathIndex() + 1) % pathPoints.Count);
                 timer = 0f;
             }
@@ -77,7 +77,8 @@ public class PatrolState : BaseState
     {
         Vector3 current = _enemy.transform.position;
         Vector3 target = _agent.destination;
-        current.y = 0; target.y = 0;
+        current.y = 0; 
+        target.y = 0;
         return Vector3.Distance(current, target) <= 0.2f;
     }
 
