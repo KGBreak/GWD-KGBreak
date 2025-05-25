@@ -20,6 +20,8 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] private EventReference guardChaseStartEvent;
     [SerializeField] private EventReference guardDetectionLostEvent;
 
+    [SerializeField] private VoiceManager voiceManager;
+
     private float detectionMeterValue = 0f;
     private Transform player;
     private PlayerMovement playerMovement;
