@@ -9,7 +9,7 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] private float visionAngle = 45f;
     [SerializeField] private float downwardTiltAngle = 20f;
     [SerializeField] private float proximityDetection = 5f;
-    [SerializeField] private EnemyMovement enemyMovement;
+    [SerializeField] private Enemy enemy;
     [SerializeField] private float detectionMeterSize = 3f;
     [SerializeField] private float deathSize = 5f;
     [SerializeField] private DetectionMeter detectionMeter;
@@ -62,7 +62,7 @@ public class EnemyVision : MonoBehaviour
                     RuntimeManager.PlayOneShot(guardChaseStartEvent, transform.position);
                     hasPlayedChaseStartVO = true;
                 }
-                enemyMovement.SetDestination(player.position);
+                enemy.SetInvestigateTarget(player.position);
             }
 
             // 3) Full detect → restart

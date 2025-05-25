@@ -66,7 +66,11 @@ public class TurnOn : Interactable
 
         if (closestEnemy != null)
         {
-            closestEnemy.gameObject.GetComponent<EnemyMovement>().SetDestination(transform.position, this);
+            if (closestEnemy.TryGetComponent<Enemy>(out Enemy enemyScript))
+            {
+                enemyScript.SetTurnOnButton(this);
+                enemyScript.SetInvestigateTarget(transform.position);
+            }
         }
     }
 }

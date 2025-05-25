@@ -80,7 +80,7 @@ public class DetectionIndicator : MonoBehaviour
     {
         if (!spottingEnemies.ContainsKey(enemy))
         {
-            RectTransform newIndicator = Instantiate(indicatorPrefab, canvasRect);
+            RectTransform newIndicator = Instantiate(indicatorPrefab, canvasRect, false);
             spottingEnemies.Add(enemy, newIndicator);
         }
     }

@@ -36,4 +36,13 @@ namespace Util
         David,
         Intercom
     }
+
+    [System.Serializable]
+    public class PathPoint
+    {
+        public Transform position;
+        public float timeSpent;
+        public Actions action;
+        public Vector3 direction;
+    }
 }
