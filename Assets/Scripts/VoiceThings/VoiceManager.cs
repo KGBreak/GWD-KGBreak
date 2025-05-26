@@ -104,62 +104,61 @@ private void Update()
 
         bool isIntercomOnly = dialog.actors.All(a => a == VoiceActor.Intercom);
 
+        List<EventInstance> playingInstances = new List<EventInstance>();
+
         foreach (var line in dialog.voiceLines)
         {
-            // 1) Create & attach
             EventInstance instance = RuntimeManager.CreateInstance(line.eventRef);
             Transform speakerTransform = GetNpcTransformByActor(line.actor);
+
             if (line.actor == VoiceActor.Intercom)
-                RuntimeManager.AttachInstanceToGameObject(
-                    instance,
-                    playerTransform,
-                    playerTransform.GetComponent<Rigidbody>()
-                );
+            {
+                RuntimeManager.AttachInstanceToGameObject(instance, playerTransform, playerTransform.GetComponent<Rigidbody>());
+            }
             else if (speakerTransform != null)
-                RuntimeManager.AttachInstanceToGameObject(
-                    instance,
-                    speakerTransform,
-                    speakerTransform.GetComponent<Rigidbody>()
-                );
+            {
+                RuntimeManager.AttachInstanceToGameObject(instance, speakerTransform, speakerTransform.GetComponent<Rigidbody>());
+            }
 
-            // 2) Start playing
             instance.start();
-
-            // 3) Poll until sound actually stops—but honour pause
-            PLAYBACK_STATE state;
-            do
-            {
-                // if we're paused, actually pause the FMOD instance,
-                // and then wait until we're unpaused before continuing
-                if (investigatingEnemies.Count > 0 && !isIntercomOnly)
-                {
-                    instance.setPaused(true);
-                    yield return new WaitUntil(() => !(investigatingEnemies.Count > 0));
-                    instance.setPaused(false);
-                }
-
-                // otherwise, just poll as normal
-                yield return null;
-                instance.getPlaybackState(out state);
-            }
-            while (state != PLAYBACK_STATE.STOPPED);
-
-            instance.release();
-
-            // 4) Delay after the line—but again, honour pause
-            float elapsed = 0f;
-            while (elapsed < line.delayAfter)
-            {
-                if (!(investigatingEnemies.Count > 0))
-                    elapsed += Time.deltaTime;
-                yield return null;
-            }
+            playingInstances.Add(instance);
         }
 
-        // Finished entire dialog
+        // Wait for all lines to finish
+        bool allStopped = false;
+        while (!allStopped)
+        {
+            allStopped = true;
+            foreach (var instance in playingInstances)
+            {
+                instance.getPlaybackState(out var state);
+                if (state != PLAYBACK_STATE.STOPPED)
+                {
+                    allStopped = false;
+
+                    if (investigatingEnemies.Count > 0 && !isIntercomOnly)
+                    {
+                        instance.setPaused(true);
+                    }
+                    else
+                    {
+                        instance.setPaused(false);
+                    }
+                }
+            }
+            yield return null;
+        }
+
+        // Release all instances
+        foreach (var instance in playingInstances)
+        {
+            instance.release();
+        }
+
         currentDialogCoroutine = null;
         currentDialog = null;
     }
+
 
 
     private Transform GetNpcTransformByActor(VoiceActor actor)
