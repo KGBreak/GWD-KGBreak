@@ -2925,6 +2925,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: -400814057
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1296953270
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: 824019604
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: -523818080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 1736534246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1279908638
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1211830118
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: 649651902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 433147510
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1094422463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: -2089595762
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: 486394033
+      objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -6654,6 +6714,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Emil
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Emil
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Emil
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: -2127004226
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1235613193
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: -1088887878
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: 650669065
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 1492566325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1288949247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1753036922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: -1072217098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 122432937
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1226598220
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: 1712071053
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: -248748203
+      objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -9725,6 +9845,66 @@ PrefabInstance:
     - target: {fileID: 5665283195828219952, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: -400814057
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1296953270
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: 824019604
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: -523818080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 1736534246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1279908638
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1211830118
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: 649651902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 433147510
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1094422463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: -2089595762
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: 486394033
       objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
@@ -18730,6 +18910,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: 970924119
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1133879790
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: -1367947648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: -950897702
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 2058166728
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1125831409
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1229271149
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: 1048078260
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 775283587
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1161652360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: 158316718
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: -722431951
+      objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -23716,6 +23956,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: -400814057
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1296953270
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: 824019604
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: -523818080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 1736534246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1279908638
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1211830118
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: 649651902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 433147510
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1094422463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: -2089595762
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: 486394033
+      objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -26465,6 +26765,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Emil
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Emil
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Emil
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: -2127004226
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1235613193
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: -1088887878
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: 650669065
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 1492566325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1288949247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1753036922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: -1072217098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 122432937
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1226598220
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: 1712071053
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: -248748203
+      objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -28867,6 +29227,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: 970924119
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1133879790
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: -1367947648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: -950897702
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 2058166728
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1125831409
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1229271149
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: 1048078260
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 775283587
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1161652360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: 158316718
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: -722431951
+      objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
       value: Overseer
@@ -30199,6 +30619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1519576207}
   - component: {fileID: 1519576206}
+  - component: {fileID: 1519576208}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -30227,12 +30648,55 @@ Transform:
   m_GameObject: {fileID: 1519576205}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.206262, y: -0.47719097, z: 6.5453115}
+  m_LocalPosition: {x: 11.793737, y: 16.022808, z: -19.454689}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1519576208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519576205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb969cb285889a74098ca502d4d2fb9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoosh2D:
+    Guid:
+      Data1: -1196085822
+      Data2: 1122549689
+      Data3: -2125113723
+      Data4: -1746729854
+    Path: event:/Dialogue/Intercom/Intercom_Switch_SFX
+  voice3D:
+    Guid:
+      Data1: 1822911708
+      Data2: 1339396645
+      Data3: -1561093485
+      Data4: -2114060871
+    Path: event:/Dialogue/Intercom/Intercom_Switch_Vox
+  gibberishLoop:
+    Guid:
+      Data1: -577113908
+      Data2: 1151353744
+      Data3: -391428687
+      Data4: -500525615
+    Path: event:/Dialogue/Intercom/Intercom_gibberish
+  EnglishLoop:
+    Guid:
+      Data1: 1096139516
+      Data2: 1287467842
+      Data3: -489558128
+      Data4: 1711594034
+    Path: event:/Dialogue/Intercom/Intercom_Random
+  EnglishLoopDelay: 1
+  gibberishStartDelay: 10
+  dictionaryEntryIDs: 6400000065000000
 --- !u!1001 &1529695869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37385,6 +37849,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: 970924119
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1133879790
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: -1367947648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: -950897702
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 2058166728
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1125831409
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1229271149
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: 1048078260
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 775283587
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1161652360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: 158316718
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: -722431951
+      objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -38193,6 +38717,66 @@ PrefabInstance:
     - target: {fileID: 5665283195828219952, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Atilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: -400814057
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1296953270
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: 824019604
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: -523818080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 1736534246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1279908638
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1211830118
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: 649651902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 433147510
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1094422463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: -2089595762
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: 486394033
       objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
@@ -40006,6 +40590,66 @@ PrefabInstance:
     - target: {fileID: 5665283195828219952, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Spotted/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Path
+      value: event:/Dialogue/Interpersonel/LostInterest/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Path
+      value: event:/Dialogue/Interpersonel/Suspicion/Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data1
+      value: 970924119
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data2
+      value: 1133879790
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data3
+      value: -1367947648
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardChaseStartEvent.Guid.Data4
+      value: -950897702
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data1
+      value: 2058166728
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data2
+      value: 1125831409
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data3
+      value: -1229271149
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionLostEvent.Guid.Data4
+      value: 1048078260
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data1
+      value: 775283587
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data2
+      value: 1161652360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data3
+      value: 158316718
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370006942994597548, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: guardDetectionStartEvent.Guid.Data4
+      value: -722431951
       objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name

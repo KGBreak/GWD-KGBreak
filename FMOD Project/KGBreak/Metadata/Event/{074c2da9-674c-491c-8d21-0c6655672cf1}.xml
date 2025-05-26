@@ -5,7 +5,7 @@
 			<value>Emil</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6c7b3c78-2fe9-473b-ad43-7e6d4a38ca93}</destination>
@@ -105,6 +105,7 @@
 	<object class="MixerBusEffectChain" id="{3f370396-b6e1-4e41-a66d-865dcf59eff7}">
 		<relationship name="effects">
 			<destination>{66c01b9f-6e3b-4a3e-abf1-11bf8842197e}</destination>
+			<destination>{9d6edef9-c4bc-4379-898e-314a80efd0e3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ef336e26-864e-47ab-896d-09a6b121eb42}" />
@@ -135,4 +136,5 @@
 	</object>
 	<object class="MixerBusFader" id="{46d449e9-6e3d-43af-8ffc-c70c88b15f36}" />
 	<object class="MixerBusFader" id="{66c01b9f-6e3b-4a3e-abf1-11bf8842197e}" />
+	<object class="SpatialiserEffect" id="{9d6edef9-c4bc-4379-898e-314a80efd0e3}" />
 </objects>

@@ -5,7 +5,7 @@
 			<value>Tim</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6c7b3c78-2fe9-473b-ad43-7e6d4a38ca93}</destination>
@@ -105,6 +105,7 @@
 	<object class="MixerBusEffectChain" id="{b2fa6a91-4ba1-481e-88b1-a728b4dc9fb6}">
 		<relationship name="effects">
 			<destination>{906a4b27-92d9-438a-8afe-29411f8fb9f2}</destination>
+			<destination>{a57c5e87-dec0-4da4-9c9b-ad55ee80173f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{45600310-f5fd-46be-bc7e-e46c547aa713}" />
@@ -135,4 +136,5 @@
 	</object>
 	<object class="MixerBusFader" id="{78289093-6503-4526-adaf-0967110eb061}" />
 	<object class="MixerBusFader" id="{906a4b27-92d9-438a-8afe-29411f8fb9f2}" />
+	<object class="SpatialiserEffect" id="{a57c5e87-dec0-4da4-9c9b-ad55ee80173f}" />
 </objects>

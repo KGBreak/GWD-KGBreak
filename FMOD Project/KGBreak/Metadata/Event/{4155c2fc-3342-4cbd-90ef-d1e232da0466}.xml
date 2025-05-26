@@ -5,7 +5,7 @@
 			<value>Intercom_Random</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{28ca37e8-b643-4462-8491-8d889a2dd5d8}</destination>
@@ -139,7 +139,8 @@
 	<object class="MixerBusEffectChain" id="{d8774204-fbfc-461f-bf31-117e61d3b2c4}">
 		<relationship name="effects">
 			<destination>{845df2ac-88b9-4294-8370-702f729cb753}</destination>
-			<destination>{bac037e3-86b0-418c-9989-f584ea918ccc}</destination>
+			<destination>{dbc66101-7bc4-4a03-8c4a-c020c1c9055d}</destination>
+			<destination>{d7643398-a9e8-4df4-968d-bb88094b9307}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c074f7ed-93b6-4263-a581-c510b6c28862}" />
@@ -155,14 +156,18 @@
 	</object>
 	<object class="MixerBusFader" id="{55739a50-473d-4b52-a23c-5735c6e9ba1c}" />
 	<object class="MixerBusFader" id="{845df2ac-88b9-4294-8370-702f729cb753}" />
-	<object class="SpatialiserEffect" id="{bac037e3-86b0-418c-9989-f584ea918ccc}">
-		<property name="minimumDistance">
-			<value>0.5</value>
+	<object class="MixerSend" id="{dbc66101-7bc4-4a03-8c4a-c020c1c9055d}">
+		<property name="level">
+			<value>-11.5</value>
 		</property>
-		<property name="maximumDistance">
-			<value>15</value>
+		<property name="inputFormat">
+			<value>1</value>
 		</property>
+		<relationship name="mixerReturn">
+			<destination>{88adce7b-bc9c-48f0-8baf-8c8fed1bc3d2}</destination>
+		</relationship>
 	</object>
+	<object class="PannerEffect" id="{d7643398-a9e8-4df4-968d-bb88094b9307}" />
 	<object class="SingleSound" id="{3c289007-1af3-4cb3-9763-ba6c015acec9}">
 		<relationship name="audioFile">
 			<destination>{019a42a2-c678-4d36-9108-6b0c7fc60482}</destination>
