@@ -5,7 +5,7 @@
 			<value>Intercom_Switch_Vox</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{28ca37e8-b643-4462-8491-8d889a2dd5d8}</destination>
@@ -98,18 +98,21 @@
 	<object class="MixerBusEffectChain" id="{77d40709-e213-4d77-8706-2c95af31a53d}">
 		<relationship name="effects">
 			<destination>{a213483d-4cb1-4eb7-852f-b7d4dff9f6c5}</destination>
-			<destination>{b46c7413-4be3-476d-a276-a2b21cc849e2}</destination>
+			<destination>{69504b3c-e234-4bdf-b2ef-3ea40c9005ec}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{40f6982b-2dc4-4061-8430-15386a8fddd4}" />
 	<object class="MixerBusFader" id="{ea906dec-8d2a-4b48-82d8-c236fb7239a6}" />
 	<object class="MixerBusFader" id="{a213483d-4cb1-4eb7-852f-b7d4dff9f6c5}" />
-	<object class="SpatialiserEffect" id="{b46c7413-4be3-476d-a276-a2b21cc849e2}">
-		<property name="minimumDistance">
-			<value>0.5</value>
+	<object class="MixerSend" id="{69504b3c-e234-4bdf-b2ef-3ea40c9005ec}">
+		<property name="level">
+			<value>-11</value>
 		</property>
-		<property name="panBlend">
-			<value>0.754999995</value>
+		<property name="inputFormat">
+			<value>1</value>
 		</property>
+		<relationship name="mixerReturn">
+			<destination>{88adce7b-bc9c-48f0-8baf-8c8fed1bc3d2}</destination>
+		</relationship>
 	</object>
 </objects>

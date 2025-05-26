@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{c0e9c14f-f8a7-474c-9c91-647db9a6fc85}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-6</value>
 		</property>
 		<property name="name">
 			<value>Intercom</value>
@@ -20,23 +20,50 @@
 	<object class="MixerBusEffectChain" id="{70dbff71-c21c-46c8-b020-1037cb225372}">
 		<relationship name="effects">
 			<destination>{0b22d564-d2c7-45f9-8a9d-ae05d319c91b}</destination>
-			<destination>{09ee5f71-67db-454f-bc68-2308a954d48c}</destination>
+			<destination>{8423b140-6e3b-43a6-980d-2aa3fe9ecbac}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9ce5aeaa-971b-4253-ba14-c01585d74e62}" />
 	<object class="MixerBusFader" id="{0b22d564-d2c7-45f9-8a9d-ae05d319c91b}" />
-	<object class="DelayEffect" id="{09ee5f71-67db-454f-bc68-2308a954d48c}">
-		<property name="delay">
-			<value>94</value>
+	<object class="MultibandEqEffect" id="{8423b140-6e3b-43a6-980d-2aa3fe9ecbac}">
+		<property name="filterTypeB">
+			<value>5</value>
 		</property>
-		<property name="feedback">
-			<value>15</value>
+		<property name="filterTypeC">
+			<value>9</value>
 		</property>
-		<property name="level">
-			<value>-14</value>
+		<property name="filterTypeD">
+			<value>9</value>
 		</property>
-		<property name="dryLevel">
-			<value>-4</value>
+		<property name="frequencyA">
+			<value>5489.62793</value>
+		</property>
+		<property name="frequencyB">
+			<value>113.993225</value>
+		</property>
+		<property name="frequencyC">
+			<value>1948.19666</value>
+		</property>
+		<property name="frequencyD">
+			<value>216.682251</value>
+		</property>
+		<property name="qualityA">
+			<value>0.697135448</value>
+		</property>
+		<property name="qualityB">
+			<value>0.381469101</value>
+		</property>
+		<property name="qualityC">
+			<value>4.30000019</value>
+		</property>
+		<property name="qualityD">
+			<value>2.20000005</value>
+		</property>
+		<property name="gainC">
+			<value>-14.7237272</value>
+		</property>
+		<property name="gainD">
+			<value>-15.763814</value>
 		</property>
 	</object>
 </objects>
