@@ -26,5 +26,5 @@ public class VoiceRoom : MonoBehaviour
         }
     }
 
-    public List<Transform> getNpcs() { return npcs; }
+    public List<Transform> GetNpcs() { return npcs; }
 }

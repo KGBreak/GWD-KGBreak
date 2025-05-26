@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMODUnity;
+using Util;
 
 public class EnemyVision : MonoBehaviour
 {
@@ -16,11 +17,9 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] private LayerMask obstacleLayer;
 
     [Header("FMOD Guard VO")]
-    [SerializeField] private EventReference guardDetectionStartEvent;
-    [SerializeField] private EventReference guardChaseStartEvent;
-    [SerializeField] private EventReference guardDetectionLostEvent;
 
-    [SerializeField] private VoiceManager voiceManager;
+    [SerializeField] private GameObject voiceManagerObject;
+    private VoiceManager voiceManager;
 
     private float detectionMeterValue = 0f;
     private Transform player;
@@ -42,6 +41,7 @@ public class EnemyVision : MonoBehaviour
         player = playerObject.transform;
         playerMovement = playerObject.GetComponent<PlayerMovement>();
         detectionIndicator = playerObject.GetComponent<DetectionIndicator>();
+        voiceManager = voiceManagerObject.GetComponent<VoiceManager>();
     }
 
     void Update()
@@ -53,7 +53,7 @@ public class EnemyVision : MonoBehaviour
             // 1) Meter just went from 0→>0?
             if (detectionMeterValue <= 0f && !hasPlayedDetectionStartVO)
             {
-                RuntimeManager.PlayOneShot(guardDetectionStartEvent, transform.position);
+                voiceManager.playInvestigatingLines(transform, GetComponent<NPCVoiceActor>().actor, InvestigatingState.Suspicious);
                 hasPlayedDetectionStartVO = true;
                 hasPlayedDetectionLostVO = false;  // allow lost-VO next time
             }
@@ -65,7 +65,7 @@ public class EnemyVision : MonoBehaviour
             {
                 if (!hasPlayedChaseStartVO)
                 {
-                    RuntimeManager.PlayOneShot(guardChaseStartEvent, transform.position);
+                    voiceManager.playInvestigatingLines(transform, GetComponent<NPCVoiceActor>().actor, InvestigatingState.Spotted);
                     hasPlayedChaseStartVO = true;
                 }
 
@@ -106,7 +106,7 @@ public class EnemyVision : MonoBehaviour
             {
                 if (!hasPlayedDetectionLostVO && hasPlayedChaseStartVO)
                 {
-                    RuntimeManager.PlayOneShot(guardDetectionLostEvent, transform.position);
+                    voiceManager.stopInvestigatingLines(transform, GetComponent<NPCVoiceActor>().actor);
                     hasPlayedDetectionLostVO = true;
                 }
 

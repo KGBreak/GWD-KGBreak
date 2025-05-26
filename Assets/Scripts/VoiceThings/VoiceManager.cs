@@ -5,12 +5,16 @@ using FMODUnity;
 using FMOD.Studio;
 using System.Collections;
 using Util;
+using System.Linq;
 
 
 public class VoiceManager : MonoBehaviour
 {
-    [SerializeField] private Queue<Dialog> fillerDialogs;
+    [SerializeField] private List<Dialog> fillerDialogsList = new List<Dialog>();
+    [SerializeField] private List<VoiceLine> investigateLines = new List<VoiceLine>();
 
+    private Queue<Dialog> fillerDialogs;
+    private HashSet<Transform> investigatingEnemies = new HashSet<Transform>();
 
     private Queue<Dialog> dialogQueue = new Queue<Dialog>();
     private VoiceRoom currentRoom;
@@ -20,11 +24,15 @@ public class VoiceManager : MonoBehaviour
     private float checkInterval = 5f;
     private float nextCheckTime = 0f;
 
+    private void Awake()
+    {
+        fillerDialogs = new Queue<Dialog>(fillerDialogsList);
+    }
 
-    private void Update()
+private void Update()
     {
         // Run update every 5 seconds
-        if (Time.time < nextCheckTime) return;
+        if (Time.time < nextCheckTime || investigatingEnemies.Count > 0) return;
         nextCheckTime = Time.time + checkInterval;
 
         // If we are not running a dialog, we are in a room, and we can find a valid dialog from filler dialog for the voice actors in the room, then start filler dialog
@@ -45,26 +53,32 @@ public class VoiceManager : MonoBehaviour
             }
         }
     }
-    
+
     // Called from voice room, with optionally a dialog. 
     // If we are currently playing dialog and the given is important, then 
     public void OnPlayerEnterRoom(VoiceRoom room, Dialog dialog)
     {
-
         currentRoom = room;
         if (dialog == null) return;
 
-        if (dialog.isImportant && currentDialogCoroutine != null) {
-            StopCoroutine(currentDialogCoroutine);
+        if (dialog.isImportant)
+        {
+            // stop any running coroutine + clear all queued stuff
+            if (currentDialogCoroutine != null) StopCoroutine(currentDialogCoroutine);
             currentDialogCoroutine = null;
-            currentDialog = null;
             dialogQueue.Clear();
+
+            // immediately start playing the important dialog
+            currentDialogCoroutine = StartCoroutine(PlayDialog(dialog));
+            return;
         }
 
+        // non-important dialogs can still be queued…
         dialogQueue.Enqueue(dialog);
     }
-    
-    // Called from voice room. Set room to null, if dialog is playing and is not important, end it.
+
+
+    // Called from voice room. Set room to null, if dialog is playing and is not important and not intercom, end it.
     public void OnPlayerExitRoom(VoiceRoom room)
     {
         if (currentRoom == room)
@@ -72,9 +86,10 @@ public class VoiceManager : MonoBehaviour
 
             currentRoom = null;
 
-            if (currentDialog != null && !currentDialog.isImportant)
+            if (currentDialog != null && !currentDialog.isImportant && !currentDialog.actors.Contains(VoiceActor.Intercom))
             {
                 StopCoroutine(currentDialogCoroutine);
+                dialogQueue.Clear();
                 currentDialogCoroutine = null;
                 currentDialog = null;
             }
@@ -85,39 +100,61 @@ public class VoiceManager : MonoBehaviour
     {
         currentDialog = dialog;
 
+        bool isIntercomOnly = dialog.actors.All(a => a == VoiceActor.Intercom);
+
         foreach (var line in dialog.voiceLines)
         {
-
+            // 1) Create & attach
             EventInstance instance = RuntimeManager.CreateInstance(line.eventRef);
             Transform speakerTransform = GetNpcTransformByActor(line.actor);
             if (speakerTransform != null)
-            {
                 RuntimeManager.AttachInstanceToGameObject(instance, speakerTransform, speakerTransform.GetComponent<Rigidbody>());
-            }
 
+            // 2) Start playing
             instance.start();
 
+            // 3) Poll until sound actually stops—but honour pause
             PLAYBACK_STATE state;
             do
             {
+                // if we're paused, actually pause the FMOD instance,
+                // and then wait until we're unpaused before continuing
+                if (investigatingEnemies.Count > 0 && !isIntercomOnly)
+                {
+                    instance.setPaused(true);
+                    yield return new WaitUntil(() => !(investigatingEnemies.Count > 0));
+                    instance.setPaused(false);
+                }
+
+                // otherwise, just poll as normal
                 yield return null;
                 instance.getPlaybackState(out state);
             }
             while (state != PLAYBACK_STATE.STOPPED);
 
             instance.release();
-            yield return new WaitForSeconds(line.delayAfter);
+
+            // 4) Delay after the line—but again, honour pause
+            float elapsed = 0f;
+            while (elapsed < line.delayAfter)
+            {
+                if (!(investigatingEnemies.Count > 0))
+                    elapsed += Time.deltaTime;
+                yield return null;
+            }
         }
 
+        // Finished entire dialog
         currentDialogCoroutine = null;
         currentDialog = null;
     }
+
 
     private Transform GetNpcTransformByActor(VoiceActor actor)
     {
         if (actor == VoiceActor.Intercom) return null;
 
-        foreach (var npc in currentRoom.getNpcs())
+        foreach (var npc in currentRoom.GetNpcs())
         {
             var voiceComponent = npc.GetComponent<NPCVoiceActor>();
             if (voiceComponent != null && voiceComponent.actor == actor)
@@ -134,7 +171,7 @@ public class VoiceManager : MonoBehaviour
     {
         // Get all VoiceActors present in the current room
         HashSet<VoiceActor> presentActors = new HashSet<VoiceActor>();
-        foreach (var npc in currentRoom.getNpcs())
+        foreach (var npc in currentRoom.GetNpcs())
         {
             var voiceComponent = npc.GetComponent<NPCVoiceActor>();
             if (voiceComponent != null)
@@ -170,5 +207,47 @@ public class VoiceManager : MonoBehaviour
         }
 
         return null; // No valid filler found
+    }
+
+    public void playInvestigatingLines(Transform transform, VoiceActor voiceActor, InvestigatingState investigateState)
+    {
+        investigatingEnemies.Add(transform);
+
+        foreach (VoiceLine voiceLine in investigateLines)
+        {
+            if (voiceLine.actor == voiceActor && voiceLine.investigatingState == investigateState)
+            {
+                // create & attach
+                var inst = RuntimeManager.CreateInstance(voiceLine.eventRef);
+                if (transform != null)
+                    RuntimeManager.AttachInstanceToGameObject(inst, transform, transform.GetComponent<Rigidbody>());
+
+                // play and immediately release (FMOD will keep it alive until it’s done)
+                inst.start();
+                inst.release();
+                break;
+            }
+        }
+
+    }
+
+    public void stopInvestigatingLines(Transform transform, VoiceActor voiceActor)
+    {
+        investigatingEnemies.Remove(transform);
+        foreach (VoiceLine voiceLine in investigateLines)
+        {
+            if (voiceLine.actor == voiceActor && voiceLine.investigatingState == InvestigatingState.None)
+            {
+                // create & attach
+                var inst = RuntimeManager.CreateInstance(voiceLine.eventRef);
+                if (transform != null)
+                    RuntimeManager.AttachInstanceToGameObject(inst, transform, transform.GetComponent<Rigidbody>());
+
+                // play and immediately release (FMOD will keep it alive until it’s done)
+                inst.start();
+                inst.release();
+                break;
+            }
+        }
     }
 }

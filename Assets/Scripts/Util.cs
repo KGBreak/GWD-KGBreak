@@ -37,6 +37,13 @@ namespace Util
         Intercom
     }
 
+    public enum InvestigatingState
+    {
+        None,
+        Suspicious,
+        Spotted
+    }
+
     [System.Serializable]
     public class PathPoint
     {
