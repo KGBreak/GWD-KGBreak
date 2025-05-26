@@ -2,7 +2,6 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
-[CreateAssetMenu(fileName = "VoiceLine", menuName = "Scriptable Objects/VoiceLine")]
 public class VoiceRoom : MonoBehaviour
 {
     [SerializeField] private int roomId;
@@ -22,6 +21,7 @@ public class VoiceRoom : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("oops");
             voiceManager.OnPlayerExitRoom(this);
         }
     }

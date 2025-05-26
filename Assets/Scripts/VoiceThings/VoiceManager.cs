@@ -12,6 +12,7 @@ public class VoiceManager : MonoBehaviour
 {
     [SerializeField] private List<Dialog> fillerDialogsList = new List<Dialog>();
     [SerializeField] private List<VoiceLine> investigateLines = new List<VoiceLine>();
+    [SerializeField] private Transform playerTransform;
 
     private Queue<Dialog> fillerDialogs;
     private HashSet<Transform> investigatingEnemies = new HashSet<Transform>();
@@ -49,6 +50,7 @@ private void Update()
 
             if (dialogQueue.Count > 0)
             {
+                Debug.Log("play one");
                 currentDialogCoroutine = StartCoroutine(PlayDialog(dialogQueue.Dequeue()));
             }
         }
@@ -85,11 +87,11 @@ private void Update()
         {
 
             currentRoom = null;
+            dialogQueue.Clear();
 
             if (currentDialog != null && !currentDialog.isImportant && !currentDialog.actors.Contains(VoiceActor.Intercom))
             {
                 StopCoroutine(currentDialogCoroutine);
-                dialogQueue.Clear();
                 currentDialogCoroutine = null;
                 currentDialog = null;
             }
@@ -107,8 +109,18 @@ private void Update()
             // 1) Create & attach
             EventInstance instance = RuntimeManager.CreateInstance(line.eventRef);
             Transform speakerTransform = GetNpcTransformByActor(line.actor);
-            if (speakerTransform != null)
-                RuntimeManager.AttachInstanceToGameObject(instance, speakerTransform, speakerTransform.GetComponent<Rigidbody>());
+            if (line.actor == VoiceActor.Intercom)
+                RuntimeManager.AttachInstanceToGameObject(
+                    instance,
+                    playerTransform,
+                    playerTransform.GetComponent<Rigidbody>()
+                );
+            else if (speakerTransform != null)
+                RuntimeManager.AttachInstanceToGameObject(
+                    instance,
+                    speakerTransform,
+                    speakerTransform.GetComponent<Rigidbody>()
+                );
 
             // 2) Start playing
             instance.start();
@@ -198,6 +210,7 @@ private void Update()
 
             if (allActorsPresent)
             {
+                fillerDialogs.Enqueue(dialog); // No deleting for now
                 return dialog; // Found a valid one
             }
             else
@@ -249,5 +262,10 @@ private void Update()
                 break;
             }
         }
+    }
+
+    public void removeInvestigator(Transform transform)
+    {
+        investigatingEnemies.Remove(transform);
     }
 }

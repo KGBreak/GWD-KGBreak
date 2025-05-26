@@ -109,6 +109,10 @@ public class EnemyVision : MonoBehaviour
                     voiceManager.stopInvestigatingLines(transform, GetComponent<NPCVoiceActor>().actor);
                     hasPlayedDetectionLostVO = true;
                 }
+                if (!hasPlayedDetectionLostVO && hasPlayedDetectionStartVO)
+                {
+                    voiceManager.removeInvestigator(transform);
+                }
 
                 detectionMeterValue = 0f;
                 hasPlayedDetectionStartVO = false;
