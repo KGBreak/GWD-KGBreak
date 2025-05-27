@@ -1,6 +1,7 @@
 using UnityEngine;
 using Util;
 using FMODUnity;
+
 public class VentPoint : Interactable
 {
     [SerializeField]
@@ -10,6 +11,9 @@ public class VentPoint : Interactable
     [SerializeField]
     private bool canBringItem = false;
     [SerializeField] private ExitDirection exitDirection;
+    [SerializeField] private string snapshotPath = "snapshot:/Airduct_Lowpass";
+    private static EventInstance airductLowpassSnapshot;
+    private static bool snapshotActive = false;
     private static float originalCameraDistance;
     private static bool originalDistanceSet = false;
 
@@ -41,7 +45,7 @@ public class VentPoint : Interactable
             if (characterController != null)
             {
                 characterController.enabled = false; // Disable the CharacterController to set the position directly
-                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection) * 0.5f; 
+                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection) * 0.5f;
                 characterController.enabled = true; // Re-enable the CharacterController
             }
             else
@@ -55,6 +59,7 @@ public class VentPoint : Interactable
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerMovement>().resetGravity();
+        AmbientController.Instance?.SetInVent(isEnterPoint);
         if (player != null)
         {
             CameraController cameraController = player.GetComponentInChildren<CameraController>();
@@ -62,9 +67,9 @@ public class VentPoint : Interactable
             {
                 if (isEnterPoint)
                 {
-                    // Play the “enter vent” stinger
+                    // Play the ï¿½enter ventï¿½ stinger
                     RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
-                    // Tell the AmbientController we’re now in the vent
+                    // Tell the AmbientController weï¿½re now in the vent
                     AmbientController.Instance.SetInVent(true);
                     if (!originalDistanceSet)
                     {
@@ -75,9 +80,9 @@ public class VentPoint : Interactable
                 }
                 else
                 {
-                    // Tell the AmbientController we’ve exited
+                    // Tell the AmbientController weï¿½ve exited
                     AmbientController.Instance.SetInVent(false);
-                    // Play the “exit vent” stinger
+                    // Play the ï¿½exit ventï¿½ stinger
                     RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
                     if (originalDistanceSet)
                     {
@@ -85,8 +90,19 @@ public class VentPoint : Interactable
                         originalDistanceSet = false;
                     }
                 }
+                if (isEnterPoint && !snapshotActive)
+                {
+                    airductLowpassSnapshot = RuntimeManager.CreateInstance(snapshotPath);
+                    airductLowpassSnapshot.start();
+                    snapshotActive = true;
+                }
+                else if (!isEnterPoint && snapshotActive)
+                {
+                    airductLowpassSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    airductLowpassSnapshot.release();
+                    snapshotActive = false;
+                }
             }
         }
     }
-
 }
