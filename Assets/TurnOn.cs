@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 
 public class TurnOn : Interactable
 {
@@ -19,11 +20,13 @@ public class TurnOn : Interactable
         if (suckUpScript.IsTurnedOn())
         {
             suckUpScript.SetTurnOn(false);
+            RuntimeManager.PlayOneShot("event:/TurnOff", transform.position);
         }
         else
         {
 
             suckUpScript.SetTurnOn(true);
+            RuntimeManager.PlayOneShot("event:/TurnOff", transform.position);
         }
         SetRotation();
         FindAndPingClosest();

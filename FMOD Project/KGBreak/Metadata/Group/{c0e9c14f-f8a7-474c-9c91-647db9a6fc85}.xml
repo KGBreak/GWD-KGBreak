@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{c0e9c14f-f8a7-474c-9c91-647db9a6fc85}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-8.5</value>
 		</property>
 		<property name="name">
 			<value>Intercom</value>
@@ -36,7 +36,7 @@
 			<value>9</value>
 		</property>
 		<property name="frequencyA">
-			<value>5489.62793</value>
+			<value>4370.81787</value>
 		</property>
 		<property name="frequencyB">
 			<value>113.993225</value>

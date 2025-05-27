@@ -15806,6 +15806,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1580123961}
+    - targetCorrespondingSourceObject: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1580123971}
   m_SourcePrefab: {fileID: 100100000, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
 --- !u!4 &499690149 stripped
 Transform:
@@ -52183,6 +52186,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1580123971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580123950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f624a5d78255642b7760f7ddab554e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkTurnThreshold: 0.1
+  turnLeftAngle: 60
+  turnRightAngle: -60
+  turn180Angle: 135
+  turn90Duration: 0.6
+  turn180Duration: 1.2
 --- !u!1 &1583524757
 GameObject:
   m_ObjectHideFlags: 0
