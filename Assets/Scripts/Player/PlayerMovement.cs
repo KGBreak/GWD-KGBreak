@@ -50,9 +50,13 @@ public class PlayerMovement : MonoBehaviour
     private EventInstance movementEvent;
     private bool isMovementEventPlaying = false;
 
+    [Header("Respawn")]
+    private Vector3 lastCheckpointPosition;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        lastCheckpointPosition = transform.position; // Initialize the last checkpoint position to the player's starting position
     }
 
     private void Start()
@@ -186,9 +190,8 @@ public class PlayerMovement : MonoBehaviour
     public void SetGravity(float newGravity)
     {
         this.aplliedGravity = newGravity;
-
-
     }
+
     public void resetGravity()
     {
         velocity.y = 0f;
@@ -207,4 +210,19 @@ public class PlayerMovement : MonoBehaviour
         velocity = Vector3.zero;
     }
 
+
+    public void ResetToLastCheckpoint()
+    {
+        characterController.enabled = false; // Disable the character controller to prevent movement during teleportation
+        transform.position = lastCheckpointPosition; // Teleport the player to the last checkpoint
+        characterController.enabled = true; // Re-enable the character controller
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Checkpoint"))
+        {
+            lastCheckpointPosition = other.transform.GetChild(0).position;
+        }
+    }
 }

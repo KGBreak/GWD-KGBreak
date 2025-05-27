@@ -82,7 +82,8 @@ public class EnemyVision : MonoBehaviour
                 }
 
                 Debug.Log("Player detected, restarting the scene...");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                player.GetComponent<PlayerMovement>().ResetToLastCheckpoint();
             }
 
         }
