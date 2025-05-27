@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ExtractionPipeTeleport : MonoBehaviour
 {
-    [SerializeField] VentPointEDIT ventPoint;
+    [SerializeField] VentPoint ventPoint;
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
