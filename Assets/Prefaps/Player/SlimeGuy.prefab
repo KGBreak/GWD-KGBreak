@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicatorPrefab: {fileID: 871640028322476256, guid: ac1c84a6e8f779b488aa206e80310d3c, type: 3}
-  canvasRect: {fileID: 871640028322476256, guid: ac1c84a6e8f779b488aa206e80310d3c, type: 3}
+  canvasRect: {fileID: 1524154947817395930}
   edgePadding: 10
 --- !u!114 &7964171366903928607
 MonoBehaviour:

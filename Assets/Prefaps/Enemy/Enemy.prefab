@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 174273241985249445}
   - component: {fileID: 8348206392376772278}
   - component: {fileID: -4425617511664186422}
+  - component: {fileID: 8520372360363510348}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -431,7 +432,7 @@ Animator:
   m_GameObject: {fileID: 8544474352826760812}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ccd6c684af22357418455a989c6ce7a7, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9df14c1b34ee1f548bc7884e1825324b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -624,6 +625,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71de9f8e6ce92145b79398250c4f3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8520372360363510348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544474352826760812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f624a5d78255642b7760f7ddab554e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkTurnThreshold: 0.1
+  turnLeftAngle: 60
+  turnRightAngle: -60
+  turn180Angle: 135
+  turn90Duration: 0.6
+  turn180Duration: 1.2
 --- !u!1001 &2079182952692839698
 PrefabInstance:
   m_ObjectHideFlags: 0

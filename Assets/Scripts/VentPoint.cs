@@ -1,6 +1,6 @@
 using UnityEngine;
 using Util;
-
+using FMODUnity;
 public class VentPoint : Interactable
 {
     [SerializeField]
@@ -62,6 +62,10 @@ public class VentPoint : Interactable
             {
                 if (isEnterPoint)
                 {
+                    // Play the “enter vent” stinger
+                    RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
+                    // Tell the AmbientController we’re now in the vent
+                    AmbientController.Instance.SetInVent(true);
                     if (!originalDistanceSet)
                     {
                         originalCameraDistance = cameraController.distanceFromPlayer;
@@ -71,6 +75,10 @@ public class VentPoint : Interactable
                 }
                 else
                 {
+                    // Tell the AmbientController we’ve exited
+                    AmbientController.Instance.SetInVent(false);
+                    // Play the “exit vent” stinger
+                    RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
                     if (originalDistanceSet)
                     {
                         cameraController.distanceFromPlayer = originalCameraDistance; // Restore the original distance when exiting the vent
