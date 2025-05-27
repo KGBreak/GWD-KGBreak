@@ -4244,7 +4244,7 @@ PrefabInstance:
     - target: {fileID: -5078149904227852931, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: pathPoints.Array.data[0].position
       value: 
-      objectReference: {fileID: 745639398}
+      objectReference: {fileID: 0}
     - target: {fileID: -5078149904227852931, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: pathPoints.Array.data[0].timeSpent
       value: 6
@@ -4328,10 +4328,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5665283195828219952, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 745639398}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
 --- !u!114 &170523237 stripped
@@ -6431,11 +6428,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 391991102881980058, guid: 5e6d1bea767aecd4392f89f32a8e6366, type: 3}
   m_PrefabInstance: {fileID: 224953295}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &225436796 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5665283195828219952, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
-  m_PrefabInstance: {fileID: 170523236}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &231202575
 PrefabInstance:
@@ -12915,10 +12907,7 @@ PrefabInstance:
     - {fileID: 5138285722615139452, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 749534036}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
 --- !u!4 &392813241 stripped
 Transform:
@@ -14485,6 +14474,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 3
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1 &456552621
 GameObject:
   m_ObjectHideFlags: 0
@@ -17756,6 +17746,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 1
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &545095462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20239,6 +20230,7 @@ MonoBehaviour:
   isEnterPoint: 1
   canBringItem: 1
   exitDirection: 3
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &620530057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22601,6 +22593,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 1
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &693923704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24644,52 +24637,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5682623326121744751, guid: accc31615ad23c54fbfe5705ad0a1274, type: 3}
   m_PrefabInstance: {fileID: 743380496}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &749534031 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
-  m_PrefabInstance: {fileID: 392813240}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &749534036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 745639398}
-  m_Layer: 9
-  m_Name: Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &745639398
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745639397}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.005, y: -0.922, z: -0.005}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 225436796}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_GameObject: {fileID: 749534031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930eb909b0256dd4198d4b13e30ac011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherPoint: {fileID: 1204552163}
-  isEnterPoint: 0
-  canBringItem: 1
-  exitDirection: 2
 --- !u!1001 &751522460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28498,6 +28445,7 @@ MonoBehaviour:
   isEnterPoint: 1
   canBringItem: 1
   exitDirection: 1
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &878891357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29644,6 +29592,7 @@ MonoBehaviour:
   isEnterPoint: 1
   canBringItem: 1
   exitDirection: 3
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1 &901636912
 GameObject:
   m_ObjectHideFlags: 0
@@ -36022,6 +35971,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 3
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &1075527859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36512,6 +36462,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 2
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &1096685989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40667,6 +40618,7 @@ MonoBehaviour:
   isEnterPoint: 1
   canBringItem: 1
   exitDirection: 2
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1 &1204585663
 GameObject:
   m_ObjectHideFlags: 0
@@ -44087,6 +44039,7 @@ MonoBehaviour:
   isEnterPoint: 1
   canBringItem: 1
   exitDirection: 1
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &1319888461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46965,6 +46918,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 1
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &1396804313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47132,6 +47086,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 0
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1 &1404430353 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5040705654371965747, guid: 593709e74530e5b49b67f340fc690b54, type: 3}
@@ -50883,7 +50838,7 @@ MonoBehaviour:
     Path: event:/Dialogue/Intercom/Intercom_Random
   EnglishLoopDelay: 1
   gibberishStartDelay: 10
-  dictionaryEntryIDs: 6400000065000000
+  dictionaryEntryIDs: 00000000
 --- !u!1001 &1528424617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65586,6 +65541,7 @@ MonoBehaviour:
   isEnterPoint: 1
   canBringItem: 1
   exitDirection: 0
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &1976426777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66426,6 +66382,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 3
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &1996049025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66819,6 +66776,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 2
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &2009936898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67619,6 +67577,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 0
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &2043259649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69034,6 +68993,7 @@ MonoBehaviour:
   isEnterPoint: 1
   canBringItem: 1
   exitDirection: 4
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &2101146324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70115,6 +70075,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 1
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &2121423516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71169,6 +71130,7 @@ MonoBehaviour:
   isEnterPoint: 0
   canBringItem: 1
   exitDirection: 3
+  snapshotPath: snapshot:/Airduct_Lowpass
 --- !u!1001 &2137588208
 PrefabInstance:
   m_ObjectHideFlags: 0

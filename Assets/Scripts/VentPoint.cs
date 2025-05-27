@@ -1,5 +1,8 @@
 using UnityEngine;
 using Util;
+using FMODUnity;
+using FMOD.Studio;
+
 
 public class VentPoint : Interactable
 {
@@ -10,6 +13,9 @@ public class VentPoint : Interactable
     [SerializeField]
     private bool canBringItem = false;
     [SerializeField] private ExitDirection exitDirection;
+    [SerializeField] private string snapshotPath = "snapshot:/Airduct_Lowpass";
+    private static EventInstance airductLowpassSnapshot;
+    private static bool snapshotActive = false;
     private static float originalCameraDistance;
     private static bool originalDistanceSet = false;
 
@@ -41,7 +47,7 @@ public class VentPoint : Interactable
             if (characterController != null)
             {
                 characterController.enabled = false; // Disable the CharacterController to set the position directly
-                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection) * 0.5f; 
+                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection) * 0.5f;
                 characterController.enabled = true; // Re-enable the CharacterController
             }
             else
@@ -55,6 +61,7 @@ public class VentPoint : Interactable
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerMovement>().resetGravity();
+        AmbientController.Instance?.SetInVent(isEnterPoint);
         if (player != null)
         {
             CameraController cameraController = player.GetComponentInChildren<CameraController>();
@@ -77,8 +84,19 @@ public class VentPoint : Interactable
                         originalDistanceSet = false;
                     }
                 }
+                if (isEnterPoint && !snapshotActive)
+                {
+                    airductLowpassSnapshot = RuntimeManager.CreateInstance(snapshotPath);
+                    airductLowpassSnapshot.start();
+                    snapshotActive = true;
+                }
+                else if (!isEnterPoint && snapshotActive)
+                {
+                    airductLowpassSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    airductLowpassSnapshot.release();
+                    snapshotActive = false;
+                }
             }
         }
     }
-
 }
