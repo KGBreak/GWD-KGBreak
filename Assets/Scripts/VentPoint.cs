@@ -1,6 +1,7 @@
 using UnityEngine;
 using Util;
 using FMODUnity;
+using FMOD.Studio;
 
 public class VentPoint : Interactable
 {
@@ -64,58 +65,6 @@ public class VentPoint : Interactable
         }
     }
 
-    /*private void PerformAdditionalActions2()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<PlayerMovement>().resetGravity();
-        AmbientController.Instance?.SetInVent(isEnterPoint);
-        if (player != null)
-        {
-            CameraController cameraController = player.GetComponentInChildren<CameraController>();
-            if (cameraController != null)
-            {
-                if (isEnterPoint)
-                {
-                    // Play the �enter vent� stinger
-                    RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
-                    // Tell the AmbientController we�re now in the vent
-                    AmbientController.Instance.SetInVent(true);
-                    if (!originalDistanceSet)
-                    {
-                        originalCameraDistance = cameraController.distanceFromPlayer;
-                        originalDistanceSet = true;
-                    }
-                    cameraController.SetFirstPerson(); // Set distance to zero when entering the vent
-
-                }
-                else
-                {
-                    // Tell the AmbientController we�ve exited
-                    AmbientController.Instance.SetInVent(false);
-                    // Play the �exit vent� stinger
-                    RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
-                    if (originalDistanceSet)
-                    {
-                        cameraController.distanceFromPlayer = originalCameraDistance; // Restore the original distance when exiting the vent
-                        originalDistanceSet = false;
-                    }
-                }
-                if (isEnterPoint && !snapshotActive)
-                {
-                    airductLowpassSnapshot = RuntimeManager.CreateInstance(snapshotPath);
-                    airductLowpassSnapshot.start();
-                    snapshotActive = true;
-                }
-                else if (!isEnterPoint && snapshotActive)
-                {
-                    airductLowpassSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                    airductLowpassSnapshot.release();
-                    snapshotActive = false;
-                }
-            }
-        }
-    }*/
-
     private void PerformAdditionalActions()
     {
         player.GetComponent<PlayerMovement>().resetGravity();
@@ -123,10 +72,23 @@ public class VentPoint : Interactable
         {
             if (isEnterPoint)
             {
+                airductLowpassSnapshot = RuntimeManager.CreateInstance(snapshotPath);
+                airductLowpassSnapshot.start();
+                snapshotActive = true;
+                RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
+                // Tell the AmbientController we�re now in the vent
+                AmbientController.Instance.SetInVent(true);
                 camController.SetFirstPerson();
             }
             else
             {
+                airductLowpassSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                airductLowpassSnapshot.release();
+                snapshotActive = false;
+                // Tell the AmbientController we�ve exited
+                AmbientController.Instance.SetInVent(false);
+                // Play the �exit vent� stinger
+                RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
                 camController.SetThirdPerson();
             }
         }
