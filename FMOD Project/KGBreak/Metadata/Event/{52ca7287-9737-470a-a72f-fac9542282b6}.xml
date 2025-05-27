@@ -28,9 +28,6 @@
 		<relationship name="timeline">
 			<destination>{a5619300-2e50-4167-8d1a-e2377751880c}</destination>
 		</relationship>
-		<relationship name="parameters">
-			<destination>{e37f133c-3c43-431e-8140-ab501461ca08}</destination>
-		</relationship>
 		<relationship name="banks">
 			<destination>{908f1e65-bfae-4ca5-9799-50577b3c9703}</destination>
 		</relationship>
@@ -42,7 +39,7 @@
 	</object>
 	<object class="MasterTrack" id="{74e65434-2e6c-45fb-96be-d6012bd0975a}">
 		<relationship name="modules">
-			<destination>{77bf58bc-88cc-4fcd-8d3f-3f376767d268}</destination>
+			<destination>{3e886477-4b38-4ae6-ad5b-2f04d2777c3e}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{70371aa5-0b5c-4351-9865-db7b47252d6e}</destination>
@@ -64,26 +61,24 @@
 			<value>1</value>
 		</property>
 		<property name="minimumDistance">
-			<value>0.699999988</value>
+			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>9.80000019</value>
+			<value>6</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{eba199c9-69f4-4e69-a7af-2df99b49db23}" />
 	<object class="Timeline" id="{a5619300-2e50-4167-8d1a-e2377751880c}">
-		<property name="isProxyEnabled">
-			<value>false</value>
-		</property>
-	</object>
-	<object class="ActionSheet" id="{e37f133c-3c43-431e-8140-ab501461ca08}">
 		<relationship name="modules">
-			<destination>{77bf58bc-88cc-4fcd-8d3f-3f376767d268}</destination>
+			<destination>{3e886477-4b38-4ae6-ad5b-2f04d2777c3e}</destination>
+		</relationship>
+		<relationship name="markers">
+			<destination>{b6d52d63-1061-4790-a187-6486cdcb4bdb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{70371aa5-0b5c-4351-9865-db7b47252d6e}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-6</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{9ed0b774-cf79-4971-8c78-1d994764aec4}</destination>
@@ -95,9 +90,12 @@
 			<destination>{31719095-e841-41cd-a467-f8c666627446}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{77bf58bc-88cc-4fcd-8d3f-3f376767d268}">
-		<relationship name="sounds">
-			<destination>{8b7bf351-6c29-43ad-934b-5d7e5fd2cfbd}</destination>
+	<object class="SingleSound" id="{3e886477-4b38-4ae6-ad5b-2f04d2777c3e}">
+		<property name="length">
+			<value>156</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{e4543634-668d-4a9e-bdf9-afad40395644}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{e8a76101-bb0f-4dd3-98a2-95741b266a92}">
@@ -106,6 +104,20 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{58ce0646-f272-4380-9e5c-5e61523c1b7b}" />
+	<object class="LoopRegion" id="{b6d52d63-1061-4790-a187-6486cdcb4bdb}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>156</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{a5619300-2e50-4167-8d1a-e2377751880c}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{eba199c9-69f4-4e69-a7af-2df99b49db23}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{9ed0b774-cf79-4971-8c78-1d994764aec4}">
 		<relationship name="effects">
 			<destination>{2ffb87ef-6de7-45bb-a808-464b4f01c539}</destination>
@@ -117,33 +129,14 @@
 			<value>350.350006</value>
 		</property>
 	</object>
-	<object class="MultiSound" id="{8b7bf351-6c29-43ad-934b-5d7e5fd2cfbd}">
-		<relationship name="sounds">
-			<destination>{eb159af0-7339-4544-8d14-4dd222a4cde5}</destination>
-			<destination>{07d21b9c-fcc3-45d5-bb70-99cab7bb64f7}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusFader" id="{d4c82e72-5b00-4821-9283-69d4005de2c4}" />
 	<object class="MixerBusFader" id="{2ffb87ef-6de7-45bb-a808-464b4f01c539}" />
 	<object class="SpatialiserEffect" id="{1eba8486-7880-43d3-8564-0e6de818e092}">
 		<property name="minimumDistance">
-			<value>0.699999988</value>
+			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>9.80000019</value>
+			<value>6</value>
 		</property>
-	</object>
-	<object class="SingleSound" id="{eb159af0-7339-4544-8d14-4dd222a4cde5}">
-		<property name="volume">
-			<value>-6</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{e4543634-668d-4a9e-bdf9-afad40395644}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{07d21b9c-fcc3-45d5-bb70-99cab7bb64f7}">
-		<relationship name="audioFile">
-			<destination>{af9f72c8-c2c5-4d0d-8599-9de3b7fbc4ed}</destination>
-		</relationship>
 	</object>
 </objects>
