@@ -71,10 +71,6 @@ public class InvestigateState : BaseState
 
     public override BaseState GetNextState()
     {
-        if (_enemy.GetDebug())
-        {
-            Debug.Log(timer > _enemy.GetInvestigateTime());
-        }
         return timer > _enemy.GetInvestigateTime() ? new PatrolState(_enemy) : this;
     }
 

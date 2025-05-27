@@ -18,7 +18,7 @@ public class Door : Interactable
     void Start()
     {
         closedPosition = transform.position;
-        openPosition = closedPosition + (-transform.forward * slideLength);
+        openPosition = closedPosition + (-transform.up * slideLength);
     }
 
     public override void InteractWith()

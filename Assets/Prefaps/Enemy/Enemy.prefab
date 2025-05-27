@@ -390,7 +390,6 @@ GameObject:
   - component: {fileID: 8993280782143185241}
   - component: {fileID: 7932070159973192354}
   - component: {fileID: -5078149904227852931}
-  - component: {fileID: 1387528473820513667}
   - component: {fileID: 2784030856259566614}
   - component: {fileID: 4126198804805880705}
   - component: {fileID: 5874342962388730276}
@@ -505,39 +504,6 @@ MonoBehaviour:
   pathPoints: []
   investigateTime: 6
   investigateAction: {fileID: 5874342962388730276}
-  debug: 0
---- !u!114 &1387528473820513667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8544474352826760812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a367410679a311c4b83b9590e0846ed6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathPoints:
-  - position: {fileID: 0}
-    timeSpent: 4
-    action: {fileID: 4126198804805880705}
-    direction: {x: 90, y: 0, z: 0}
-  - position: {fileID: 0}
-    timeSpent: 2
-    action: {fileID: 4126198804805880705}
-    direction: {x: 0, y: 0, z: 0}
-  - position: {fileID: 0}
-    timeSpent: 8
-    action: {fileID: 4126198804805880705}
-    direction: {x: 0, y: 0, z: 180}
-  - position: {fileID: 0}
-    timeSpent: 1
-    action: {fileID: 4126198804805880705}
-    direction: {x: 0, y: 0, z: 0}
-  navAgent: {fileID: 7932070159973192354}
-  investigateTime: 5
-  investigateAction: {fileID: 5874342962388730276}
 --- !u!114 &2784030856259566614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,27 +571,7 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1216
-  guardDetectionStartEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  guardChaseStartEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  guardDetectionLostEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+  voiceManagerObject: {fileID: 0}
 --- !u!114 &174273241985249445
 MonoBehaviour:
   m_ObjectHideFlags: 0

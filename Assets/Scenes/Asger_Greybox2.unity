@@ -58185,6 +58185,10 @@ PrefabInstance:
       propertyPath: guardDetectionStartEvent.Guid.Data4
       value: 486394033
       objectReference: {fileID: 0}
+    - target: {fileID: 8348206392376772278, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
+      propertyPath: actor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8544474352826760812, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
       propertyPath: m_Name
       value: Guard 2 (1)

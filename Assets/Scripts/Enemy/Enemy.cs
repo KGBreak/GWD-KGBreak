@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private List<PathPoint> pathPoints;
     [SerializeField] private float investigateTime;
     [SerializeField] private Actions investigateAction;
-    [SerializeField] private bool debug = false;
 
     private int currentPathIndex = 0;
     private Vector3? investigateTarget = null;
@@ -19,7 +18,6 @@ public class Enemy : MonoBehaviour
     public List<PathPoint> GetPathPoints() => pathPoints;
     public int GetPathIndex() => currentPathIndex;
 
-    public bool GetDebug() => debug;
     public void SetPathIndex(int index) => currentPathIndex = index;
     public float GetInvestigateTime() => investigateTime;
     public Actions GetInvestigateAction() => investigateAction;
