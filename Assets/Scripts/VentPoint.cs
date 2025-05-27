@@ -41,12 +41,12 @@ public class VentPoint : Interactable
             if (characterController != null)
             {
                 characterController.enabled = false; // Disable the CharacterController to set the position directly
-                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection);
+                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection) * 0.5f; 
                 characterController.enabled = true; // Re-enable the CharacterController
             }
             else
             {
-                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection);
+                player.transform.position = targetPoint.position + DirectionHelper.GetWorldDirection(exitDirection) * 0.5f;
             }
         }
     }
