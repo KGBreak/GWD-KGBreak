@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6954482141930850564}
   - component: {fileID: 5145292070378208718}
   - component: {fileID: 5811378829341778252}
+  - component: {fileID: 8723276417698689274}
   m_Layer: 0
   m_Name: SM_Switch_01
   m_TagString: Untagged
@@ -108,3 +109,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.022807688, y: 0.13290237, z: 0.12045501}
   m_Center: {x: 0.01071997, y: 0.000000074505806, z: -0.0000001527369}
+--- !u!114 &8723276417698689274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658364863035300891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b3718e1fc4df74cb686512272464b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suckUp: {fileID: 0}
+  pingRange: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
