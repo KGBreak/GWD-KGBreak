@@ -7,7 +7,7 @@ using Util;
 public class Dialog : ScriptableObject
 {
     public List<VoiceLine> voiceLines;
-    public bool isImportant;
+    public bool isImportant = false;
     public List<VoiceActor> actors;
     public bool wasPlayed;
       

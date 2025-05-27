@@ -16,6 +16,8 @@ public class VoiceManager : MonoBehaviour
 
     private Queue<Dialog> fillerDialogs;
     private HashSet<Transform> investigatingEnemies = new HashSet<Transform>();
+    private List<EventInstance> playingInstances = new List<EventInstance>();
+    private List<EventInstance> investigatingInstances = new List<EventInstance>();
 
     private Queue<Dialog> dialogQueue = new Queue<Dialog>();
     private VoiceRoom currentRoom;
@@ -27,6 +29,9 @@ public class VoiceManager : MonoBehaviour
 
     private void Awake()
     {
+        fillerDialogsList = fillerDialogsList
+        .OrderBy(_ => UnityEngine.Random.value)
+        .ToList();
         fillerDialogs = new Queue<Dialog>(fillerDialogsList);
     }
 
@@ -60,23 +65,38 @@ private void Update()
     // If we are currently playing dialog and the given is important, then 
     public void OnPlayerEnterRoom(VoiceRoom room, Dialog dialog)
     {
-        currentRoom = room;
-        if (dialog == null) return;
+        // ———> 1) As soon as you enter ANY new room, abort any
+        //       ongoing interpersonal (non-important, non-intercom) dialog:
+       /* if (currentDialog != null
+            && !currentDialog.isImportant
+            && !currentDialog.actors.Contains(VoiceActor.Intercom))
+        {
+            EndDialog();
+        }*/
 
+        // ———> 2) Now set the new room
+        currentRoom = room;
+
+        if (dialog == null)
+            return;
+
+        // ———> 3) If it’s an important dialog, abort anything else
+        //       and start it immediately:
         if (dialog.isImportant)
         {
-            // stop any running coroutine + clear all queued stuff
-            if (currentDialogCoroutine != null) StopCoroutine(currentDialogCoroutine);
-            currentDialogCoroutine = null;
-            dialogQueue.Clear();
-
-            // immediately start playing the important dialog
+            EndDialog();
             currentDialogCoroutine = StartCoroutine(PlayDialog(dialog));
             return;
         }
 
-        // non-important dialogs can still be queued…
+        // ———> 4) Otherwise it’s non-important: queue it up
         dialogQueue.Enqueue(dialog);
+
+        // ———> 5) If you’re not already playing something, kick it off now:
+        if (currentDialogCoroutine == null)
+        {
+            currentDialogCoroutine = StartCoroutine(PlayDialog(dialogQueue.Dequeue()));
+        }
     }
 
 
@@ -88,13 +108,6 @@ private void Update()
 
             currentRoom = null;
             dialogQueue.Clear();
-
-            if (currentDialog != null && !currentDialog.isImportant && !currentDialog.actors.Contains(VoiceActor.Intercom))
-            {
-                StopCoroutine(currentDialogCoroutine);
-                currentDialogCoroutine = null;
-                currentDialog = null;
-            }
         }
     }
 
@@ -103,8 +116,6 @@ private void Update()
         currentDialog = dialog;
 
         bool isIntercomOnly = dialog.actors.All(a => a == VoiceActor.Intercom);
-
-        List<EventInstance> playingInstances = new List<EventInstance>();
 
         foreach (var line in dialog.voiceLines)
         {
@@ -129,6 +140,8 @@ private void Update()
         while (!allStopped)
         {
             allStopped = true;
+            CleanupInvestigationInstances();
+
             foreach (var instance in playingInstances)
             {
                 instance.getPlaybackState(out var state);
@@ -136,7 +149,7 @@ private void Update()
                 {
                     allStopped = false;
 
-                    if (investigatingEnemies.Count > 0 && !isIntercomOnly)
+                    if ((investigatingEnemies.Count > 0 || investigatingInstances.Count > 0) && !isIntercomOnly)
                     {
                         instance.setPaused(true);
                     }
@@ -149,14 +162,29 @@ private void Update()
             yield return null;
         }
 
-        // Release all instances
-        foreach (var instance in playingInstances)
+        EndDialog();
+    }
+
+    public void EndDialog()
+    {
+        // 1) Stop coroutine
+        if (currentDialogCoroutine != null)
         {
-            instance.release();
+            StopCoroutine(currentDialogCoroutine);
+            currentDialogCoroutine = null;
         }
 
-        currentDialogCoroutine = null;
+        // 2) Stop & release every FMOD instance
+        foreach (var inst in playingInstances)
+        {
+            inst.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);  // or ALLOWFADEOUT
+            inst.release();
+        }
+        playingInstances.Clear();
+
+        // 3) Reset dialog state
         currentDialog = null;
+        dialogQueue.Clear();
     }
 
 
@@ -236,7 +264,7 @@ private void Update()
 
                 // play and immediately release (FMOD will keep it alive until it’s done)
                 inst.start();
-                inst.release();
+                investigatingInstances.Add(inst);
                 break;
             }
         }
@@ -245,7 +273,6 @@ private void Update()
 
     public void stopInvestigatingLines(Transform transform, VoiceActor voiceActor)
     {
-        investigatingEnemies.Remove(transform);
         foreach (VoiceLine voiceLine in investigateLines)
         {
             if (voiceLine.actor == voiceActor && voiceLine.investigatingState == InvestigatingState.None)
@@ -257,7 +284,8 @@ private void Update()
 
                 // play and immediately release (FMOD will keep it alive until it’s done)
                 inst.start();
-                inst.release();
+                investigatingInstances.Add(inst);
+                investigatingEnemies.Remove(transform);
                 break;
             }
         }
@@ -266,5 +294,19 @@ private void Update()
     public void removeInvestigator(Transform transform)
     {
         investigatingEnemies.Remove(transform);
+    }
+
+    private void CleanupInvestigationInstances()
+    {
+        for (int i = investigatingInstances.Count - 1; i >= 0; i--)
+        {
+            var inst = investigatingInstances[i];
+            inst.getPlaybackState(out var state);
+            if (state == PLAYBACK_STATE.STOPPED)
+            {
+                inst.release();
+                investigatingInstances.RemoveAt(i);
+            }
+        }
     }
 }
