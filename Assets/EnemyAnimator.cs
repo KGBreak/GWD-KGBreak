@@ -1,6 +1,9 @@
-﻿using UnityEngine;
-using UnityEngine.AI;
+﻿using FMODUnity;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.AI;
+using FMODUnity;
+
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
@@ -84,5 +87,9 @@ public class EnemyAnimator : MonoBehaviour
         agent.isStopped = true;
         yield return new WaitForSeconds(duration);
         agent.isStopped = false;
+    }
+    public void Footstep()
+    {
+        RuntimeManager.PlayOneShot("event:/GuardFootstep", transform.position);
     }
 }

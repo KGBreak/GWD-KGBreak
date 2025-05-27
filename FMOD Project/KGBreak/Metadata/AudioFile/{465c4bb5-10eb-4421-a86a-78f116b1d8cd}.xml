@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{465c4bb5-10eb-4421-a86a-78f116b1d8cd}">
+		<property name="assetPath">
+			<value>plr_movement_walking_cloth_06.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.48252083333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dfa8febb-b1f6-4580-8bdc-9dba0e9dc466}</destination>
+		</relationship>
+	</object>
+</objects>
