@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMODUnity;
+using Util;
 
 public class EnemyVision : MonoBehaviour
 {
@@ -9,16 +10,16 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] private float visionAngle = 45f;
     [SerializeField] private float downwardTiltAngle = 20f;
     [SerializeField] private float proximityDetection = 5f;
-    [SerializeField] private EnemyMovement enemyMovement;
+    [SerializeField] private Enemy enemy;
     [SerializeField] private float detectionMeterSize = 3f;
     [SerializeField] private float deathSize = 5f;
     [SerializeField] private DetectionMeter detectionMeter;
     [SerializeField] private LayerMask obstacleLayer;
 
     [Header("FMOD Guard VO")]
-    [SerializeField] private EventReference guardDetectionStartEvent;
-    [SerializeField] private EventReference guardChaseStartEvent;
-    [SerializeField] private EventReference guardDetectionLostEvent;
+
+    [SerializeField] private GameObject voiceManagerObject;
+    private VoiceManager voiceManager;
 
     private float detectionMeterValue = 0f;
     private Transform player;
@@ -30,12 +31,17 @@ public class EnemyVision : MonoBehaviour
     private bool hasPlayedChaseStartVO = false;
     private bool hasPlayedDetectionLostVO = false;
 
+    // Cooldown related variables
+    private float cooldownTimer = 0f;
+    private float cooldownDuration = 5f;  // 5 seconds cooldown
+
     void Start()
     {
         var playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.transform;
         playerMovement = playerObject.GetComponent<PlayerMovement>();
         detectionIndicator = playerObject.GetComponent<DetectionIndicator>();
+        voiceManager = voiceManagerObject.GetComponent<VoiceManager>();
     }
 
     void Update()
@@ -47,7 +53,7 @@ public class EnemyVision : MonoBehaviour
             // 1) Meter just went from 0→>0?
             if (detectionMeterValue <= 0f && !hasPlayedDetectionStartVO)
             {
-                RuntimeManager.PlayOneShot(guardDetectionStartEvent, transform.position);
+                voiceManager.playInvestigatingLines(transform, GetComponent<NPCVoiceActor>().actor, InvestigatingState.Suspicious);
                 hasPlayedDetectionStartVO = true;
                 hasPlayedDetectionLostVO = false;  // allow lost-VO next time
             }
@@ -59,10 +65,12 @@ public class EnemyVision : MonoBehaviour
             {
                 if (!hasPlayedChaseStartVO)
                 {
-                    RuntimeManager.PlayOneShot(guardChaseStartEvent, transform.position);
+                    voiceManager.playInvestigatingLines(transform, GetComponent<NPCVoiceActor>().actor, InvestigatingState.Spotted);
                     hasPlayedChaseStartVO = true;
                 }
-                enemyMovement.SetDestination(player.position);
+
+                cooldownTimer = cooldownDuration;
+                enemy.SetInvestigateTarget(player.position);
             }
 
             // 3) Full detect → restart
@@ -86,14 +94,25 @@ public class EnemyVision : MonoBehaviour
             // drain the meter
             if (detectionMeterValue > 0f)
             {
-                detectionMeterValue -= Time.deltaTime;
+                if (cooldownTimer > 0f)
+                {
+                    cooldownTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    detectionMeterValue -= Time.deltaTime;
+                }
             }
             else
             {
                 if (!hasPlayedDetectionLostVO && hasPlayedChaseStartVO)
                 {
-                    RuntimeManager.PlayOneShot(guardDetectionLostEvent, transform.position);
+                    voiceManager.stopInvestigatingLines(transform, GetComponent<NPCVoiceActor>().actor);
                     hasPlayedDetectionLostVO = true;
+                }
+                if (!hasPlayedDetectionLostVO && hasPlayedDetectionStartVO)
+                {
+                    voiceManager.removeInvestigator(transform);
                 }
 
                 detectionMeterValue = 0f;

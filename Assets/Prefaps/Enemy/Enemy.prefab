@@ -389,12 +389,14 @@ GameObject:
   - component: {fileID: 2701547890564386598}
   - component: {fileID: 8993280782143185241}
   - component: {fileID: 7932070159973192354}
-  - component: {fileID: 1387528473820513667}
+  - component: {fileID: -5078149904227852931}
   - component: {fileID: 2784030856259566614}
   - component: {fileID: 4126198804805880705}
   - component: {fileID: 5874342962388730276}
   - component: {fileID: 6370006942994597548}
   - component: {fileID: 174273241985249445}
+  - component: {fileID: 8348206392376772278}
+  - component: {fileID: -4425617511664186422}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -486,7 +488,7 @@ NavMeshAgent:
   m_BaseOffset: 0.94
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1387528473820513667
+--- !u!114 &-5078149904227852931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -495,28 +497,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8544474352826760812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a367410679a311c4b83b9590e0846ed6, type: 3}
+  m_Script: {fileID: 11500000, guid: f1d9506a258b1b8449d1791b7e6e2410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathPoints:
-  - position: {fileID: 0}
-    timeSpent: 4
-    action: {fileID: 4126198804805880705}
-    direction: {x: 90, y: 0, z: 0}
-  - position: {fileID: 0}
-    timeSpent: 2
-    action: {fileID: 4126198804805880705}
-    direction: {x: 0, y: 0, z: 0}
-  - position: {fileID: 0}
-    timeSpent: 8
-    action: {fileID: 4126198804805880705}
-    direction: {x: 0, y: 0, z: 180}
-  - position: {fileID: 0}
-    timeSpent: 1
-    action: {fileID: 4126198804805880705}
-    direction: {x: 0, y: 0, z: 0}
-  navAgent: {fileID: 7932070159973192354}
-  investigateTime: 5
+  agent: {fileID: 7932070159973192354}
+  pathPoints: []
+  investigateTime: 6
   investigateAction: {fileID: 5874342962388730276}
 --- !u!114 &2784030856259566614
 MonoBehaviour:
@@ -530,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8038d778db61048aa4db62e8ca5f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyMovement: {fileID: 1387528473820513667}
+  enemy: {fileID: 0}
   EnemyTransform: {fileID: 5665283195828219952}
 --- !u!114 &4126198804805880705
 MonoBehaviour:
@@ -544,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ed0d232c1b68643adc0b0250c826bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyMovement: {fileID: 1387528473820513667}
+  enemy: {fileID: 0}
   EnemyTransform: {fileID: 5665283195828219952}
 --- !u!114 &5874342962388730276
 MonoBehaviour:
@@ -558,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490eea7c8f61d4f4bb88bb27a711f6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyMovement: {fileID: 0}
+  enemy: {fileID: 0}
   EnemyTransform: {fileID: 0}
   rotateSpeed: 80
   turnDelay: 1.5
@@ -578,13 +564,14 @@ MonoBehaviour:
   visionAngle: 90
   downwardTiltAngle: 0
   proximityDetection: 1.7
-  enemyMovement: {fileID: 1387528473820513667}
+  enemy: {fileID: -5078149904227852931}
   detectionMeterSize: 2
   deathSize: 4
   detectionMeter: {fileID: 174273241985249445}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1216
+  voiceManagerObject: {fileID: 0}
 --- !u!114 &174273241985249445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +599,31 @@ MonoBehaviour:
       Data3: -1133385029
       Data4: -25853958
     Path: event:/Detected_Full
+--- !u!114 &8348206392376772278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544474352826760812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbc15673214c1141adf4454c08679bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: 0
+--- !u!114 &-4425617511664186422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544474352826760812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71de9f8e6ce92145b79398250c4f3cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2079182952692839698
 PrefabInstance:
   m_ObjectHideFlags: 0

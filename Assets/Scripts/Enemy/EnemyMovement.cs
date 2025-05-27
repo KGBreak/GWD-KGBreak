@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.Controls;
+using Util;
 
-[System.Serializable]
-public class PathPoint
-{
-    public Transform position;
-    public float timeSpent;
-    public Actions action;
-    public Vector3 direction;
-}
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] List<PathPoint> pathPoints;
@@ -29,13 +22,13 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
 
-        if (followingPath) {
+        /*if (followingPath) {
             FollowPath();
         }
         else
         {
             Investigate();
-        }
+        }*/
     }
 
     void FollowPath()

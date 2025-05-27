@@ -6,7 +6,7 @@ public class SimulateDetection : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    [SerializeField] EnemyMovement enemyMovement;
+    [SerializeField] Enemy enemy;
     [SerializeField] float investigateTime;
     [SerializeField] float investigateTime2;
     [SerializeField] Vector3 investPos;
@@ -24,12 +24,12 @@ public class SimulateDetection : MonoBehaviour
     {
         timer += Time.deltaTime;
         if (timer > investigateTime && done == false) {
-            enemyMovement.SetDestination(investPos);
+            enemy.SetInvestigateTarget(investPos);
             done = true;
         }
         if (timer > investigateTime2 && done2 == false)
         {
-            enemyMovement.SetDestination(investPos2);
+            enemy.SetInvestigateTarget(investPos2);
             done2 = true;
         }
     }

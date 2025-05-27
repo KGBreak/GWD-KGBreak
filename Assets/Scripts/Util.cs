@@ -27,4 +27,29 @@ namespace Util
         Up,
         Down
     }
+
+    public enum VoiceActor
+    {
+        Attila,
+        Emil,
+        Tim,
+        David,
+        Intercom
+    }
+
+    public enum InvestigatingState
+    {
+        None,
+        Suspicious,
+        Spotted
+    }
+
+    [System.Serializable]
+    public class PathPoint
+    {
+        public Transform position;
+        public float timeSpent;
+        public Actions action;
+        public Vector3 direction;
+    }
 }
