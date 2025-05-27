@@ -84,8 +84,15 @@ public class PatrolState : BaseState
 
     private void RotateTowards(Vector3 direction)
     {
+        if (direction.sqrMagnitude < 0.0001f)
+            return;   // nothing to look at
+
         Quaternion targetRot = Quaternion.LookRotation(direction);
         float lerp = Mathf.Clamp01(timer / _enemy.GetPathPoints()[_enemy.GetPathIndex()].timeSpent);
-        _enemy.transform.rotation = Quaternion.Slerp(_enemy.transform.rotation, targetRot, lerp);
+        _enemy.transform.rotation = Quaternion.Slerp(
+            _enemy.transform.rotation,
+            targetRot,
+            lerp
+        );
     }
 }

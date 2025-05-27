@@ -4,11 +4,18 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField]
-    Transform playerTransform;
-    [SerializeField]
-    Settings settings; // Reference to the Settings ScriptableObject
-    public float distanceFromPlayer = 3f;
+
+    [Header("References")]
+    [SerializeField] Transform playerTransform;
+    [SerializeField] Settings settings;         // your mouse-sens So
+    [SerializeField] GameObject leftEye;        // drag in your left eyeball
+    [SerializeField] GameObject rightEye;       // drag in your right eyeball
+
+    private float distanceFromPlayer;
+
+    [SerializeField] private float ThirdPersonDistanceFromPlayer = 3f;
+    [SerializeField] private float FirstPersonDistanceFromPlayer = 0.01f;
+
 
     [SerializeField]
     Vector3 offset = new Vector3(0, 1.5f, 0);
@@ -19,9 +26,14 @@ public class CameraController : MonoBehaviour
     float yRotation = 0f;
     InputSystem_Actions playerInput;
 
+    private Camera cam;
+
     private void Awake()
     {
         playerInput = new InputSystem_Actions();
+        cam = GetComponent<Camera>();
+        cam.nearClipPlane = 0.1f;   // small enough that even thin walls don’t get clipped
+        distanceFromPlayer = ThirdPersonDistanceFromPlayer;
     }
 
     private void OnEnable()
@@ -84,5 +96,21 @@ public class CameraController : MonoBehaviour
             transform.position = desiredPosition;
             transform.LookAt(playerTransform.position + offset);
         }
+    }
+
+    public void SetFirstPerson()
+    {
+        distanceFromPlayer = FirstPersonDistanceFromPlayer;
+        leftEye.SetActive(false);
+        rightEye.SetActive(false);
+
+    }
+
+    public void SetThirdPerson()
+    {
+        distanceFromPlayer = ThirdPersonDistanceFromPlayer;
+        leftEye.SetActive(true);
+        rightEye.SetActive(true);
+
     }
 }

@@ -16,6 +16,15 @@ public class VentPoint : Interactable
     private static bool snapshotActive = false;
     private static float originalCameraDistance;
     private static bool originalDistanceSet = false;
+    private GameObject player;
+    private CameraController camController;
+
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        camController = player.GetComponentInChildren<CameraController>();
+    }
 
     public override void InteractWith()
     {
@@ -55,7 +64,7 @@ public class VentPoint : Interactable
         }
     }
 
-    private void PerformAdditionalActions()
+    /*private void PerformAdditionalActions2()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerMovement>().resetGravity();
@@ -76,7 +85,8 @@ public class VentPoint : Interactable
                         originalCameraDistance = cameraController.distanceFromPlayer;
                         originalDistanceSet = true;
                     }
-                    cameraController.distanceFromPlayer = 0.01f; // Set distance to zero when entering the vent
+                    cameraController.SetFirstPerson(); // Set distance to zero when entering the vent
+
                 }
                 else
                 {
@@ -102,6 +112,22 @@ public class VentPoint : Interactable
                     airductLowpassSnapshot.release();
                     snapshotActive = false;
                 }
+            }
+        }
+    }*/
+
+    private void PerformAdditionalActions()
+    {
+        player.GetComponent<PlayerMovement>().resetGravity();
+        if (camController != null)
+        {
+            if (isEnterPoint)
+            {
+                camController.SetFirstPerson();
+            }
+            else
+            {
+                camController.SetThirdPerson();
             }
         }
     }
