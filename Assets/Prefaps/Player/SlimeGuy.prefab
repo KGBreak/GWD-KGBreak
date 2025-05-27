@@ -567,7 +567,7 @@ MonoBehaviour:
   drag: 0.1
   cameraTransform: {fileID: 2159924689686554770}
   rotationSpeed: 5
-  hidingManager: {fileID: 0}
+  hidingManager: {fileID: 6223412145581331476}
 --- !u!65 &2971119780029483262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -601,14 +601,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26641c0aea8943e4d97776bcf56abc87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 1.5
+  detectionRadius: 1
   targetLayer:
     serializedVersion: 2
     m_Bits: 192
-  elevationThreshold: 3
+  elevationThreshold: 1
   feeler: {fileID: 3546051110316930392}
-  hidingManager: {fileID: 0}
-  itemManager: {fileID: 0}
+  hidingManager: {fileID: 6223412145581331476}
+  itemManager: {fileID: 6043987849687517633}
 --- !u!114 &790143266530890559
 MonoBehaviour:
   m_ObjectHideFlags: 0
