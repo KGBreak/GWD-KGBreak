@@ -21,7 +21,7 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] private GameObject voiceManagerObject;
     private VoiceManager voiceManager;
 
-    private float detectionMeterValue = 0f;
+    public float detectionMeterValue = 0f;
     private Transform player;
     private PlayerMovement playerMovement;
     private DetectionIndicator detectionIndicator;
@@ -76,14 +76,17 @@ public class EnemyVision : MonoBehaviour
             // 3) Full detect → restart
             if (detectionMeterValue > deathSize)
             {
-                if (playerMovement != null)
+                if(!playerMovement.isGameOver)
                 {
-                    playerMovement.ForceStopMovementAudio();
-                }
+                    if (playerMovement != null)
+                    {
+                        playerMovement.ForceStopMovementAudio();
+                    }
 
-                Debug.Log("Player detected, restarting the scene...");
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                player.GetComponent<PlayerMovement>().ResetToLastCheckpoint();
+                    Debug.Log("Player detected, restarting the scene...");
+                    //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    player.GetComponent<PlayerMovement>().TriggerGameOverSequence(this);
+                }
             }
 
         }
