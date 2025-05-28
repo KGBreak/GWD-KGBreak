@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     // Method to handle the Start Game button
     public void StartGame()
     {
-        SceneManager.LoadScene("Asger_Greybox2");
+        SceneManager.LoadScene("FinalLevel");
         Bus master = RuntimeManager.GetBus("bus:/");
         master.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }

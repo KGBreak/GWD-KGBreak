@@ -2,6 +2,7 @@
 using UnityEngine.InputSystem;
 using FMODUnity;
 using FMOD.Studio;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -89,6 +90,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        //if you press R then reset to last checkpoint
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetToLastCheckpoint();
+        }
+
         if (isHiding) {
             return;
         }

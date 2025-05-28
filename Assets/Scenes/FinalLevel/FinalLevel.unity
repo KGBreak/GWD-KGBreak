@@ -3787,6 +3787,10 @@ PrefabInstance:
       propertyPath: 'legalExitDirections.Array.data[0]'
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6778964501800780988, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: m_Name
       value: HideInObject (9)
@@ -18958,6 +18962,10 @@ PrefabInstance:
     - target: {fileID: 5138285722615139452, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: 'legalExitDirections.Array.data[0]'
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778964501800780988, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: m_Name
@@ -37370,6 +37378,10 @@ PrefabInstance:
       propertyPath: 'legalExitDirections.Array.data[0]'
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6778964501800780988, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: m_Name
       value: HideInObject (2)
@@ -48869,6 +48881,10 @@ PrefabInstance:
     - target: {fileID: 5138285722615139452, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: 'legalExitDirections.Array.data[0]'
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778964501800780988, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: m_Name
@@ -62447,6 +62463,10 @@ PrefabInstance:
       propertyPath: 'legalExitDirections.Array.data[0]'
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6778964501800780988, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: m_Name
       value: HideInObject (6)
@@ -70150,6 +70170,10 @@ PrefabInstance:
     - target: {fileID: 5138285722615139452, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: 'legalExitDirections.Array.data[0]'
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778964501800780988, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: m_Name
@@ -79261,6 +79285,10 @@ PrefabInstance:
       propertyPath: 'legalExitDirections.Array.data[0]'
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6778964501800780988, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: m_Name
       value: HideInObject (5)
@@ -79611,6 +79639,10 @@ PrefabInstance:
     - target: {fileID: 5138285722615139452, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: 'legalExitDirections.Array.data[0]'
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778964501800780988, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8769622315549738996, guid: 4d1d269f6cc414f4dace2e6640935950, type: 3}
       propertyPath: m_Name
