@@ -54391,7 +54391,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519576205}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb969cb285889a74098ca502d4d2fb9c, type: 3}
   m_Name: 
@@ -64967,6 +64967,84 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5682623326121744751, guid: accc31615ad23c54fbfe5705ad0a1274, type: 3}
   m_PrefabInstance: {fileID: 1824506830}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1824646686
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1896460060}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0849
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0849
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0849
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.441
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.024
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.371
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9908039
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.13530591
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -15.553
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      propertyPath: m_Name
+      value: Radio_Placeholder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2003862753}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2003862756}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2003862757}
+  m_SourcePrefab: {fileID: 100100000, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
 --- !u!1001 &1825253827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66970,6 +67048,7 @@ Transform:
   - {fileID: 1307185589}
   - {fileID: 1221375527}
   - {fileID: 1479686396}
+  - {fileID: 2003862752}
   - {fileID: 1023474363}
   - {fileID: 670587592}
   - {fileID: 948917926}
@@ -70878,6 +70957,91 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3101671702276550921, guid: 4922ea83b19e8cc4aad44318dc074c90, type: 3}
+--- !u!1 &2003862751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+  m_PrefabInstance: {fileID: 1824646686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2003862752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d1d001b6f94bb914e9bbdb3311daaa09, type: 3}
+  m_PrefabInstance: {fileID: 1824646686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2003862753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003862751}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4698ea22666b1ff419a0431a83c5c8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radioEventPath: event:/Radio_Announcement
+--- !u!114 &2003862756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003862751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1388999303
+      Data2: 1191876407
+      Data3: -906350681
+      Data4: -1232985516
+    Path: event:/Radio_Music
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 5
+--- !u!114 &2003862757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003862751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -789970196
+      Data2: 1295554557
+      Data3: -1148712563
+      Data4: 1286109019
+    Path: event:/Radio_Announcement
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 5
 --- !u!1001 &2004952728
 PrefabInstance:
   m_ObjectHideFlags: 0
