@@ -39494,6 +39494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1131815558}
   - component: {fileID: 1131815557}
+  - component: {fileID: 1131815559}
   m_Layer: 0
   m_Name: OpeningSequence
   m_TagString: Untagged
@@ -39529,12 +39530,33 @@ Transform:
   m_GameObject: {fileID: 1131815556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4702954, y: 1.90689, z: -3.0299027}
+  m_LocalPosition: {x: -2.3998, y: 3.092, z: 1.256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1131815559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131815556}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 3831
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.88509846, y: 0.6728926, z: 1.7169037}
+  m_Center: {x: 0.05745077, y: 0.12765908, z: 0.35845184}
 --- !u!1001 &1133169620
 PrefabInstance:
   m_ObjectHideFlags: 0
