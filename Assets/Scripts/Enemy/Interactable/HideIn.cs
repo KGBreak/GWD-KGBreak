@@ -1,19 +1,19 @@
 using UnityEngine;
 using Util;
 using FMODUnity;
-using FMOD.Studio;
 
 public class HideIn : Interactable
 {
     private bool isInside = false;
     private GameObject player;
     private Vector3 exitPosition;
+
     [SerializeField] private ExitDirection[] legalExitDirections;
     [SerializeField] private Transform exitPoint;
     [SerializeField] private bool canBringItem = false;
 
-    [SerializeField] private bool exitToFirstPerson = false; // Controls view mode on exit
-    [SerializeField] private bool exitWithFilter = false;     // Controls audio snapshot state on exit
+    [SerializeField] private bool exitToFirstPerson = false;
+    [SerializeField] private bool exitWithFilter = false;
 
     private Renderer[] playerRenderers;
     private Collider playerCollider;
@@ -21,10 +21,6 @@ public class HideIn : Interactable
     private Camera playerCamera;
     private HidingManager hidingManager;
     private CameraController camController;
-
-    [SerializeField] private string snapshotPath = "snapshot:/Airduct_Lowpass";
-    private static EventInstance airductLowpassSnapshot;
-    private static bool snapshotActive = false;
 
     public override void InteractWith()
     {
@@ -73,13 +69,7 @@ public class HideIn : Interactable
         player.transform.position = transform.position;
         player.transform.rotation = transform.rotation;
 
-        if (camController != null)
-        {
-            airductLowpassSnapshot = RuntimeManager.CreateInstance(snapshotPath);
-            airductLowpassSnapshot.start();
-            snapshotActive = true;
-            // Leave camera mode unchanged
-        }
+        AudioSnapshotController.Instance.StartSnapshot();
 
         isInside = true;
     }
@@ -101,17 +91,13 @@ public class HideIn : Interactable
 
         hidingManager.SetHidingObject(null);
 
+        if (!exitWithFilter)
+        {
+            AudioSnapshotController.Instance.StopSnapshot();
+        }
+
         if (camController != null)
         {
-            // Conditionally stop the filter on exit
-            if (!exitWithFilter && snapshotActive)
-            {
-                airductLowpassSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                airductLowpassSnapshot.release();
-                snapshotActive = false;
-            }
-
-            // Camera mode based on bool
             if (exitToFirstPerson)
             {
                 camController.SetFirstPerson();
