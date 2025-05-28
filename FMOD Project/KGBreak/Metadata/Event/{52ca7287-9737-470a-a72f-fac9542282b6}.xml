@@ -64,7 +64,7 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>6</value>
+			<value>5</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{eba199c9-69f4-4e69-a7af-2df99b49db23}" />
@@ -121,7 +121,8 @@
 	<object class="MixerBusEffectChain" id="{9ed0b774-cf79-4971-8c78-1d994764aec4}">
 		<relationship name="effects">
 			<destination>{2ffb87ef-6de7-45bb-a808-464b4f01c539}</destination>
-			<destination>{1eba8486-7880-43d3-8564-0e6de818e092}</destination>
+			<destination>{2ea41e65-1b58-42c5-ab12-7fbec681b84c}</destination>
+			<destination>{f6ae428b-54b8-47c1-8957-c0cb2fcf7edd}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{efeed50f-2887-43db-9407-f9b224b226d5}">
@@ -131,12 +132,23 @@
 	</object>
 	<object class="MixerBusFader" id="{d4c82e72-5b00-4821-9283-69d4005de2c4}" />
 	<object class="MixerBusFader" id="{2ffb87ef-6de7-45bb-a808-464b4f01c539}" />
-	<object class="SpatialiserEffect" id="{1eba8486-7880-43d3-8564-0e6de818e092}">
+	<object class="ObjectSpatialiserEffect" id="{2ea41e65-1b58-42c5-ab12-7fbec681b84c}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>6</value>
+			<value>5</value>
+		</property>
+	</object>
+	<object class="SpatialiserEffect" id="{f6ae428b-54b8-47c1-8957-c0cb2fcf7edd}">
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>5</value>
 		</property>
 	</object>
 </objects>

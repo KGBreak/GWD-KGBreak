@@ -64,7 +64,7 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>6</value>
+			<value>5</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{0d8854a0-f5e3-4c44-b95e-506d6d0d5855}" />
@@ -104,10 +104,10 @@
 			<value>3</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>30000</value>
+			<value>20000</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>75000</value>
+			<value>40000</value>
 		</property>
 		<property name="minimumScatterDistance">
 			<value>0</value>
@@ -142,7 +142,8 @@
 	<object class="MixerBusEffectChain" id="{c69290b0-359c-49cd-9624-1637876b90b4}">
 		<relationship name="effects">
 			<destination>{ea2389be-4316-4b9f-bda4-0e68db170e02}</destination>
-			<destination>{45a83b5a-def3-4e97-b926-0fb2d0ef7f01}</destination>
+			<destination>{54387e83-ca01-4143-a169-e64dff05acb0}</destination>
+			<destination>{a08864ca-546e-4b34-aa77-a47a602d9878}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ae9cfd22-df26-4d57-98b6-ac139ccded36}" />
@@ -155,22 +156,29 @@
 			<destination>{4534be4c-565d-42e6-92e8-9cba5ee3458f}</destination>
 			<destination>{dcdbb134-3095-46a9-886d-e55bd9ef5742}</destination>
 			<destination>{1f1bd864-0dc6-4202-8d79-5edbd14868d9}</destination>
-			<destination>{a0b66957-ad26-4d14-8696-3aab69b1a6b5}</destination>
 			<destination>{2b0ec67c-e237-4e88-8975-60f200a5e017}</destination>
 			<destination>{2b004bcf-7ef6-4d02-8aae-4bdbe14af915}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{7fe070b8-a2fd-44d6-8efe-f28053e014bb}" />
 	<object class="MixerBusFader" id="{ea2389be-4316-4b9f-bda4-0e68db170e02}" />
-	<object class="SpatialiserEffect" id="{45a83b5a-def3-4e97-b926-0fb2d0ef7f01}">
+	<object class="ObjectSpatialiserEffect" id="{54387e83-ca01-4143-a169-e64dff05acb0}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>6</value>
+			<value>5</value>
 		</property>
-		<property name="extentMode">
-			<value>1</value>
+	</object>
+	<object class="SpatialiserEffect" id="{a08864ca-546e-4b34-aa77-a47a602d9878}">
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>5</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{b15cc453-2d73-41bd-9984-2b0e3aa7c646}">
@@ -206,11 +214,6 @@
 	<object class="SingleSound" id="{1f1bd864-0dc6-4202-8d79-5edbd14868d9}">
 		<relationship name="audioFile">
 			<destination>{af4fb87c-3a64-4783-960c-48d0cb25fdab}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{a0b66957-ad26-4d14-8696-3aab69b1a6b5}">
-		<relationship name="audioFile">
-			<destination>{772d3eb5-434c-4756-a989-39f1c7e30cc8}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{2b0ec67c-e237-4e88-8975-60f200a5e017}">
