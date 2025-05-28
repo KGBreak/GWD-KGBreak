@@ -24595,7 +24595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 930eb909b0256dd4198d4b13e30ac011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherPoint: {fileID: 980196689}
+  otherPoint: {fileID: 1997512546}
   isEnterPoint: 1
   canBringItem: 1
   exitDirection: 3
@@ -64319,7 +64319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4579
+      value: -2.488
       objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalPosition.y
@@ -64327,7 +64327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9529
+      value: -1.044
       objectReference: {fileID: 0}
     - target: {fileID: 6411791368941786080, guid: 1352c717772c25745831c2da41dfe781, type: 3}
       propertyPath: m_LocalRotation.w
@@ -68418,7 +68418,7 @@ Transform:
   m_GameObject: {fileID: 1731754988}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.18, y: 3.486, z: -2.367}
+  m_LocalPosition: {x: -5.18, y: 3.057, z: -2.367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76533,7 +76533,7 @@ GameObject:
   - component: {fileID: 1930100317}
   - component: {fileID: 1930100316}
   - component: {fileID: 1930100315}
-  - component: {fileID: 1930100314}
+  - component: {fileID: 1930100318}
   m_Layer: 0
   m_Name: vent enter 0.1 (3)
   m_TagString: Untagged
@@ -76556,23 +76556,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 327448799}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
---- !u!114 &1930100314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930100312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98067919ff3aba04eb67ab58b990dedc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  legalExitDirections: 02000000
-  exitPoint: {fileID: 544012409}
-  canBringItem: 1
-  exitToFirstPerson: 0
-  exitWithFilter: 0
 --- !u!64 &1930100315
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -76648,6 +76631,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930100312}
   m_Mesh: {fileID: -2068131708435754098, guid: dd0c9827f9928c44794152ec892a6501, type: 3}
+--- !u!114 &1930100318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930100312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930eb909b0256dd4198d4b13e30ac011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherPoint: {fileID: 620139618}
+  isEnterPoint: 0
+  canBringItem: 1
+  exitDirection: 0
 --- !u!1001 &1940736350
 PrefabInstance:
   m_ObjectHideFlags: 0
