@@ -13,6 +13,6 @@ public class LoreManager : MonoBehaviour
         loreEntries.Add(entryNumber, (loreDoc, loreObject));
         Debug.Log($"Lore added: {loreDoc} (Entry {entryNumber})");
 
-        OnLoreEntryAdded?.Invoke(entryNumber);
+        //OnLoreEntryAdded?.Invoke(entryNumber);
     }
 }

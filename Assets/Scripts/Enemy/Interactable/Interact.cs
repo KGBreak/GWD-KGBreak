@@ -32,7 +32,7 @@ public class Interact : MonoBehaviour
             foreach (Collider hit in hits)
             {
                 float heightDifference = Mathf.Abs(feeler.transform.position.y - hit.transform.position.y);
-                if (heightDifference <= elevationThreshold)
+                if (heightDifference <= elevationThreshold || hit.transform.gameObject.CompareTag("Door"))
                 {
                     Interactable interactable = hit.GetComponent<Interactable>();
                     if (interactable == null) continue; // Skip if not interactable

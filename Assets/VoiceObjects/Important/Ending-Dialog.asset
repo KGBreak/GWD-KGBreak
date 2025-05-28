@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 444a5de94334c194b8eb9f7158494554, type: 3}
-  m_Name: Opening-Dialog
+  m_Name: Ending-Dialog
   m_EditorClassIdentifier: 
   voiceLines:
-  - {fileID: 11400000, guid: 4be2afc8373f9b7459707ce0dc85296d, type: 2}
-  - {fileID: 11400000, guid: cf46fcf10acfbf8439c214f781986c7c, type: 2}
+  - {fileID: 11400000, guid: 31a978ece74f7c84a8c243a8bc550931, type: 2}
+  - {fileID: 11400000, guid: d4a084fa3d819664fb6d2d127e77eb84, type: 2}
   isImportant: 0
-  actors: 0200000000000000
+  actors: 0000000002000000
   wasPlayed: 0

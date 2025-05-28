@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87f06396aef3e8468f924bc06b20f2c, type: 3}
   m_Name: Opening-Tim
   m_EditorClassIdentifier: 
-  actor: 0
+  actor: 2
   eventRef:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 891231407
+      Data2: 1269835814
+      Data3: 1165500546
+      Data4: 249701255
+    Path: event:/Dialogue/Interpersonel/Story/Intro_Start_Tim
   investigatingState: 0
