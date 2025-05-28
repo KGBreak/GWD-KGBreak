@@ -67,7 +67,7 @@
 			<value>0.5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>8</value>
+			<value>9</value>
 		</property>
 		<property name="triggerCooldown">
 			<value>200</value>
@@ -147,7 +147,7 @@
 			<value>0.5</value>
 		</property>
 		<property name="maximumDistance">
-			<value>8</value>
+			<value>9</value>
 		</property>
 	</object>
 </objects>
