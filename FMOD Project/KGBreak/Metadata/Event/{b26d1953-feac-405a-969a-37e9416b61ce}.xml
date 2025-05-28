@@ -56,10 +56,14 @@
 			<destination>{39df1e9c-9fc2-4ad9-8d12-05a016b5c92f}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{41932bdc-80d8-415e-b639-a0fed2f42387}</destination>
+			<destination>{e3d908f1-4662-408c-a983-26760b040f93}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{35efab72-dbdf-4717-9a27-59a478cebf9c}" />
+	<object class="EventAutomatableProperties" id="{35efab72-dbdf-4717-9a27-59a478cebf9c}">
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{b6987873-9530-42ca-a574-795134f1b81d}" />
 	<object class="Timeline" id="{6d5254c0-a15d-4955-b365-a9fb608abc5f}">
 		<property name="isProxyEnabled">
@@ -72,6 +76,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{6022ae4e-2cb8-48de-9a46-9fd19d76afd9}">
+		<property name="volume">
+			<value>7</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{a01e2760-6241-4ce4-b6c9-297be3b386c0}</destination>
 		</relationship>
@@ -96,14 +103,23 @@
 	<object class="MixerBusEffectChain" id="{a01e2760-6241-4ce4-b6c9-297be3b386c0}">
 		<relationship name="effects">
 			<destination>{8fc59096-8a7e-4821-991d-6fae7b1f360b}</destination>
+			<destination>{44df5a51-865d-4342-9769-751da0f573c5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{0d742184-c779-46ab-afab-c4ea59a0f062}" />
 	<object class="SingleSound" id="{36cc1551-c257-43a7-ab9c-684f4e122845}">
+		<property name="volume">
+			<value>6</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{c8e22fd8-b6f9-4ae2-b27d-9164a31f5bee}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{27c7c86d-e606-4285-b337-8e048a363849}" />
 	<object class="MixerBusFader" id="{8fc59096-8a7e-4821-991d-6fae7b1f360b}" />
+	<object class="ObjectSpatialiserEffect" id="{44df5a51-865d-4342-9769-751da0f573c5}">
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+	</object>
 </objects>
