@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87f06396aef3e8468f924bc06b20f2c, type: 3}
+  m_Name: Opening-Intercom
+  m_EditorClassIdentifier: 
+  actor: 4
+  eventRef:
+    Guid:
+      Data1: -2118211039
+      Data2: 1133455810
+      Data3: 1746486462
+      Data4: 2130164516
+    Path: event:/Dialogue/Intercom/Intercom_S_Interuption
+  investigatingState: 0
