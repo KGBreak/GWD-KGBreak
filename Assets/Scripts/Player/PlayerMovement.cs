@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     HidingManager hidingManager;
 
     [SerializeField] private PlayerMovement playerMovement;
+    public bool isGameOver = false;
 
 
     Vector2 moveInput ;
@@ -52,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Respawn")]
     private Vector3 lastCheckpointPosition;
+    public Animator gameOverAnimator;
+    private EnemyVision enemyToReset;
 
     private void Awake()
     {
@@ -210,12 +213,24 @@ public class PlayerMovement : MonoBehaviour
         velocity = Vector3.zero;
     }
 
+    public void TriggerGameOverSequence(EnemyVision enemyToReset)
+    {
+        if (isGameOver) return; // Prevent multiple triggers
+        isGameOver = true;
+        this.enemyToReset = enemyToReset;
+        gameOverAnimator.SetBool("isGameOver", isGameOver);
+        Invoke(nameof(ResetToLastCheckpoint), 2.5f); // Delay the reset to allow the animation to play
+    }
 
     public void ResetToLastCheckpoint()
     {
         characterController.enabled = false; // Disable the character controller to prevent movement during teleportation
         transform.position = lastCheckpointPosition; // Teleport the player to the last checkpoint
         characterController.enabled = true; // Re-enable the character controller
+        cameraTransform.GetComponent<CameraController>().SetFirstPerson();
+        isGameOver = false; // Reset the game over state
+        enemyToReset.detectionMeterValue = 0f; // Reset the enemy's detection meter
+        gameOverAnimator.SetBool("isGameOver", isGameOver);
     }
 
     private void OnTriggerEnter(Collider other)
