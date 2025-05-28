@@ -1,6 +1,7 @@
 using UnityEngine;
 using Util;
 using FMODUnity;
+using FMOD.Studio;
 
 public class HideIn : Interactable
 {
@@ -10,11 +11,20 @@ public class HideIn : Interactable
     [SerializeField] private ExitDirection[] legalExitDirections;
     [SerializeField] private Transform exitPoint;
     [SerializeField] private bool canBringItem = false;
+
+    [SerializeField] private bool exitToFirstPerson = false; // Controls view mode on exit
+    [SerializeField] private bool exitWithFilter = false;     // Controls audio snapshot state on exit
+
     private Renderer[] playerRenderers;
     private Collider playerCollider;
     private PlayerMovement playerMovement;
     private Camera playerCamera;
     private HidingManager hidingManager;
+    private CameraController camController;
+
+    [SerializeField] private string snapshotPath = "snapshot:/Airduct_Lowpass";
+    private static EventInstance airductLowpassSnapshot;
+    private static bool snapshotActive = false;
 
     public override void InteractWith()
     {
@@ -22,7 +32,6 @@ public class HideIn : Interactable
         {
             ExitObject();
             RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
-            
         }
         else
         {
@@ -33,88 +42,102 @@ public class HideIn : Interactable
 
     void Start()
     {
-        // Find the player by tag
         player = GameObject.FindGameObjectWithTag("Player");
-
-        playerCamera = Camera.main; // Get the main camera
-
-        // Get all Renderers from child objects
+        playerCamera = Camera.main;
         playerRenderers = player.GetComponentsInChildren<Renderer>();
         playerCollider = player.GetComponent<Collider>();
         playerMovement = player.GetComponent<PlayerMovement>();
         hidingManager = player.GetComponent<HidingManager>();
-
+        camController = player.GetComponentInChildren<CameraController>();
     }
 
     public void EnterObject()
     {
         if (player == null) return;
+
         if (!canBringItem)
         {
             player.GetComponent<ItemManager>().EjectCurrentItem();
         }
+
         hidingManager.SetHidingObject(this);
 
-        // Hide player by disabling all Renderers
         foreach (Renderer rend in playerRenderers)
         {
             rend.enabled = false;
         }
 
-        // Disable collider to avoid interactions
         if (playerCollider) playerCollider.enabled = false;
         if (playerMovement) playerMovement.SetHiding(true);
 
-
-        // Move player inside the object
         player.transform.position = transform.position;
         player.transform.rotation = transform.rotation;
+
+        if (camController != null)
+        {
+            airductLowpassSnapshot = RuntimeManager.CreateInstance(snapshotPath);
+            airductLowpassSnapshot.start();
+            snapshotActive = true;
+            // Leave camera mode unchanged
+        }
 
         isInside = true;
     }
 
     public void ExitObject()
     {
-        RuntimeManager.PlayOneShot("event:/Player/EnterMorph");
         if (player == null) return;
 
-        Vector3 cameraViewDir = playerCamera.transform.forward; // Use camera's forward vector
-
-        // Determine the best exit direction based on where the camera is looking
         Vector3 bestExitDirection = GetBestExitDirection();
-
-        // Move player to the best exit position
         player.transform.position = transform.position + bestExitDirection;
 
-        // Show player by enabling all Renderers again
         foreach (Renderer rend in playerRenderers)
         {
             rend.enabled = true;
         }
 
-        // Re-enable collider
         if (playerCollider) playerCollider.enabled = true;
         if (playerMovement) playerMovement.SetHiding(false);
 
         hidingManager.SetHidingObject(null);
+
+        if (camController != null)
+        {
+            // Conditionally stop the filter on exit
+            if (!exitWithFilter && snapshotActive)
+            {
+                airductLowpassSnapshot.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                airductLowpassSnapshot.release();
+                snapshotActive = false;
+            }
+
+            // Camera mode based on bool
+            if (exitToFirstPerson)
+            {
+                camController.SetFirstPerson();
+            }
+            else
+            {
+                camController.SetThirdPerson();
+            }
+        }
+
         isInside = false;
     }
 
-
     Vector3 GetBestExitDirection()
     {
-        if (legalExitDirections.Length == 0) return transform.right; // Default to right if none are set
+        if (legalExitDirections.Length == 0) return transform.right;
 
-        Vector3 cameraViewDir = playerCamera.transform.forward; // Use camera's view direction
+        Vector3 cameraViewDir = playerCamera.transform.forward;
         Vector3 bestDirection = Vector3.zero;
-        float maxDot = -1f; // Lowest possible dot product
+        float maxDot = -1f;
 
         foreach (ExitDirection dir in legalExitDirections)
         {
             Vector3 worldDirection = DirectionHelper.GetWorldDirection(dir);
             float dotProduct = Vector3.Dot(cameraViewDir, worldDirection);
-
-            if (dotProduct > maxDot) // Closer to player's camera direction
+            if (dotProduct > maxDot)
             {
                 maxDot = dotProduct;
                 bestDirection = worldDirection;
@@ -133,6 +156,24 @@ public class HideIn : Interactable
     {
         isInside = boolean;
     }
+
+    public void SetExitToFirstPerson(bool value)
+    {
+        exitToFirstPerson = value;
+    }
+
+    public bool GetExitToFirstPerson()
+    {
+        return exitToFirstPerson;
+    }
+
+    public void SetExitWithFilter(bool value)
+    {
+        exitWithFilter = value;
+    }
+
+    public bool GetExitWithFilter()
+    {
+        return exitWithFilter;
+    }
 }
-
-
