@@ -85,18 +85,13 @@ private void Update()
         if (dialog.isImportant)
         {
             EndDialog();
-            currentDialogCoroutine = StartCoroutine(PlayDialog(dialog));
+            dialogQueue.Enqueue(dialog);
             return;
         }
 
         // ———> 4) Otherwise it’s non-important: queue it up
         dialogQueue.Enqueue(dialog);
 
-        // ———> 5) If you’re not already playing something, kick it off now:
-        if (currentDialogCoroutine == null)
-        {
-            currentDialogCoroutine = StartCoroutine(PlayDialog(dialogQueue.Dequeue()));
-        }
     }
 
 

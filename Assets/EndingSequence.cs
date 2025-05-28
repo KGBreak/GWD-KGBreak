@@ -3,12 +3,12 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 
-public class EndingSequence : MonoBehaviour
+public class EndingSequence : VoiceRoom
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    [SerializeField] VoiceLine firstVoiceLine;
-    [SerializeField] VoiceLine secondVoiceLine;
+    [SerializeField] Dialog firstVoiceLine;
+    [SerializeField] Dialog secondVoiceLine;
     [SerializeField] Transform issac;
     [SerializeField] GameObject player;
     [SerializeField] GameObject finalKeyCard;
@@ -26,11 +26,14 @@ public class EndingSequence : MonoBehaviour
         if (firstEnter && other.CompareTag("Player"))
         {
             firstEnter = false;
-            RuntimeManager.PlayOneShotAttached(firstVoiceLine.eventRef, issac.gameObject);
+            Debug.Log(this);
+            voiceManager.OnPlayerEnterRoom(this, firstVoiceLine);
+            //RuntimeManager.PlayOneShotAttached(firstVoiceLine.eventRef, issac.gameObject);
         }
         else if (itemManager.GetItem() == finalKeyCard)
         {
-            RuntimeManager.PlayOneShotAttached(secondVoiceLine.eventRef, issac.gameObject);
+            voiceManager.OnPlayerEnterRoom(this, secondVoiceLine);
+            //RuntimeManager.PlayOneShotAttached(secondVoiceLine.eventRef, issac.gameObject);
         }
  
 
