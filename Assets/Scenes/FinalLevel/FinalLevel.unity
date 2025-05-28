@@ -33976,6 +33976,25 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &905799536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69305250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f50ae0b2c8b817c43b0b9aa47c883d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvent:
+    Guid:
+      Data1: -474770694
+      Data2: 1288446112
+      Data3: 2123135921
+      Data4: 398860395
+    Path: event:/ENV/Alarm
 --- !u!1001 &908165156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57419,6 +57438,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8292226592930400140, guid: 7d9ece03673f9f24ebc7734a078b86ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1843010298}
+    - targetCorrespondingSourceObject: {fileID: 8292226592930400140, guid: 7d9ece03673f9f24ebc7734a078b86ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1843010301}
   m_SourcePrefab: {fileID: 100100000, guid: 7d9ece03673f9f24ebc7734a078b86ba, type: 3}
 --- !u!4 &1499111616 stripped
 Transform:
@@ -58259,6 +58281,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapshotPath: snapshot:/Airduct_Lowpass
+  m_Script: {fileID: 11500000, guid: f50ae0b2c8b817c43b0b9aa47c883d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &1519694842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5665283195828219952, guid: d46de2c139b1fb2499d4f50ee9522196, type: 3}
@@ -70585,6 +70617,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1843010301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843010294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59e44fc3abdaa74eab089573f013498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvent:
+    Guid:
+      Data1: 1190750688
+      Data2: 1334103432
+      Data3: -235435597
+      Data4: 142536065
+    Path: event:/ENV/Canister__Open
 --- !u!1001 &1845330949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83174,6 +83225,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8518849421023327821, guid: c327e7c48cfbb294d860fceef6f817ff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 905799535}
+    - targetCorrespondingSourceObject: {fileID: 8518849421023327821, guid: c327e7c48cfbb294d860fceef6f817ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 905799536}
   m_SourcePrefab: {fileID: 100100000, guid: c327e7c48cfbb294d860fceef6f817ff, type: 3}
 --- !u!1001 &4450728723276790871
 PrefabInstance:
