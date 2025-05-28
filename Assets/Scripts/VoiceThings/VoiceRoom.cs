@@ -7,12 +7,13 @@ public class VoiceRoom : MonoBehaviour
     [SerializeField] private int roomId;
     [SerializeField] private List<Transform> npcs;
     [SerializeField] private Dialog specificDialog;
-    [SerializeField] private VoiceManager voiceManager;
+    [SerializeField] protected VoiceManager voiceManager;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("heeeloo");
             voiceManager.OnPlayerEnterRoom(this, specificDialog);
         }
     }
@@ -21,7 +22,6 @@ public class VoiceRoom : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("oops");
             voiceManager.OnPlayerExitRoom(this);
         }
     }
