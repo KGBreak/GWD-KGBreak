@@ -63,6 +63,12 @@
 		<property name="voiceStealing">
 			<value>3</value>
 		</property>
+		<property name="minimumDistance">
+			<value>0.5</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
 		<property name="triggerCooldown">
 			<value>200</value>
 		</property>
@@ -136,5 +142,12 @@
 	</object>
 	<object class="MixerBusFader" id="{78289093-6503-4526-adaf-0967110eb061}" />
 	<object class="MixerBusFader" id="{906a4b27-92d9-438a-8afe-29411f8fb9f2}" />
-	<object class="SpatialiserEffect" id="{a57c5e87-dec0-4da4-9c9b-ad55ee80173f}" />
+	<object class="SpatialiserEffect" id="{a57c5e87-dec0-4da4-9c9b-ad55ee80173f}">
+		<property name="minimumDistance">
+			<value>0.5</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+	</object>
 </objects>
