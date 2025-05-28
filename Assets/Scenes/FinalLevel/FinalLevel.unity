@@ -44687,6 +44687,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 713283348}
+  - {fileID: 1713038252}
   - {fileID: 4450728723276790872}
   m_Father: {fileID: 1600202705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60607,6 +60608,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6451970843001869659, guid: 27c4839790877094081875592011c732, type: 3}
   m_PrefabInstance: {fileID: 1710454460}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1713038251
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1266014131}
+    m_Modifications:
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.438
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0935377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.486
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70105743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70105743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.09229582
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.09229582
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242147372525286199, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      propertyPath: m_Name
+      value: Dictionary_Book (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2242147372525286199, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1713038254}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+--- !u!4 &1713038252 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1465470378372606349, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+  m_PrefabInstance: {fileID: 1713038251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1713038253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2242147372525286199, guid: 9ccc3973032a6dd46bbd764e31de228a, type: 3}
+  m_PrefabInstance: {fileID: 1713038251}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1713038254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713038253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f52879ab9fa28e4cb1834463ef8b070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loreDoc: Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus
+    ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
+    convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla
+    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer
+    nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora
+    torquent per conubia nostra inceptos himenaeos.  Lorem ipsum dolor sit amet consectetur
+    adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.
+    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam
+    urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis
+    massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class
+    aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. 
+    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien
+    vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.
+    Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec
+    metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.
+    Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per
+    conubia nostra inceptos himenaeos.  Lorem ipsum dolor sit amet consectetur adipiscing
+    elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus
+    mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+    Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl
+    malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent
+    taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+  entryNumber: 1
 --- !u!1001 &1714205890
 PrefabInstance:
   m_ObjectHideFlags: 0

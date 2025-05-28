@@ -1,14 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Add this namespace for TextMeshPro
+using TMPro;
 
 public class LorePanelController : MonoBehaviour
 {
-    public TMP_Text loreText; // Reference to the TMP_Text component for lore content
-    public TMP_Text entryNumberText; // Reference to the TMP_Text component for entry number
+    public TMP_Text loreText; 
+    public TMP_Text entryNumberText; 
     public Button leftArrow;
     public Button rightArrow;
+    public ScrollRect scrollRect;
+    public RectTransform contentRectTransform;
 
     private int currentEntryIndex = 0;
     private List<int> loreEntryKeys;
@@ -22,14 +24,37 @@ public class LorePanelController : MonoBehaviour
         rightArrow.onClick.AddListener(ShowNextEntry);
     }
 
+    void OnEnable()
+    {
+        loreEntryKeys = new List<int>(LoreManager.loreEntries.Keys);
+        loreEntryKeys.Sort();
+
+        if (loreEntryKeys.Count > 0)
+        {
+            currentEntryIndex = loreEntryKeys.Count - 1;
+            DisplayLoreEntry(currentEntryIndex);
+        }
+        else
+        {
+            loreText.text = "No lore entries yet.";
+            entryNumberText.text = "";
+        }
+    }
+
+
     public void DisplayLoreEntry(int index)
     {
+        loreEntryKeys = new List<int>(LoreManager.loreEntries.Keys);
+
         if (index >= 0 && index < loreEntryKeys.Count)
         {
             int entryNumber = loreEntryKeys[index];
             var entry = LoreManager.loreEntries[entryNumber];
             loreText.text = entry.loreDoc;
             entryNumberText.text = $"Entry {entryNumber}";
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(contentRectTransform);
+            scrollRect.verticalNormalizedPosition = 1f;
         }
     }
 
