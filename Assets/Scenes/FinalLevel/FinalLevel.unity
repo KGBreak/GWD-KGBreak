@@ -14456,6 +14456,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3998301397558797994, guid: 45ab125c83fab6342bbbe9d9275d3c72, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2100738310}
+    - targetCorrespondingSourceObject: {fileID: 3998301397558797994, guid: 45ab125c83fab6342bbbe9d9275d3c72, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2100738311}
   m_SourcePrefab: {fileID: 100100000, guid: 45ab125c83fab6342bbbe9d9275d3c72, type: 3}
 --- !u!4 &368754784 stripped
 Transform:
@@ -35787,6 +35790,10 @@ PrefabInstance:
       propertyPath: suckUp
       value: 
       objectReference: {fileID: 368754786}
+    - target: {fileID: 1836029301559934773, guid: b86c5f25de980b64fae3929974dcc2b5, type: 3}
+      propertyPath: vacuumSoundObject
+      value: 
+      objectReference: {fileID: 851994940}
     - target: {fileID: 4875825404658439286, guid: b86c5f25de980b64fae3929974dcc2b5, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -48818,6 +48825,10 @@ PrefabInstance:
       propertyPath: suckUp
       value: 
       objectReference: {fileID: 2934687495096923547}
+    - target: {fileID: 1836029301559934773, guid: b86c5f25de980b64fae3929974dcc2b5, type: 3}
+      propertyPath: vacuumSoundObject
+      value: 
+      objectReference: {fileID: 2934687495096923548}
     - target: {fileID: 4875825404658439286, guid: b86c5f25de980b64fae3929974dcc2b5, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -54996,7 +55007,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2076523137099233742, guid: 45ab125c83fab6342bbbe9d9275d3c72, type: 3}
   m_PrefabInstance: {fileID: 2934687495096923545}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2934687495096923548}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 930eb909b0256dd4198d4b13e30ac011, type: 3}
@@ -82384,6 +82395,25 @@ MonoBehaviour:
   isEnterPoint: 1
   canBringItem: 0
   exitDirection: 4
+--- !u!114 &2100738311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851994940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35bb8b2c98c8b443a65245a307b72be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vacuumSoundEvent:
+    Guid:
+      Data1: 675460494
+      Data2: 1297350162
+      Data3: 18451354
+      Data4: -382674351
+    Path: event:/ENV/Vacuum
 --- !u!1001 &2101146324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85705,7 +85735,10 @@ PrefabInstance:
     - {fileID: 3972867456945623771, guid: 45ab125c83fab6342bbbe9d9275d3c72, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3998301397558797994, guid: 45ab125c83fab6342bbbe9d9275d3c72, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2934687495096923549}
   m_SourcePrefab: {fileID: 100100000, guid: 45ab125c83fab6342bbbe9d9275d3c72, type: 3}
 --- !u!4 &2934687495096923546 stripped
 Transform:
@@ -85717,6 +85750,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1780690352667806951, guid: 45ab125c83fab6342bbbe9d9275d3c72, type: 3}
   m_PrefabInstance: {fileID: 2934687495096923545}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2934687495096923548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3998301397558797994, guid: 45ab125c83fab6342bbbe9d9275d3c72, type: 3}
+  m_PrefabInstance: {fileID: 2934687495096923545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2934687495096923549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2934687495096923548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35bb8b2c98c8b443a65245a307b72be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vacuumSoundEvent:
+    Guid:
+      Data1: 675460494
+      Data2: 1297350162
+      Data3: 18451354
+      Data4: -382674351
+    Path: event:/ENV/Vacuum
 --- !u!1001 &3612233140429135908
 PrefabInstance:
   m_ObjectHideFlags: 0

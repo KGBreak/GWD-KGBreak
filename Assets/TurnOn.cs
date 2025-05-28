@@ -5,15 +5,19 @@ public class TurnOn : Interactable
 {
 
     [SerializeField] GameObject suckUp;
+    [SerializeField] GameObject vacuumSoundObject;
     [SerializeField] float pingRange = 10f;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] LayerMask obstacleLayer;
     SuckUp suckUpScript;
+    private VacuumSFX vacuumSFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Start()
     {
         suckUpScript = suckUp.GetComponent<SuckUp>();
+        if (vacuumSoundObject != null)
+            vacuumSFX = vacuumSoundObject.GetComponent<VacuumSFX>();
     }
     public override void InteractWith()
     {
@@ -21,12 +25,16 @@ public class TurnOn : Interactable
         {
             suckUpScript.SetTurnOn(false);
             RuntimeManager.PlayOneShot("event:/TurnOff", transform.position);
+            if (vacuumSFX != null)
+                vacuumSFX.StopVacuumSound();
         }
         else
         {
 
             suckUpScript.SetTurnOn(true);
             RuntimeManager.PlayOneShot("event:/TurnOff", transform.position);
+            if (vacuumSFX != null)
+                vacuumSFX.PlayVacuumSound();
         }
         SetRotation();
         FindAndPingClosest();
