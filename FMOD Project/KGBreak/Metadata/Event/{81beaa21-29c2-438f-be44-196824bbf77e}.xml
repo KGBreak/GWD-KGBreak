@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{81beaa21-29c2-438f-be44-196824bbf77e}">
 		<property name="name">
-			<value>Intercom_S_CheckIn</value>
+			<value>Intercom_S_Interuption</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
