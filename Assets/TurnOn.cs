@@ -6,9 +6,7 @@ public class TurnOn : Interactable
 
     [SerializeField] GameObject suckUp;
     [SerializeField] GameObject vacuumSoundObject;
-    [SerializeField] float pingRange = 10f;
-    [SerializeField] LayerMask enemyLayer;
-    [SerializeField] LayerMask obstacleLayer;
+    [SerializeField] Enemy enemy1;
     SuckUp suckUpScript;
     private VacuumSFX vacuumSFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,7 +35,7 @@ public class TurnOn : Interactable
                 vacuumSFX.PlayVacuumSound();
         }
         SetRotation();
-        FindAndPingClosest();
+        PingClosest();
     }
 
     public void TurnOnOrOff(bool turnOn)
@@ -51,37 +49,13 @@ public class TurnOn : Interactable
         transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, -transform.eulerAngles.z);
     }
 
-    public void FindAndPingClosest()
+    public void PingClosest()
     {
-        Collider[] enemies = Physics.OverlapSphere(transform.position, pingRange, enemyLayer);
-        Transform closestEnemy = null;
-        float closestDistanceSqr = Mathf.Infinity;
-
-        Debug.Log(enemies.Length);
-
-        foreach (var enemy in enemies)
+        if (enemy1 != null)
         {
-            Vector3 directionToEnemy = enemy.transform.position - transform.position;
-            float distanceSqr = directionToEnemy.sqrMagnitude;
-
-            // Check line of sight
-            if (!Physics.Raycast(transform.position, directionToEnemy.normalized, directionToEnemy.magnitude, obstacleLayer))
-            {
-                if (distanceSqr < closestDistanceSqr)
-                {
-                    closestDistanceSqr = distanceSqr;
-                    closestEnemy = enemy.transform;
-                }
-            }
+            enemy1.SetTurnOnButton(this);
+            enemy1.SetInvestigateTarget(transform.position);
         }
-
-        if (closestEnemy != null)
-        {
-            if (closestEnemy.TryGetComponent<Enemy>(out Enemy enemyScript))
-            {
-                enemyScript.SetTurnOnButton(this);
-                enemyScript.SetInvestigateTarget(transform.position);
-            }
-        }
+        
     }
 }
