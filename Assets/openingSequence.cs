@@ -10,7 +10,8 @@ public class openingSequence : MonoBehaviour
 {
     [SerializeField] private GameObject openingNpc1;
     [SerializeField] private GameObject openingNpc2;
-    [SerializeField] private GameObject openingVentalation;
+    [SerializeField] private GameObject openingVentalationLook;
+    [SerializeField] private GameObject openingVentalationEnter;
     [SerializeField] private VoiceLine gibberish;
     [SerializeField] private VoiceLine transition;
     [SerializeField] private Dialog openingConvo;
@@ -21,6 +22,7 @@ public class openingSequence : MonoBehaviour
     private StateMachine Npc1SM;
     private StateMachine Npc2SM;
     private VentPoint ventPoint;
+    private HideIn ventPointLook;
     private Door door;
 
     private EventInstance _currentInstance;
@@ -31,7 +33,8 @@ public class openingSequence : MonoBehaviour
     {
         Npc1SM = openingNpc1.GetComponent<StateMachine>();
         Npc2SM = openingNpc2.GetComponent<StateMachine>();
-        ventPoint = openingVentalation.GetComponent<VentPoint>();
+        ventPointLook = openingVentalationLook.GetComponent<HideIn>();
+        ventPoint = openingVentalationEnter.GetComponent<VentPoint>();
         door = openingDoor.GetComponent<Door>();
 
         _currentInstance = RuntimeManager.CreateInstance(gibberish.eventRef);
@@ -44,11 +47,14 @@ public class openingSequence : MonoBehaviour
     {
         if (hasConsumed) return;
         hasConsumed = true;
+
+        ventPoint.enabled = true;
         _currentInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         _currentInstance.release();
 
         _currentInstance = RuntimeManager.CreateInstance(transition.eventRef);
         _currentInstance.start();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -99,7 +105,7 @@ public class openingSequence : MonoBehaviour
 
     private void OnDialogComplete()
     {
-        ventPoint.enabled = true;
+        ventPointLook.enabled = true;
 
         door.InteractWith();
 

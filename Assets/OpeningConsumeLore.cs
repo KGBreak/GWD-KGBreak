@@ -12,8 +12,8 @@ public class OpeningConsumeLore : ConsumeLore
 
     public override void InteractWith()
     {
-        OS.consumeDictionary();
         base.InteractWith();
+        OS.consumeDictionary();
 
     }
 }
