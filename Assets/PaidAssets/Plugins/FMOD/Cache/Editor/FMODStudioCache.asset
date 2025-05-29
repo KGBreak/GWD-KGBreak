@@ -1,5 +1,1113 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9205508781026672643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/Canister__Open
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/Canister__Open
+  Guid:
+    Data1: 1190750688
+    Data2: 1334103432
+    Data3: -235435597
+    Data4: 142536065
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1.5
+  MaxDistance: 7
+  Length: 0
+--- !u!114 &-8547380494897657351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 1 tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 1 tim
+  Guid:
+    Data1: -1198897093
+    Data2: 1161728793
+    Data3: 718935436
+    Data4: 2011282432
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &-8015917088161770372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Intercom/Intercom_gibberish
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Intercom/Intercom_gibberish
+  Guid:
+    Data1: -577113908
+    Data2: 1151353744
+    Data3: -391428687
+    Data4: -500525615
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 2.4
+  MaxDistance: 5.2000003
+  Length: 36000
+--- !u!114 &-8012548262503100152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Movement_Stop
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Movement_Stop
+  Guid:
+    Data1: -709629705
+    Data2: 1262928517
+    Data3: 1820584854
+    Data4: -853919905
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7926155383120647498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Story/Intro_Start_Tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Story/Intro_Start_Tim
+  Guid:
+    Data1: 891231407
+    Data2: 1269835814
+    Data3: 1165500546
+    Data4: 249701255
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 0
+--- !u!114 &-7709130694797952509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 1 atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 1 atilla
+  Guid:
+    Data1: -1977663697
+    Data2: 1152857569
+    Data3: 2115227068
+    Data4: -1512720418
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &-7630016154905620718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Suspicion/Emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Suspicion/Emil
+  Guid:
+    Data1: 122432937
+    Data2: 1226598220
+    Data3: 1712071053
+    Data4: -248748203
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 10
+  Length: 5000
+--- !u!114 &-7466679579486697021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/Vacuum
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/Vacuum
+  Guid:
+    Data1: 675460494
+    Data2: 1297350162
+    Data3: 18451354
+    Data4: -382674351
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 8
+  Length: 8640
+--- !u!114 &-7425547984346923718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Pause
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Pause
+  Guid:
+    Data1: 589983812
+    Data2: 1330552235
+    Data3: 848822400
+    Data4: -478865342
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-7023965115463590141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 4 atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 4 atilla
+  Guid:
+    Data1: -1468249826
+    Data2: 1340031693
+    Data3: 1221603007
+    Data4: -1853847188
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &-6838605718035406260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Suspicion/Atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Suspicion/Atilla
+  Guid:
+    Data1: 433147510
+    Data2: 1094422463
+    Data3: -2089595762
+    Data4: 486394033
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 9
+  Length: 2500
+--- !u!114 &-6496491296722057180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Intercom/Intercom_S_Detected
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Intercom/Intercom_S_Detected
+  Guid:
+    Data1: 681091503
+    Data2: 1141047771
+    Data3: -1768036674
+    Data4: -820569295
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6139151414106029616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Intercom/Intercom_S_Lockdown
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Intercom/Intercom_S_Lockdown
+  Guid:
+    Data1: 1443399706
+    Data2: 1157058932
+    Data3: 25982098
+    Data4: -268711510
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6057110790104433952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 7 tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 7 tim
+  Guid:
+    Data1: -273303681
+    Data2: 1333879493
+    Data3: 1413273761
+    Data4: 1994601113
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &-5529624610096635327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Radio_Music
+  m_EditorClassIdentifier: 
+  Path: event:/Radio_Music
+  Guid:
+    Data1: 1388999303
+    Data2: 1191876407
+    Data3: -906350681
+    Data4: -1232985516
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 5
+  Length: 156000
+--- !u!114 &-5128105800188142264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/LostInterest/Atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/LostInterest/Atilla
+  Guid:
+    Data1: 1736534246
+    Data2: 1279908638
+    Data3: -1211830118
+    Data4: 649651902
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 9
+  Length: 5500
+--- !u!114 &-4975112859967380179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 6 emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 6 emil
+  Guid:
+    Data1: 206225942
+    Data2: 1246117379
+    Data3: -296351054
+    Data4: -2106529554
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &-4919445909280380490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Story/Isaak_Keycard
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Story/Isaak_Keycard
+  Guid:
+    Data1: -558291530
+    Data2: 1133168997
+    Data3: -1466014047
+    Data4: -1567446515
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 0
+--- !u!114 &-4734839780199761737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience
+  Guid:
+    Data1: 105369823
+    Data2: 1195925141
+    Data3: -1997093242
+    Data4: 1604284943
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1046144711202560845}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 86869
+--- !u!114 &-4519609321842386075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Drop
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Drop
+  Guid:
+    Data1: -700741327
+    Data2: 1179270272
+    Data3: 818973117
+    Data4: -2089017989
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4306679001871799419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Detected_LOOP
+  m_EditorClassIdentifier: 
+  Path: event:/Detected_LOOP
+  Guid:
+    Data1: -1227939069
+    Data2: 1321237776
+    Data3: 204841882
+    Data4: -746267817
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1697
+--- !u!114 &-4252509519068353532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 8 tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 8 tim
+  Guid:
+    Data1: 1650924550
+    Data2: 1312212414
+    Data3: -1184884342
+    Data4: 1206045887
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &-4089040121058833187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/ThinkingOutLoud/Tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/ThinkingOutLoud/Tim
+  Guid:
+    Data1: 1462144093
+    Data2: 1084611605
+    Data3: -1287694443
+    Data4: 1731831826
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 9
+  Length: 8900
+--- !u!114 &-3342655761087609019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/LostInterest/Tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/LostInterest/Tim
+  Guid:
+    Data1: 2058166728
+    Data2: 1125831409
+    Data3: -1229271149
+    Data4: 1048078260
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 8
+  Length: 6400
+--- !u!114 &-3274079069732248751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Spotted/Emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Spotted/Emil
+  Guid:
+    Data1: -2127004226
+    Data2: 1235613193
+    Data3: -1088887878
+    Data4: 650669065
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 9
+  Length: 5000
+--- !u!114 &-3077705145863551572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 2 tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 2 tim
+  Guid:
+    Data1: -1084805804
+    Data2: 1284207131
+    Data3: -1376319570
+    Data4: -1640931279
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &-2893045347039983066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Movement
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Movement
+  Guid:
+    Data1: -820488887
+    Data2: 1260621000
+    Data3: 2133137799
+    Data4: 1397299089
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5195
+--- !u!114 &-2689081760592356895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GuardFootstep
+  m_EditorClassIdentifier: 
+  Path: event:/GuardFootstep
+  Guid:
+    Data1: 1147038735
+    Data2: 1319975732
+    Data3: 2030877355
+    Data4: 519226218
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 6
+  Length: 0
+--- !u!114 &-2520318503559986284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/Alarm
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/Alarm
+  Guid:
+    Data1: -474770694
+    Data2: 1288446112
+    Data3: 2123135921
+    Data4: 398860395
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8324
+--- !u!114 &-2184123913313670249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/LostInterest/Emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/LostInterest/Emil
+  Guid:
+    Data1: 1492566325
+    Data2: 1288949247
+    Data3: -1753036922
+    Data4: -1072217098
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 8
+  Length: 4500
+--- !u!114 &-2160440840562054962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TurnOff
+  m_EditorClassIdentifier: 
+  Path: event:/TurnOff
+  Guid:
+    Data1: -1033068329
+    Data2: 1189237826
+    Data3: 1660310708
+    Data4: 582578969
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2140360726804164048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Pause
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Pause
+  Guid:
+    Data1: -272147719
+    Data2: 1161671294
+    Data3: 667472512
+    Data4: 194318669
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1765526036035238471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Varshavjanka
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Varshavjanka
+  Guid:
+    Data1: -763217546
+    Data2: 1119788877
+    Data3: -774580605
+    Data4: 573476033
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 110800
+--- !u!114 &-1734797032944739363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Suspicion/Tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Suspicion/Tim
+  Guid:
+    Data1: 775283587
+    Data2: 1161652360
+    Data3: 158316718
+    Data4: -722431951
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 10
+  Length: 2250
+--- !u!114 &-1713633560946378821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Airduct_Lowpass
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Airduct_Lowpass
+  Guid:
+    Data1: 1372358257
+    Data2: 1087677732
+    Data3: 1815213483
+    Data4: 512469357
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1345024818221806484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Intercom/Intercom_Switch_SFX
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Intercom/Intercom_Switch_SFX
+  Guid:
+    Data1: -1196085822
+    Data2: 1122549689
+    Data3: -2125113723
+    Data4: -1746729854
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9869
+--- !u!114 &-1082499427740982709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Pickup
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Pickup
+  Guid:
+    Data1: 585366145
+    Data2: 1188971034
+    Data3: -1165027185
+    Data4: 2014314208
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1040700854681696571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Door_open
+  m_EditorClassIdentifier: 
+  Path: event:/Door_open
+  Guid:
+    Data1: -841807061
+    Data2: 1159689085
+    Data3: 826525614
+    Data4: -203111868
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 0
+--- !u!114 &-874962408874920865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/UI_click
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_click
+  Guid:
+    Data1: -969695323
+    Data2: 1163010641
+    Data3: -465293636
+    Data4: 871737502
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-770591337770075535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Intercom/Intercom_S_Captured
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Intercom/Intercom_S_Captured
+  Guid:
+    Data1: -502180423
+    Data2: 1247325323
+    Data3: 1034000006
+    Data4: -754805473
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-390510964252484390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Spotted/Atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Spotted/Atilla
+  Guid:
+    Data1: -400814057
+    Data2: 1296953270
+    Data3: 824019604
+    Data4: -523818080
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 9
+  Length: 2900
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +1120,903 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: 8487604113056880468}
+  - {fileID: 7837100230392252318}
+  EditorEvents:
+  - {fileID: -2893045347039983066}
+  - {fileID: -874962408874920865}
+  - {fileID: -4306679001871799419}
+  - {fileID: -1040700854681696571}
+  - {fileID: -4519609321842386075}
+  - {fileID: 478891640081124837}
+  - {fileID: -1765526036035238471}
+  - {fileID: 484725709741241508}
+  - {fileID: 8465808688382563851}
+  - {fileID: -1082499427740982709}
+  - {fileID: -5529624610096635327}
+  - {fileID: 7118118616689873290}
+  - {fileID: 4697096554308964802}
+  - {fileID: 8441849672930483595}
+  - {fileID: -8012548262503100152}
+  - {fileID: -2140360726804164048}
+  - {fileID: 4189879202892118605}
+  - {fileID: -6139151414106029616}
+  - {fileID: -1713633560946378821}
+  - {fileID: -6496491296722057180}
+  - {fileID: -770591337770075535}
+  - {fileID: -1345024818221806484}
+  - {fileID: 3074290799544627400}
+  - {fileID: -8015917088161770372}
+  - {fileID: 6363551369096307960}
+  - {fileID: -4734839780199761737}
+  - {fileID: 3828781284174442713}
+  - {fileID: -4252509519068353532}
+  - {fileID: 1687028525857077981}
+  - {fileID: -2689081760592356895}
+  - {fileID: -4975112859967380179}
+  - {fileID: -390510964252484390}
+  - {fileID: -7023965115463590141}
+  - {fileID: 3628435826494321070}
+  - {fileID: -7709130694797952509}
+  - {fileID: -2184123913313670249}
+  - {fileID: -8547380494897657351}
+  - {fileID: -7425547984346923718}
+  - {fileID: 1412091134216024906}
+  - {fileID: 5094273668898148537}
+  - {fileID: -3077705145863551572}
+  - {fileID: 3497276596358864201}
+  - {fileID: -4089040121058833187}
+  - {fileID: -6838605718035406260}
+  - {fileID: -6057110790104433952}
+  - {fileID: 8591716019544598145}
+  - {fileID: -1734797032944739363}
+  - {fileID: 4144054566444970438}
+  - {fileID: 3627886220077811351}
+  - {fileID: 769767137910992929}
+  - {fileID: 196409708556954810}
+  - {fileID: -7630016154905620718}
+  - {fileID: 7730405695582499232}
+  - {fileID: -3274079069732248751}
+  - {fileID: 3093141875435679879}
+  - {fileID: -3342655761087609019}
+  - {fileID: -2160440840562054962}
+  - {fileID: 5451713673741825726}
+  - {fileID: -5128105800188142264}
+  - {fileID: -7466679579486697021}
+  - {fileID: 8832135431728865524}
+  - {fileID: -4919445909280380490}
+  - {fileID: -2520318503559986284}
+  - {fileID: 3441656660921856995}
+  - {fileID: 336873453236786821}
+  - {fileID: 4432981425051882903}
+  - {fileID: -7926155383120647498}
+  - {fileID: 6369174788872421686}
+  - {fileID: -9205508781026672643}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  cacheTime: 0
+  MasterBanks:
+  - {fileID: 7837100230392252318}
+  StringsBanks:
+  - {fileID: 8487604113056880468}
+  cacheTime: 638841201266093880
   cacheVersion: 131622
+--- !u!114 &196409708556954810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 5 atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 5 atilla
+  Guid:
+    Data1: 1949455011
+    Data2: 1126419096
+    Data3: 1932350379
+    Data4: 1118294756
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &336873453236786821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Story/Intro_End_Tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Story/Intro_End_Tim
+  Guid:
+    Data1: -1301472941
+    Data2: 1079705260
+    Data3: -382231914
+    Data4: -832476351
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 0
+--- !u!114 &478891640081124837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Detected_Full
+  m_EditorClassIdentifier: 
+  Path: event:/Detected_Full
+  Guid:
+    Data1: -249821092
+    Data2: 1263188630
+    Data3: -1133385029
+    Data4: -25853958
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2119
+--- !u!114 &484725709741241508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Door_close
+  m_EditorClassIdentifier: 
+  Path: event:/Door_close
+  Guid:
+    Data1: -901610633
+    Data2: 1084816200
+    Data3: -782000734
+    Data4: 1590268830
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 0
+--- !u!114 &769767137910992929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 4 emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 4 emil
+  Guid:
+    Data1: -910039912
+    Data2: 1190374494
+    Data3: -857930850
+    Data4: 1149625356
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &1046144711202560845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience/State
+  m_EditorClassIdentifier: 
+  Name: State
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3724386456
+    data2: 2240758081
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1412091134216024906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Conversations
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Conversations
+  Guid:
+    Data1: -26208185
+    Data2: 1279504375
+    Data3: 1375652532
+    Data4: -1106732521
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 60000
+--- !u!114 &1687028525857077981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/ThinkingOutLoud/Emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/ThinkingOutLoud/Emil
+  Guid:
+    Data1: -1596929271
+    Data2: 1082087901
+    Data3: -833920349
+    Data4: -1432236570
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 9
+  Length: 5500
+--- !u!114 &3074290799544627400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Level_Music_01
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Level_Music_01
+  Guid:
+    Data1: 323439304
+    Data2: 1086302166
+    Data3: 1775928254
+    Data4: 1395545211
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 98496
+--- !u!114 &3093141875435679879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 6 atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 6 atilla
+  Guid:
+    Data1: 1277625028
+    Data2: 1075801927
+    Data3: -670588775
+    Data4: -1360679886
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &3441656660921856995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Intercom/Intercom_S_Interuption
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Intercom/Intercom_S_Interuption
+  Guid:
+    Data1: -2118211039
+    Data2: 1133455810
+    Data3: 1746486462
+    Data4: 2130164516
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3497276596358864201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Spotted/Tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Spotted/Tim
+  Guid:
+    Data1: 970924119
+    Data2: 1133879790
+    Data3: -1367947648
+    Data4: -950897702
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 9
+  Length: 3800
+--- !u!114 &3627886220077811351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 3 atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 3 atilla
+  Guid:
+    Data1: 242129558
+    Data2: 1263755093
+    Data3: -511440449
+    Data4: -165539631
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &3628435826494321070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 3 emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 3 emil
+  Guid:
+    Data1: -1011007196
+    Data2: 1223131515
+    Data3: 916127637
+    Data4: 1377226529
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &3828781284174442713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Intercom/Intercom_Random
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Intercom/Intercom_Random
+  Guid:
+    Data1: 1096139516
+    Data2: 1287467842
+    Data3: -489558128
+    Data4: 1711594034
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 15
+  Length: 29200
+--- !u!114 &4144054566444970438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 2 emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 2 emil
+  Guid:
+    Data1: 372985994
+    Data2: 1186952683
+    Data3: 300413060
+    Data4: -1580960194
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &4189879202892118605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/StartGame
+  m_EditorClassIdentifier: 
+  Path: event:/UI/StartGame
+  Guid:
+    Data1: -1069995265
+    Data2: 1341766036
+    Data3: 2044336037
+    Data4: -997402667
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4432981425051882903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Story/Intro_End_Atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Story/Intro_End_Atilla
+  Guid:
+    Data1: 3598475
+    Data2: 1130063448
+    Data3: 766684326
+    Data4: -1492425387
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 0
+--- !u!114 &4697096554308964802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Radio_Announcement
+  m_EditorClassIdentifier: 
+  Path: event:/Radio_Announcement
+  Guid:
+    Data1: -789970196
+    Data2: 1295554557
+    Data3: -1148712563
+    Data4: 1286109019
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 5
+  Length: 32000
+--- !u!114 &5094273668898148537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 7 emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 7 emil
+  Guid:
+    Data1: -777539510
+    Data2: 1257996529
+    Data3: 1201413523
+    Data4: 1902304871
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &5451713673741825726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 5 tim
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 5 tim
+  Guid:
+    Data1: -169575195
+    Data2: 1186137765
+    Data3: -967128438
+    Data4: 171458490
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &6363551369096307960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Intercom/Intercom_Switch_Vox
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Intercom/Intercom_Switch_Vox
+  Guid:
+    Data1: 1822911708
+    Data2: 1339396645
+    Data3: -1561093485
+    Data4: -2114060871
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 20
+  Length: 22810
+--- !u!114 &6369174788872421686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Story/Intro_Start_Atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Story/Intro_Start_Atilla
+  Guid:
+    Data1: -384272923
+    Data2: 1138672605
+    Data3: -195045710
+    Data4: 659061951
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 0
+--- !u!114 &7118118616689873290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Land
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Land
+  Guid:
+    Data1: -46106197
+    Data2: 1182404573
+    Data3: -1593693043
+    Data4: -853694861
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 148
+--- !u!114 &7730405695582499232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 8 emil
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Conversations/Separated/Convo 8 emil
+  Guid:
+    Data1: -1115642695
+    Data2: 1280275184
+    Data3: -660077652
+    Data4: 881443763
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 0
+--- !u!114 &7837100230392252318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Project/KGBreak/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638841201266093880
+  FileSizes:
+  - Name: Desktop
+    Value: 26193504
+  Exists: 1
+--- !u!114 &8441849672930483595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/UI_hover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_hover
+  Guid:
+    Data1: 1418410485
+    Data2: 1339455614
+    Data3: -2103691596
+    Data4: 1347688704
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8465808688382563851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/EnterMorph
+  m_EditorClassIdentifier: 
+  Path: event:/Player/EnterMorph
+  Guid:
+    Data1: 1935551353
+    Data2: 1296672632
+    Data3: 1785201057
+    Data4: -867549260
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 442
+--- !u!114 &8487604113056880468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Project/KGBreak/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638841181397477844
+  FileSizes:
+  - Name: Desktop
+    Value: 4832
+  Exists: 1
+--- !u!114 &8591716019544598145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/ThinkingOutLoud/Atilla
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/ThinkingOutLoud/Atilla
+  Guid:
+    Data1: -1315814015
+    Data2: 1089665349
+    Data3: 465428102
+    Data4: -1824571343
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 9
+  Length: 5500
+--- !u!114 &8832135431728865524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Interpersonel/Story/Isaak_KeycardReceived
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Interpersonel/Story/Isaak_KeycardReceived
+  Guid:
+    Data1: -933254233
+    Data2: 1184571672
+    Data3: -451725661
+    Data4: 562659623
+  Banks:
+  - {fileID: 7837100230392252318}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 0
