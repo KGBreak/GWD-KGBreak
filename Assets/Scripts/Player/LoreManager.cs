@@ -8,6 +8,11 @@ public class LoreManager : MonoBehaviour
 
     public static Dictionary<int, (string loreDoc, GameObject loreObject)> loreEntries = new Dictionary<int, (string, GameObject)>();
 
+    private void Start()
+    {
+        loreEntries.Clear();
+    }
+
     public void AddLoreEntry(string loreDoc, int entryNumber, GameObject loreObject)
     {
         loreEntries.Add(entryNumber, (loreDoc, loreObject));
