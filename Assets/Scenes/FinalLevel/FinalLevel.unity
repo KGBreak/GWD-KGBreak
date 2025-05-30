@@ -9441,7 +9441,6 @@ MonoBehaviour:
   npcs:
   - {fileID: 179165667}
   - {fileID: 1312614578}
-  - {fileID: 2063865829}
   specificDialog: {fileID: 0}
   voiceManager: {fileID: 1883658820}
 --- !u!4 &217620381
