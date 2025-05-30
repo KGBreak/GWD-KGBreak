@@ -11,11 +11,17 @@ public class VoiceRoom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !specificDialog.wasPlayed)
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("heeeloo");
-            voiceManager.OnPlayerEnterRoom(this, specificDialog);
-            specificDialog.wasPlayed = true;
+            if (!specificDialog.wasPlayed)
+            {
+                voiceManager.OnPlayerEnterRoom(this, specificDialog);
+                specificDialog.wasPlayed = true;
+            }
+            else
+            {
+                voiceManager.OnPlayerEnterRoom(this, null);
+            }
         }
     }
 
