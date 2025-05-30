@@ -564,7 +564,7 @@ MonoBehaviour:
   visionRange: 15
   visionAngle: 90
   downwardTiltAngle: 0
-  proximityDetection: 1.7
+  proximityDetection: 1.4
   enemy: {fileID: -5078149904227852931}
   detectionMeterSize: 2
   deathSize: 4
@@ -573,6 +573,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1216
   voiceManagerObject: {fileID: 0}
+  detectionMeterValue: 0
 --- !u!114 &174273241985249445
 MonoBehaviour:
   m_ObjectHideFlags: 0
