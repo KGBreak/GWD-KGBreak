@@ -13695,21 +13695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f52879ab9fa28e4cb1834463ef8b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loreDoc: 'Confidential Document: Primary Objective: Project A.B.S.O.R.B.   July
-    7th, 1971   Comrade,   You are hereby instructed to proceed with the following
-    actions to ensure the success of Operation Dawn:   Release the subject known
-    as Project A.B.S.O.R.B. from its containment facility.   Provide the subject
-    with the pre-approved language model to accelerate its cognitive development
-    and cross-language adaptability.   Ensure the subject exits the facility undetected
-    or in a manner that forces Soviet internal distraction and containment failure.  
-    Deliver the subject to designated extraction operatives stationed near Sector
-    C4 within twenty-four hours of release.   Completion of this mission is the sole
-    condition under which your request to evacuate you and your family as refugees
-    safely across the border will be fulfilled. Failure will result in immediate
-    revocation of extraction rights and forfeiture of protection guarantees.   You
-    are reminded:  This is your only opportunity. There will not be another.   Proceed
-    with all haste and discretion.     - Western Intelligence Coordination Front '
-  entryNumber: 6
+  loreDoc: Do not trust their lies...
+  entryNumber: 10
 --- !u!64 &305349246
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19452,20 +19439,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f52879ab9fa28e4cb1834463ef8b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loreDoc: 'Confidential Document: Primary Objective: Project A.B.S.O.R.B.   July
-    7th, 1971   Comrade,   You are hereby instructed to proceed with the following
-    actions to ensure the success of Operation Dawn:   Release the subject known
-    as Project A.B.S.O.R.B. from its containment facility.   Provide the subject
-    with the pre-approved language model to accelerate its cognitive development
-    and cross-language adaptability.   Ensure the subject exits the facility undetected
-    or in a manner that forces Soviet internal distraction and containment failure.  
-    Deliver the subject to designated extraction operatives stationed near Sector
-    C4 within twenty-four hours of release.   Completion of this mission is the sole
-    condition under which your request to evacuate you and your family as refugees
-    safely across the border will be fulfilled. Failure will result in immediate
-    revocation of extraction rights and forfeiture of protection guarantees.   You
-    are reminded:  This is your only opportunity. There will not be another.   Proceed
-    with all haste and discretion.     - Western Intelligence Coordination Front '
+  loreDoc: "Private Document: Approval of Project A.B.S.O.R.B. Union of Soviet Socialist
+    Republics Ministry of External Affairs Department of Intelligence \u2013 Project
+    A.B.S.O.R.B. August 1st, 1969 To: Dmitri Igor Overseer of Division 4B Location:
+    Zagorsk Research Facility ________________________________________ Subject: Approval
+    of Project A.B.S.O.R.B. Comrade Igor, After thorough review, your request to
+    initiate a research project aimed at the creation of a living, self-sustaining
+    surveillance organism, capable of infiltrating the most secure locations, gathering
+    intelligence, and transmitting critical data back to the Union\u2014codenamed
+    Project A.B.S.O.R.B.\u2014has been formally approved. The Union expects great
+    advancements from this development. Assemble your most loyal and industrious
+    scientists within your division. You are reminded that failure, as witnessed
+    previously in Project C.O.S.M.O.S., will not be tolerated. This time, we must
+    demonstrate to the Western parasites the full extent of Soviet supremacy. Furthermore,
+    it is expected that the surveillance organism will, upon successful prototype
+    validation, be mass-produced not only for operations against external enemies
+    but also for internal enforcement purposes. It shall be deployed to monitor civilian
+    populations, uncover sedition before it takes root, identify and neutralize counter-revolutionary
+    elements, and ensure the ideological purity of the Motherland. We expect rapid
+    and uncompromising results. May the progress within Division 4B be smooth, efficient,
+    and relentless. Glory to the Union. Colonel Sasha Belsky Department of Intelligence
+    Ministry of External Affairs (There is a Approved stamp on top of the letter) "
   entryNumber: 9
 --- !u!64 &410124294
 MeshCollider:
@@ -49122,20 +49116,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f52879ab9fa28e4cb1834463ef8b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loreDoc: "Project A.B.S.O.R.B. \u2013 Update Report 1: Reshaping   Written by Research
-    Lead Isaak Morozov, August 24th, 1969   Following the latest adjustments to the
-    Project A.B.S.O.R.B. formula, the organic liquid has successfully progressed
-    beyond its initial puddle form. It now consistently reshapes into a stable, jelly-like
-    cube. While the substance remains largely immobile, it clearly responds to external
-    molds, adapting its form to fit them and maintaining these shapes even after
-    the molds are removed.   This marks a major step forward in our efforts to create
-    a self-regulating organism. Based on current observations, we are confident that
-    further development will allow for more advanced autonomous behavior.    Glory
-    to the Union.   (Management continues to insist on changing the color of the
-    organism from green to red, as per visual protocol. However, this task has been
-    deprioritized to focus fully on achieving the primary research objectives \u2014
-    the successful creation of sentient organic life.) "
-  entryNumber: 1
+  loreDoc: "Letter: Family Visitation Request   Union of Soviet Socialist Republics 
+    Ministry of Internal Affairs  Department of Civil Affairs \u2013 Family Visitation
+    Requests   February 3rd, 1971   To: Comrade Isaak Morozov  Location: Zagorsk
+    Research Facility, Division 4B   Figur   Subject: Denial of Family Visitation
+    Request   Comrade Morozov,   After thorough review, your recent request for temporary
+    visitation privileges for your immediate family has been formally denied. Due
+    to the importance and sensitive nature of your current research assignment under
+    Project A.B.S.O.R.B., it has been determined that any civilian contact poses
+    a potential risk to state security.   In accordance with Decree No. 2145-B, no
+    further visitation requests will be approved for the remainder of this calendar
+    year. Additional correspondence regarding personal matters is discouraged until
+    such a time as your assignment is deemed complete by the appropriate authorities.  
+    The Union appreciates your continued sacrifices in service to the Motherland.
+    Your work remains vital to the future strength of the Soviet people.   Glory
+    to the Union. "
+  entryNumber: 6
 --- !u!64 &1063029433
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49569,21 +49565,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f52879ab9fa28e4cb1834463ef8b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loreDoc: "Letter: Family Visitation Request   Union of Soviet Socialist Republics 
-    Ministry of Internal Affairs  Department of Civil Affairs \u2013 Family Visitation
-    Requests   February 3rd, 1971   To: Comrade Isaak Morozov  Location: Zagorsk
-    Research Facility, Division 4B   Figur   Subject: Denial of Family Visitation
-    Request   Comrade Morozov,   After thorough review, your recent request for temporary
-    visitation privileges for your immediate family has been formally denied. Due
-    to the importance and sensitive nature of your current research assignment under
-    Project A.B.S.O.R.B., it has been determined that any civilian contact poses
-    a potential risk to state security.   In accordance with Decree No. 2145-B, no
-    further visitation requests will be approved for the remainder of this calendar
-    year. Additional correspondence regarding personal matters is discouraged until
-    such a time as your assignment is deemed complete by the appropriate authorities.  
-    The Union appreciates your continued sacrifices in service to the Motherland.
-    Your work remains vital to the future strength of the Soviet people.   Glory
-    to the Union. "
+  loreDoc: 'Confidential Document: Primary Objective: Project A.B.S.O.R.B.   July
+    7th, 1971   Comrade,   You are hereby instructed to proceed with the following
+    actions to ensure the success of Operation Dawn:   Release the subject known
+    as Project A.B.S.O.R.B. from its containment facility.   Provide the subject
+    with the pre-approved language model to accelerate its cognitive development
+    and cross-language adaptability.   Ensure the subject exits the facility undetected
+    or in a manner that forces Soviet internal distraction and containment failure.  
+    Deliver the subject to designated extraction operatives stationed near Sector
+    C4 within twenty-four hours of release.   Completion of this mission is the sole
+    condition under which your request to evacuate you and your family as refugees
+    safely across the border will be fulfilled. Failure will result in immediate
+    revocation of extraction rights and forfeiture of protection guarantees.   You
+    are reminded:  This is your only opportunity. There will not be another.   Proceed
+    with all haste and discretion.     - Western Intelligence Coordination Front '
   entryNumber: 8
 --- !u!64 &1072692106
 MeshCollider:
@@ -72011,6 +72006,135 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6551066109347315400, guid: f47fa550a2e67134c85a031e3b454580, type: 3}
   m_PrefabInstance: {fileID: 1589662605}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1591091101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4540147940031937300, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163605212689722673, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_Name
+      value: SM_Document_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163605212689722673, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163605212689722673, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.576
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.45802912
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.88893723
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -125.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503538282906630027, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8046618812760248422, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7163605212689722673, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1591091104}
+    - targetCorrespondingSourceObject: {fileID: 7163605212689722673, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1591091103}
+  m_SourcePrefab: {fileID: 100100000, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+--- !u!1 &1591091102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7163605212689722673, guid: 001d49910a2399244aea36a44bb6bb47, type: 3}
+  m_PrefabInstance: {fileID: 1591091101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1591091103
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591091102}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2465345106089876467, guid: 85949980e5b160f48ba99da20eeeebba, type: 3}
+--- !u!114 &1591091104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591091102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f52879ab9fa28e4cb1834463ef8b070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loreDoc: "Project A.B.S.O.R.B. \u2013 Update Report 1: Reshaping   Written by Research
+    Lead Isaak Morozov, August 24th, 1969   Following the latest adjustments to the
+    Project A.B.S.O.R.B. formula, the organic liquid has successfully progressed
+    beyond its initial puddle form. It now consistently reshapes into a stable, jelly-like
+    cube. While the substance remains largely immobile, it clearly responds to external
+    molds, adapting its form to fit them and maintaining these shapes even after
+    the molds are removed.   This marks a major step forward in our efforts to create
+    a self-regulating organism. Based on current observations, we are confident that
+    further development will allow for more advanced autonomous behavior.    Glory
+    to the Union.   (Management continues to insist on changing the color of the
+    organism from green to red, as per visual protocol. However, this task has been
+    deprioritized to focus fully on achieving the primary research objectives \u2014
+    the successful creation of sentient organic life.) "
+  entryNumber: 1
 --- !u!1001 &1591516450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98097,6 +98221,7 @@ SceneRoots:
   - {fileID: 769084566}
   - {fileID: 813619082}
   - {fileID: 204305089}
+  - {fileID: 1591091101}
   - {fileID: 1549813316}
   - {fileID: 2109331954}
   - {fileID: 1741763863}
