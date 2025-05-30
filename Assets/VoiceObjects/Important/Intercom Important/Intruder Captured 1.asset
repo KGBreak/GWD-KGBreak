@@ -15,5 +15,5 @@ MonoBehaviour:
   voiceLines:
   - {fileID: 11400000, guid: a22324f24b09a6b46a23d179a9452159, type: 2}
   isImportant: 1
-  actors: 03000000
+  actors: 04000000
   wasPlayed: 0
