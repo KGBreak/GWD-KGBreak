@@ -13,7 +13,7 @@ public class VoiceRoom : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (!specificDialog.wasPlayed)
+            if (specificDialog != null && !specificDialog.wasPlayed)
             {
                 voiceManager.OnPlayerEnterRoom(this, specificDialog);
                 specificDialog.wasPlayed = true;
