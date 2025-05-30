@@ -11,7 +11,7 @@ public class MusicManager : MonoBehaviour
 
     void Start()
     {
-        if (!string.IsNullOrEmpty(musicEvent.Path))
+        if (!musicEvent.IsNull)
         {
             _musicInst = RuntimeManager.CreateInstance(musicEvent);
             _musicInst.start();

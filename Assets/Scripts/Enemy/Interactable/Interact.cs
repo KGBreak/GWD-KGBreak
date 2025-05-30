@@ -1,8 +1,8 @@
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+//using UnityEngine.Rendering;
+//using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class Interact : MonoBehaviour
 {
