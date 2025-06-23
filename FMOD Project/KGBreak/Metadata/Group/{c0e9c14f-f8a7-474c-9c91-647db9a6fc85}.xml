@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{c0e9c14f-f8a7-474c-9c91-647db9a6fc85}">
 		<property name="volume">
-			<value>-12</value>
+			<value>-10</value>
 		</property>
 		<property name="name">
 			<value>Intercom</value>
@@ -14,7 +14,7 @@
 			<destination>{9ce5aeaa-971b-4253-ba14-c01585d74e62}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{93fbbecd-2b12-4b2f-9f0c-f9ea0d0abc91}</destination>
+			<destination>{57766873-8f94-41d3-9d1a-b2a217d6991a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{70dbff71-c21c-46c8-b020-1037cb225372}">
@@ -36,7 +36,7 @@
 			<value>9</value>
 		</property>
 		<property name="frequencyA">
-			<value>4370.81787</value>
+			<value>6894.82324</value>
 		</property>
 		<property name="frequencyB">
 			<value>113.993225</value>
@@ -48,7 +48,7 @@
 			<value>216.682251</value>
 		</property>
 		<property name="qualityA">
-			<value>0.697135448</value>
+			<value>0.730814755</value>
 		</property>
 		<property name="qualityB">
 			<value>0.381469101</value>
@@ -60,7 +60,7 @@
 			<value>2.20000005</value>
 		</property>
 		<property name="gainC">
-			<value>-14.7237272</value>
+			<value>-12.6435547</value>
 		</property>
 		<property name="gainD">
 			<value>-15.763814</value>

@@ -29,5 +29,17 @@
 		<property name="filterTypeB">
 			<value>2</value>
 		</property>
+		<property name="frequencyA">
+			<value>7490.58887</value>
+		</property>
+		<property name="frequencyB">
+			<value>29.0400715</value>
+		</property>
+		<property name="qualityA">
+			<value>0.676091015</value>
+		</property>
+		<property name="qualityB">
+			<value>0.612957776</value>
+		</property>
 	</object>
 </objects>
